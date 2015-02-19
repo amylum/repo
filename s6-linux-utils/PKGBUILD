@@ -1,14 +1,14 @@
 # Maintainer: Les Aker <me@lesaker.org>
-pkgname=s6
-pkgver=2.1.1.0_11
+pkgname=s6-linux-utils
+pkgver=2.0.0.1-10
 pkgrel=1
-pkgdesc="Process supervision suite"
+pkgdesc="minimalistic Linux-specific system utilities"
 arch=('x86_64')
-url="https://github.com/amylum/s6"
+url="https://github.com/amylum/s6-linux-utils"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("be839575ac47b58dfcf9b4b150145e9f263fe856ced41791281bd5e6a811681738ae79d6f02301915465094f0fb046786ca14f7c5b090f3786f24bab4e85cea2")
+sha512sums=("a1a11bb1dfb9a015aae2edaeb03fe893fb21d5ec8c61d6405fceeb77acec9f8bc5fe9a7dd1f690063267a13760a9fa538f940b09772f73c723067dd33b2e5b18")
 
 package() {
 	cd "${pkgdir}"
