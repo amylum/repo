@@ -8,7 +8,7 @@ url="https://github.com/amylum/s6-dns"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("863b4ce1d0eb949c9d729a11c09e1d4106d999f9d0305992bee4222677d6e8192ca49e7de56034ab567d3f5f6b24233be47dfb23bc52e845c2d79ca2d54e351f")
+sha512sums=("189ad9bcefc2cf761e35b9f56dd0fafbb7a814e1e2c180a988adef42eb6f2b3b67e3cbe04c2530a09ab199a4a3f30bb8a98ad7919f0eac5194c180a8678bb2aa")
 
 package() {
 	cd "${pkgdir}"
