@@ -1,0 +1,16 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=tenyks
+pkgver=1.0_8
+pkgrel=1
+pkgdesc="service oriented IRC bot"
+arch=('x86_64')
+url="https://github.com/amylum/tenyks"
+license=('MIT')
+source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
+noextract=("${pkgname}.tar.gz")
+sha512sums=("556e74799264ccb071f9288e017c9d15b729104f970914491e619dbc521969fdcc8e8a7dc3971262c32e08fa1fa6d511b6087f3ea7c65cc4dd130e738e20f90a")
+
+package() {
+	cd "${pkgdir}"
+	tar xf "${srcdir}/${pkgname}.tar.gz"
+}
