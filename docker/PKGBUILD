@@ -1,0 +1,16 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=docker
+pkgver=1.5.0_9
+pkgrel=1
+pkgdesc="application container engine"
+arch=('x86_64')
+url="https://github.com/amylum/docker"
+license=('Apache')
+source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
+noextract=("${pkgname}.tar.gz")
+sha512sums=("ed3898452973f63c2460b22b22a9f99dec0bdcc3ec2e15d1190619be4020ad6a922896e5ac65790fcd789299b7749d71b3fb1deb5484dd26ce8e6d0f046ae65f")
+
+package() {
+	cd "${pkgdir}"
+	tar xf "${srcdir}/${pkgname}.tar.gz"
+}
