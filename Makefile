@@ -9,7 +9,7 @@ define s3repo
 source $(AWS_CONFIG_FILE) && MAKEPKG_CONF=$(MAKEPKG_CONF) s3repo $1 $2
 endef
 
-.PHONY : default build upload clean $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
+.PHONY : default build-all upload-all clean $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
 
 default: build upload
 
