@@ -1,5 +1,4 @@
-MAKEPKG_CONF = ../makepkg.conf
-AWS_CONFIG_FILE = .aws
+CONFIG_FILE = .conf
 
 SHELL = /usr/bin/env bash
 
@@ -8,7 +7,7 @@ BUILD_PACKAGES = $(addprefix build-,$(PACKAGES))
 UPLOAD_PACKAGES = $(addprefix upload-,$(PACKAGES))
 
 define s3repo
-source $(AWS_CONFIG_FILE) && MAKEPKG_CONF=$(MAKEPKG_CONF) s3repo $1 $2
+source $(CONFIG_FILE) && s3repo $1 $2
 endef
 
 .PHONY : default build-all upload-all clean $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
