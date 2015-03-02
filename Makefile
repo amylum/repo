@@ -13,7 +13,7 @@ endef
 
 .PHONY : default build-all upload-all clean $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
 
-default: build upload
+default: build-all upload-all
 
 build-all:
 	$(call s3repo,build,$(PACKAGES))
