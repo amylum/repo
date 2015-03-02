@@ -2,5 +2,6 @@
 */src
 */*.tar.gz
 */*.pkg.tar.xz
+*/*.pkg.tar.xz.sig
 .aws
 .conf
