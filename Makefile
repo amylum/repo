@@ -27,5 +27,5 @@ $(BUILD_PACKAGES):
 	$(call s3repo,build,$(subst build-,,$@))
 
 $(UPLOAD_PACKAGES):
-	$(call s3repo,upload,$(subst upload-,,$@)
+	$(call s3repo,upload,$(subst upload-,,$@))
 
