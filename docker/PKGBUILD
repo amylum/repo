@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=docker
 pkgver=1.5.0_9
-pkgrel=1
+pkgrel=2
 pkgdesc="application container engine"
 arch=('x86_64')
 url="https://github.com/amylum/docker"
