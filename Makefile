@@ -1,6 +1,8 @@
 MAKEPKG_CONF = ../makepkg.conf
 AWS_CONFIG_FILE = .aws
 
+SHELL = /usr/bin/env bash
+
 PACKAGES = $(shell find * -name PKGBUILD -exec dirname {} \;)
 BUILD_PACKAGES = $(addprefix build-,$(PACKAGES))
 UPLOAD_PACKAGES = $(addprefix upload-,$(PACKAGES))
