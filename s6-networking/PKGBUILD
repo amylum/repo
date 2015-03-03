@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=s6-networking
-pkgver=2.1.0.0_7
-pkgrel=2
+pkgver=2.1.0.0_8
+pkgrel=1
 pkgdesc="small networking utilities for Unix"
 arch=('x86_64')
 url="https://github.com/amylum/s6-networking"
