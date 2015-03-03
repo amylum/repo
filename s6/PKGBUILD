@@ -8,7 +8,7 @@ url="https://github.com/amylum/s6"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("9425adb1141ba6cebd5b6ba80576b8ff4e26f87f01607b095f9132b182f426076214058176c2c186d3f44260441dc8959d6375a9b52701d23fa1212f4d7cc8b4")
+sha512sums=("296e2c2b9390e14cd157f7949b869071498be82cc5680310c8d5737fd1bf6b8a3186ad464624532e84b7ffeb052c9b745e70e1bd432378221d5f4fb11d2986e3")
 
 package() {
 	cd "${pkgdir}"

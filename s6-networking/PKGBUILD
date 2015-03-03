@@ -8,7 +8,7 @@ url="https://github.com/amylum/s6-networking"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("434abcfc3414d65dd4342591b10f76cf5016af2f2aa73b7fa84730d3f49fbfcc5717fc5613bd1abcd894de54b1cc4541e9d1ab2bab57b24909704bca50c4546f")
+sha512sums=("781f6eb6db9f3dcc8b952b12d81fb19386a903ed4a8a2c9108f01a306a24df53fb84bbe9eb86982f954c7c49cd2edbced06634d47b50d0303c8617788e33d203")
 
 package() {
 	cd "${pkgdir}"

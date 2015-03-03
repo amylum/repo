@@ -8,7 +8,7 @@ url="https://github.com/amylum/execline"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("1e87d5c4f6f4dd64acc447c6351478fb7a36786e3d3884772c50b2688c0872ed9939b3f418175a548766961cd21206522943fca88e8e80eee7ff6210404d1e1e")
+sha512sums=("0718333a7ac45d7a568d5e3a9237c054fe3bc9c14b836e6efa0b4ef211a1e8025dedc79314869fa9a9197db5c14ba07a99e30eb8633d41bc0a4a8a50a7e0eead")
 
 package() {
 	cd "${pkgdir}"
