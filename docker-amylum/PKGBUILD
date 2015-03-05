@@ -1,18 +1,19 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=docker-amylum
+realname=docker
 pkgver=1.5.0_9
 pkgrel=2
 pkgdesc="application container engine"
-provides=("docker")
-conflicts=("docker")
+provides=("${realname}")
+conflicts=("${realname}")
 arch=('x86_64')
 url="https://github.com/amylum/docker"
 license=('Apache')
-source=("https://github.com/amylum/docker/releases/download/${pkgver//_/-}/docker.tar.gz")
-noextract=("docker.tar.gz")
+source=("https://github.com/amylum/${realname}/releases/download/${pkgver//_/-}/${realname}.tar.gz")
+noextract=("${realname}.tar.gz")
 sha512sums=("ed3898452973f63c2460b22b22a9f99dec0bdcc3ec2e15d1190619be4020ad6a922896e5ac65790fcd789299b7749d71b3fb1deb5484dd26ce8e6d0f046ae65f")
 
 package() {
 	cd "${pkgdir}"
-	tar xf "${srcdir}/${pkgname}.tar.gz"
+	tar xf "${srcdir}/${realname}.tar.gz"
 }
