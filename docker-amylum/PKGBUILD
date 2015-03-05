@@ -1,8 +1,10 @@
 # Maintainer: Les Aker <me@lesaker.org>
-pkgname=docker
+pkgname=docker-amylum
 pkgver=1.5.0_9
 pkgrel=2
 pkgdesc="application container engine"
+provides=("docker")
+conflicts=("docker")
 arch=('x86_64')
 url="https://github.com/amylum/docker"
 license=('Apache')
