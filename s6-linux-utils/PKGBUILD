@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=s6-linux-utils
-pkgver=2.0.1.0_11
-pkgrel=2
+pkgver=2.0.2.0_14
+pkgrel=1
 pkgdesc="minimalistic Linux-specific system utilities"
 arch=('x86_64')
 url="https://github.com/amylum/s6-linux-utils"
