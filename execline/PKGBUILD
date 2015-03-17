@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=execline
-pkgver=2.1.1.0_14
+pkgver=2.1.1.0_15
 pkgrel=1
 pkgdesc="non-interactive scripting language"
 arch=('x86_64')
