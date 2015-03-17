@@ -8,7 +8,7 @@ url="https://github.com/amylum/skalibs"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("333224615b022193a592aa21643ea6000cb2f36b50e1ee8aef0e6fb87092b73e8be8a93762b05fae264ba5b499b831bd5d7e118eab8f77bbb6cb9ecd4e659d80")
+sha512sums=("9aa9a20e8f10c22530e4a3d053d3fe9d0dc4ede3175c0f25f6beef4d22f461b54b8d4fe2e2c0d61cae2a4585fede828169fa850e0df972d293bcdfcdbe69761f")
 
 package() {
 	cd "${pkgdir}"

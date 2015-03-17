@@ -8,7 +8,7 @@ url="https://github.com/amylum/tenyks"
 license=('MIT')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("556e74799264ccb071f9288e017c9d15b729104f970914491e619dbc521969fdcc8e8a7dc3971262c32e08fa1fa6d511b6087f3ea7c65cc4dd130e738e20f90a")
+sha512sums=("3543b1d7f4e8c75d78b43ad452c59dde08f4de52f838cdd597f66b28935198cc35bb083a787803e8e233eddfbb4cfedee3d8e64c19566acc9150fc9bf72cefc0")
 
 package() {
 	cd "${pkgdir}"
