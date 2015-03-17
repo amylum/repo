@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=tenyks
-pkgver=1.0_8
-pkgrel=3
+pkgver=1.0_9
+pkgrel=1
 pkgdesc="service oriented IRC bot"
 arch=('x86_64')
 url="https://github.com/amylum/tenyks"
