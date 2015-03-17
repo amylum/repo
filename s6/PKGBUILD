@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=s6
-pkgver=2.1.3.0-22
+pkgver=2.1.3.0_22
 pkgrel=1
 pkgdesc="Process supervision suite"
 arch=('x86_64')
