@@ -2,7 +2,7 @@
 pkgname=docker-amylum
 realname=docker
 pkgver=1.5.0_9
-pkgrel=2
+pkgrel=3
 pkgdesc="application container engine"
 provides=("${realname}")
 conflicts=("${realname}")
