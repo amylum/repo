@@ -34,6 +34,12 @@ make
 
 To just build, `make build-all`; to just upload, `make upload-all`. Any specific package can be built with `make build-NAME` and uploaded with `make upload-NAME`, and `make clean` will clean up all the build cruft.
 
+## Serving the repo
+
+### Heroku
+
+I serve the repo via [a Heroku application](https://github.com/amylum/server). In theory I could have served from S3 directly, but this gives me some more control over caching and request handling.
+
 ## License
 
 These scripts are released under the MIT License. See the bundled LICENSE file for details. The packages being built maintain their upstream licenses, obviously, and their license files are included in each package.
