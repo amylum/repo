@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=docker-amylum
 realname=docker
-pkgver=1.6.0-rc5-11
+pkgver=1.6.0_rc5_11
 pkgrel=1
 pkgdesc="application container engine"
 provides=("${realname}")
