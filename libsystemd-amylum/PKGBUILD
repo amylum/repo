@@ -1,0 +1,11 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=libsystemd-amylum
+realname=libsystemd
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Dummy package to avoid installing libsystemd"
+provides=("${realname}")
+conflicts=("${realname}")
+arch=('any')
+url="https://github.com/amylum/repo/issues/7"
+license=('MIT')
