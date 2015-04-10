@@ -10,7 +10,7 @@ define s3repo
 source $(CONFIG_FILE) && s3repo $1 $2
 endef
 
-.PHONY : default build-all upload-all clean $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
+.PHONY : default build-all upload-all clean $(PACKAGES) $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
 
 default: build-all upload-all
 
@@ -22,6 +22,10 @@ upload-all:
 
 clean:
 	find . -mindepth 2 -maxdepth 2 ! -name PKGBUILD ! -path './.git/*' -print -exec rm -r {} \;
+
+$(PACKAGES):
+	$(MAKE) build-$@
+	$(MAKE) upload-$@
 
 $(BUILD_PACKAGES):
 	$(call s3repo,build,$(subst build-,,$@))
