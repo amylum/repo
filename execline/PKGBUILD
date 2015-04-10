@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=execline
 pkgver=2.1.1.1_16
-pkgrel=1
+pkgrel=2
 pkgdesc="non-interactive scripting language"
 arch=('x86_64')
 url="https://github.com/amylum/execline"

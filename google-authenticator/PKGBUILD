@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=google-authenticator
 pkgver=v201503040014
-pkgrel=1
+pkgrel=2
 pkgdesc="TOTP authenticator module for PAM"
 arch=('x86_64')
 url="https://github.com/amylum/google-authenticator"
