@@ -8,7 +8,7 @@ url="https://github.com/amylum/anopa"
 license=('GPL')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("53c4169a797c9c9d00cd56802c3bd9e4bbb7f745a338786350b3246621ab32a5b3747990beda877fcfd1b410bd5515c487f0bda70b5172d33f6fb10cb05ccab8")
+sha512sums=("8561b7ee612e510205eb68e73f06fa7ecf9971ae0172e0ff2d35a99bd6cd232d54099ef1fdfd5e790c4b5f90da9dc1c8240fe78e5b219e81f1332b331e2d7518")
 
 package() {
 	cd "${pkgdir}"
