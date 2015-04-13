@@ -8,4 +8,4 @@ provides=("${realname}")
 conflicts=("${realname}")
 arch=('any')
 url="https://github.com/amylum/repo/issues/7"
-license=('MIT')
+license=('Apache')
