@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=sysdig
-pkgver=0.1.1_dev_4
+pkgver=0.1.1_dev_6
 pkgrel=1
 pkgdesc="system profiling tool"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/sysdig"
 license=('MIT')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("6f51b0bdfc92626107856a70032647e582487a757b55b2ae19666499d5e5c32800c94a062ac2595df9eaa55e8789fd94089a52a06c0473fa3fd901306d84d251")
+sha512sums=("3596194c51a22b9eb5fb30f706cc4ff69b96105741f98f36ca52dc2bc5e4f4d36885e1c7758721c3770341c684cc641d438f0fa6373a5e65ebf2e0db07a3e2e9")
 
 package() {
 	cd "${pkgdir}"
