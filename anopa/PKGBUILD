@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=anopa
-pkgver=0.1.0_#
+pkgver=0.1.0_3
 pkgrel=1
 pkgdesc="Process supervision framework"
 arch=('x86_64')
