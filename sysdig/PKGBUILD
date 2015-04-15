@@ -10,6 +10,8 @@ source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/$
 noextract=("${pkgname}.tar.gz")
 sha512sums=("3596194c51a22b9eb5fb30f706cc4ff69b96105741f98f36ca52dc2bc5e4f4d36885e1c7758721c3770341c684cc641d438f0fa6373a5e65ebf2e0db07a3e2e9")
 
+depends=('bash')
+
 package() {
 	cd "${pkgdir}"
 	tar xf "${srcdir}/${pkgname}.tar.gz"
