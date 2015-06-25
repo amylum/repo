@@ -11,7 +11,7 @@ source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}
 noextract=("${_realname}.tar.gz")
 sha512sums=("c63b9658c6ea4c72445a81757f2c9fb7c58c605227fab6e5afcbd9cc5c20697866a1df17c425b9f1bf3a4ff818bcf14d58d8dbadbd87ecba56db8aab86fff797")
 
-depends=('python', 'lzo')
+depends=('python' 'lzo')
 
 package() {
 	cd "${pkgdir}"
