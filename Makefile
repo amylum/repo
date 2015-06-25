@@ -21,7 +21,7 @@ upload-all:
 	$(call s3repo,upload,$(PACKAGES))
 
 clean:
-	find . -mindepth 2 -maxdepth 2 ! -name PKGBUILD ! -path './.git/*' -print -exec rm -r {} \;
+	find . -mindepth 2 -maxdepth 2 ! -name PKGBUILD ! -name '*.install' ! -path './.git/*' -print -exec rm -r {} \;
 
 $(PACKAGES):
 	$(MAKE) build-$@
