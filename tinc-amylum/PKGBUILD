@@ -11,6 +11,8 @@ source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}
 noextract=("${_realname}.tar.gz")
 sha512sums=("d652248475c00c7d6898a786b1503f2948bfdade406e8afa52ae82b9d4c91d0b71568e0700e8290064138dc15e213bd1bad56c3ff3da80fcefc778072f570b9b")
 
+depends=('python', 'lzo')
+
 package() {
 	cd "${pkgdir}"
 	tar xf "${srcdir}/${_realname}.tar.gz"
