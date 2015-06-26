@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=s6
-pkgver=2.1.4.0_29
+pkgver=2.1.6.0_30
 pkgrel=1
 pkgdesc="Process supervision suite"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/s6"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("e1d511abb183410968e0f34d08ffb5b559fae6fa66c88656d26a0197112bf47b16a7caaa2b4ca5d2610b0d1db2ae6cb520f2dec1195124aaf1f63d9abb19cda9")
+sha512sums=("99a439ae2bad52024cf8475a522f32d2e9787d1da1abd62e3aae790c1dd98e58ba2202a2bf56dd2acb876199e3012ecba82897c4fde13f36af89d97642e33b98")
 
 package() {
 	cd "${pkgdir}"
