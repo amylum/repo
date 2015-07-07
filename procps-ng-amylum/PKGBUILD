@@ -11,8 +11,8 @@ source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}
 noextract=("${_realname}.tar.gz")
 sha512sums=("3e001b79105f3908c140ca91f5e61582849b7007572db2648dfd49aa29e21c9892c79e6ec7141774486a0c20f1508a1509cfe59a1d5906444e64cf742312dd54")
 
-conflicts=('procps' 'sysvinit-tools')
-provides=('procps' 'sysvinit-tools')
+conflicts=('procps' 'sysvinit-tools' "${_realname}")
+provides=('procps' 'sysvinit-tools' "${_realname}")
 replaces=('procps' 'sysvinit-tools')
 
 package() {
