@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=procps-ng-amylum
 _realname=procps-ng
-pkgver=3.3.10_8
+pkgver=3.3.10_9
 pkgrel=1
 pkgdesc="Process utilities"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/procps-ng"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("f4fabc9677144a9983f254e10eea0fd5dc3f1f035c81cb7fd6f7f23ea769acea9a423a7cc1d51b69dd81077558f25b3211e1b4408743e43184c9925885d4b723")
+sha512sums=("91d387da526d162215404b6e7dd3433bc47aa17f96ff0451637f972c130ba59cfd6833532e1c7b09ccb1855d3f53afb9af99056c0137c9bdda5b1e15803d2bca")
 
 conflicts=('procps' 'sysvinit-tools' "${_realname}")
 provides=('procps' 'sysvinit-tools' "${_realname}")
