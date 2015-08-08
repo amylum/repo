@@ -12,5 +12,5 @@ sha512sums=("1eecd4e292a013fbeb223c732af97b7f84735a3cb45f4678d704ec34dbb69626a10
 
 package() {
 	cd "${pkgdir}"
-	tar xf "${srcdir}/${_realname}.tar.gz"
+	tar xf "${srcdir}/${pkgname}.tar.gz"
 }
