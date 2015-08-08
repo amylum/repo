@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=tinyssh
 pkgver=20150801_1
-pkgrel=3
+pkgrel=4
 pkgdesc="SSH server"
 arch=('x86_64')
 url="https://github.com/amylum/tinyssh"
