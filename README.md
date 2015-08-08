@@ -15,7 +15,6 @@ export AWS_ACCESS_KEY_ID=AAAAAAAAAAAAAAAAAAAAAAAAA
 export AWS_SECRET_ACCESS_KEY=BBBBBBBBBBBBBBBBBBBBBBBBBB
 export AWS_REGION=us-east-1
 export S3_BUCKET=amylum
-export GNUPGHOME=~/.makepkg
 export MAKEPKG_FLAGS="--force --nodeps --clean"
 export MAKEPKG_CONF=../makepkg.conf
 ```
