@@ -1,0 +1,20 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=which-amylum
+_realname=which
+pkgver=2.21_1
+pkgrel=1
+pkgdesc="A utility to show the full path of commands"
+arch=('x86_64')
+url="https://github.com/amylum/which"
+license=('GPL3')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("e6758761f8fd9dcf4fbb27014ef06690098398b761cecbd6c0e72facde328e2b1f452dcb7e6077afca636af50eaaa6086d816ee7437496dc3a42a06f1056244e")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+	cd "${pkgdir}"
+	tar xf "${srcdir}/${_realname}.tar.gz"
+}
