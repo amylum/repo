@@ -23,6 +23,9 @@ upload-all:
 clean:
 	find . -mindepth 2 -maxdepth 2 ! -name PKGBUILD ! -name '*.install' ! -path './.git/*' -print -exec rm -r {} \;
 
+prune:
+	$(call s3repo,prune)
+
 $(PACKAGES):
 	$(MAKE) build-$@
 	$(MAKE) upload-$@
