@@ -16,4 +16,5 @@ sha512sums=("70ee62250df08971c0bce8267c7ffebbcfa235e4345947dc2928aeecb8ffb9805fb
 package() {
 	cd "${pkgdir}"
 	tar xf "${srcdir}/${_realname}.tar.gz"
+	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
