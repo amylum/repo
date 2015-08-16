@@ -1,0 +1,20 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=radvd-amylum
+_realname=procps-ng
+pkgver=2.11_4
+pkgrel=1
+pkgdesc="IPv6 Router Advertisement Daemon"
+arch=('x86_64')
+url="https://github.com/amylum/radvd"
+license=('custom')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("d2cca14d2931666de711a572be996679d011335cd48f4d7738e8433045a1978d22960b9bf96a0a25ffedb5ec8dc25dd4975d59c2c931c9faa03d1d301679f1ac")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+	cd "${pkgdir}"
+	tar xf "${srcdir}/${_realname}.tar.gz"
+}
