@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=radvd-amylum
-_realname=procps-ng
+_realname=radvd
 pkgver=2.11_4
 pkgrel=1
 pkgdesc="IPv6 Router Advertisement Daemon"
