@@ -1,0 +1,21 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=sed-amylum
+_realname=sed
+pkgver=4.2.2_2
+pkgrel=1
+pkgdesc="GNU stream editor"
+arch=('x86_64')
+url="https://github.com/amylum/sed"
+license=('GPL3')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("f10fd83b104fd9819c7ddd94a0a23fe3b32a3af95dc2db581075558798baeb7633f624e781809b36e8f9f49293a263887befa00366f1069cd522500e32f85dbe")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+	cd "${pkgdir}"
+	tar xf "${srcdir}/${_realname}.tar.gz"
+	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
