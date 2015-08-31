@@ -1,0 +1,21 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=findutils-amylum
+_realname=findutils
+pkgver=4.4.2_1
+pkgrel=1
+pkgdesc="GNU utilities to locate files"
+arch=('x86_64')
+url="https://github.com/amylum/findutils"
+license=('GPL3')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("e81194fcb3accfe7524bca02913baceeed0f48e4b230e68e5a442193940f4a86a3ac07539b8929d1a348c563cba5f2b1787030c4752059722e1d2131c3428bed")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+	cd "${pkgdir}"
+	tar xf "${srcdir}/${_realname}.tar.gz"
+	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
