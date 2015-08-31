@@ -9,7 +9,7 @@ url="https://github.com/amylum/less"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("56ecfd3c4e586a926e609dabb278eea1554a4a70a1d1d675cea2e9d69ae764f646b25eab197032db6aa571c22a3550ec11a3a7ef556e0d4523092c7a5daaa030")
+sha512sums=("688775f214a94c88d29d7f8dd193a86fc9e91d1ee88990a92b92a09be9e4309963001a25130b283020ff8a688bf73f3ccc60bf87bc5d931fe0d2d6c8452aa11a")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
