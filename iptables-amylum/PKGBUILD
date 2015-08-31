@@ -1,0 +1,21 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=iptables-amylum
+_realname=iptables
+pkgver=1.4.21_8
+pkgrel=1
+pkgdesc="Linux kernel packet control tool"
+arch=('x86_64')
+url="https://github.com/amylum/iptables"
+license=('GPL2')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("3734f63d99c6cddd340f4ecc863afcd6302791ce3bf35ce193feb14351d0bd72a02a955c323e0f19ac92e5bdd7046eda3d2d8199badbc18bf4cd7ffd8d972c69")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+	cd "${pkgdir}"
+	tar xf "${srcdir}/${_realname}.tar.gz"
+	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
