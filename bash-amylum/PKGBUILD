@@ -17,5 +17,6 @@ provides=("${_realname}")
 package() {
 	cd "${pkgdir}"
 	tar xf "${srcdir}/${_realname}.tar.gz"
+	ln -s bash usr/bin/sh
 	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
