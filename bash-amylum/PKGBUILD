@@ -12,7 +12,7 @@ noextract=("${_realname}.tar.gz")
 sha512sums=("3fb895ad89d9d11179c0e55815979b149efac915fb392c6d11985a2f134b38d2d1a269f11d23f75abbad15497da68af9a25866ac67e2b8f0faa0090d446b2880")
 
 conflicts=("${_realname}")
-provides=("${_realname}" 'sh')
+provides=('sh' "${_realname}")
 
 package() {
 	cd "${pkgdir}"
