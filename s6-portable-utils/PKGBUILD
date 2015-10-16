@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=s6-portable-utils
-pkgver=2.0.5.0_8
+pkgver=2.0.5.3_10
 pkgrel=1
 pkgdesc="minimalistic system utilities"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/s6-portable-utils"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("a422417b77137c25ed7222606e05f21ec8a341f53d86edb8a1382cae0e6ed657528359d7fa4800af303ad86f840ab1b7317a40a48b220f76f74859f7c89c1783")
+sha512sums=("1ebdc4dacacb50eb5a81500466e8a4a4f52cebdbe94b0f5685d9a94508b6efe5e569a836475e5649ffe7e4e5ac6443bf4fe7afc2bae4fa0cf3cc1ef1c0d06912")
 
 package() {
 	cd "${pkgdir}"
