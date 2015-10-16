@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=xz-amylum
 _realname=xz
-pkgver=5.2.1_6
+pkgver=5.2.2_10
 pkgrel=1
 pkgdesc="Library and command line tools for XZ and LZMA compressed files"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/xz"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("aa5c571c1a9eb54c84be04b3dcd8b16edca9f179f98b536cb058a6be099ea6fb031e2336b285a16f5ee6e8741c43947d51cc88cd8fb457b7cf747fde86fb8904")
+sha512sums=("cf4aeabf9edea44f0fa0930e7e7541d1d2446d67473bc2e2304ed6201ad2675d7d0ace8db9b47f1116401de60cbfa1129a1f0560da9cfca0bfdfd75c7ec9ed24")
 
 depends=('bash')
 
