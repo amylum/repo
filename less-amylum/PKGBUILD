@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=less-amylum
 _realname=less
-pkgver=481-2
+pkgver=481_2
 pkgrel=1
 pkgdesc="A terminal based program for viewing text files"
 arch=('x86_64')
