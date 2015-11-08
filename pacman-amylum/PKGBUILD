@@ -1,0 +1,23 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=pacman-amylum
+_realname=pacman
+pkgver=4.2.1_2
+pkgrel=1
+pkgdesc="Library and command line tools for XZ and LZMA compressed files"
+arch=('x86_64')
+url="https://github.com/amylum/xz"
+license=('GPL2')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("d9ddff603e276ef8fe72cef8f2a481b78609829ed5a6b54b30c775e97848bc2b3da198a5a3d4e809ec679b2304165e95962276b8bf1de623ea89823ddd66cad8")
+
+depends=('bash')
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
