@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libgpg-error-amylum
 _realname=libgpg-error
-pkgver=1.20_1
+pkgver=1.20_2
 pkgrel=1
 pkgdesc="Support library for libgcrypt"
 arch=('x86_64')
@@ -9,7 +9,9 @@ url="https://github.com/amylum/libgpg-error"
 license=('LGPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("db07e90b84ca8c90e6cca2d75c73b92fa3af737300355783d6cc4c2e7af303498fee3695bf223353196cddea713dd6a0ef5fcd02be75ca76484dbae66a569fec")
+sha512sums=("f83d13c15a60009e8edb554805c21c49eb374bc9854d66800268ab5b76f3c95b84fc417e535a3a00e71d0464dc105b1484ea694ce7ae2ab396ff70238cdcaeed")
+
+depends=('bash')
 
 conflicts=("${_realname}")
 provides=("${_realname}")
