@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=gnupg-amylum
 _realname=gnupg
-pkgver=2.1.9-1
+pkgver=2.1.9_1
 pkgrel=1
 pkgdesc="Complete and free implementation of the OpenPGP standard"
 arch=('x86_64')
