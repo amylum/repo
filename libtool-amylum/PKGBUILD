@@ -1,0 +1,21 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=libtool-amylum
+_realname=libtool
+pkgver=2.4.6_1
+pkgrel=1
+pkgdesc="A generic library support script"
+arch=('x86_64')
+url="https://github.com/amylum/libtool"
+license=('GPL')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("becf612a2f547fd3e06d03fc2d1ddb164a6672a4492413707a1c2b16b1314ec16a4c030f0eade078f2917a9953634a93854a4df4de19a283c198d5d4224b7782")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
