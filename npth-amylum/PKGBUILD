@@ -1,0 +1,21 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=npth-amylum
+_realname=npth
+pkgver=1.2_1
+pkgrel=1
+pkgdesc="New portable threads library"
+arch=('x86_64')
+url="https://github.com/amylum/npth"
+license=('LGPL')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("de75efdbbff4fc4d3b961f893bcdfa09472048e2ad4ba4166089c70e4bdb9c998f65f3e9909c83636070f4fe53683b186b0eaf8022d273c372b61ecca69aec43")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
