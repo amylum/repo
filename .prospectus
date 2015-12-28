@@ -11,7 +11,7 @@ Dir.glob('*/PKGBUILD').each do |pkgbuild|
 
     expected do
       github_release
-      repo Regexp.last_match[1]
+      repo url.split('.com/').last
     end
 
     actual do
