@@ -1,0 +1,23 @@
+Dir.glob('*/PKGBUILD').each do |pkgbuild|
+  package = File.dirname pkgbuild
+  lines = File.readlines(pkgbuild)
+  url = lines.find { |x| x.match(/^url=/) }.split('"')[1]
+
+  dummy = lines.find { |x| x.match(/^_dummy=true/) }
+  next if dummy
+
+  item do
+    name "repo::#{package}"
+
+    expected do
+      github_release
+      repo Regexp.last_match[1]
+    end
+
+    actual do
+      grep
+      file pkgbuild
+      regex /^pkgver=([[:alnum:].]+)_([[:alnum:]]+)$/, '\1-\2'
+    end
+  end
+end

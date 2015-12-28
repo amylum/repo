@@ -9,3 +9,4 @@ conflicts=("${_realname}")
 arch=('any')
 url="https://github.com/amylum/repo/issues/7"
 license=('Apache')
+_dummy=true # Used to skip prospectus list
