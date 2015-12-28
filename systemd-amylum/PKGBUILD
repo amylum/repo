@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=systemd-amylum
 _realname=systemd
-pkgver=0.0.1
+pkgver=0.0.1_1
 pkgrel=2
 pkgdesc="Dummy package to avoid installing systemd"
 provides=("${_realname}")
