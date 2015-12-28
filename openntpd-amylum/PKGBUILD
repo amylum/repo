@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=openntpd-amylum
 _realname=openntpd
-pkgver=5.7p4_2
+pkgver=5.7p4_4
 pkgrel=1
 pkgdesc="Free, easy to use implementation of the Network Time Protocol"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/openntpd"
 license=('BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("c54959e595c962ed751a89ebc3c5ad1da5518606eb464c8b8d4051f25db7988f089d71d57da57434c9d0ccde49b9003c41c300b871dd57d8d67230f76329c846")
+sha512sums=("1776ad468df8ea00aeb8748050d33228b077c3536db157ae1ad74373e8794bf0deb1588c50c2760b1cda5705bc29835e0e7750038014d063b847140966a69d36")
 
 install=$pkgname.install
 
@@ -17,7 +17,7 @@ conflicts=("${_realname}")
 provides=("${_realname}")
 
 package() {
-	cd "${pkgdir}"
-	tar xf "${srcdir}/${_realname}.tar.gz"
-	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
