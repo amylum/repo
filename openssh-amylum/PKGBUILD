@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=openssh-amylum
 _realname=openssh
-pkgver=7.1p1_4
+pkgver=7.1p1_6
 pkgrel=1
 pkgdesc="SSH connectivity tools"
 arch=('x86_64')
@@ -9,13 +9,13 @@ url="https://github.com/amylum/openssh"
 license=('custom:BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("0445e3024af3a78afa08c39f1f6674303372cfc7cfeb3872f0191504ddb81b5b680311868370da158c6330b77d02280dbc9107ce89cbdce1c8e112884c668fdf")
+sha512sums=("43af8d26be8aa02395b40a43af6f071ac1846db2357d845137a2f7aa0e3476f8f81f104d831e7ac755b705920b6af4612ed7db4e1d3df706afe5426cbb8aaaba")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
 
 package() {
-	cd "${pkgdir}"
-	tar xf "${srcdir}/${_realname}.tar.gz"
-	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
