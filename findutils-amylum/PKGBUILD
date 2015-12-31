@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=findutils-amylum
 _realname=findutils
-pkgver=4.4.2_1
+pkgver=4.6.0-2
 pkgrel=1
 pkgdesc="GNU utilities to locate files"
 arch=('x86_64')
@@ -9,13 +9,13 @@ url="https://github.com/amylum/findutils"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("e81194fcb3accfe7524bca02913baceeed0f48e4b230e68e5a442193940f4a86a3ac07539b8929d1a348c563cba5f2b1787030c4752059722e1d2131c3428bed")
+sha512sums=("4f1069d061d1091a45aada20cce3326b96273ada9cbcdad3998307e0a11a8a7e7962e4d846e67aee27c67259f16f0543d8439a2f25a1fdefcb96d7f8687d04d9")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
 
 package() {
-	cd "${pkgdir}"
-	tar xf "${srcdir}/${_realname}.tar.gz"
-	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
