@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=findutils-amylum
 _realname=findutils
-pkgver=4.6.0-2
+pkgver=4.6.0_2
 pkgrel=1
 pkgdesc="GNU utilities to locate files"
 arch=('x86_64')
