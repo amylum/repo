@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libgpg-error-amylum
 _realname=libgpg-error
-pkgver=1.21-3
+pkgver=1.21_3
 pkgrel=1
 pkgdesc="Support library for libgcrypt"
 arch=('x86_64')
