@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=less-amylum
 _realname=less
-pkgver=481_2
+pkgver=481_3
 pkgrel=1
 pkgdesc="A terminal based program for viewing text files"
 arch=('x86_64')
@@ -9,13 +9,13 @@ url="https://github.com/amylum/less"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("5f07ada71a7da45511b45f9f24fbd8fc65bc2ef60d815c750ddae4b9c28fc5c69775d71cac7d86e69db0c22f291dd09e9a7375ef1ac512a182c4ac54fee6234b")
+sha512sums=("b12e7bdd63a45793c2e8dd7afa1a6c68a64caea16dd11b4f5be88becf092e1b1cf946e39869f4d0fabd4c8c4de56ee8799fdfe588d33a92ac28b9844275b862d")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
 
 package() {
-	cd "${pkgdir}"
-	tar xf "${srcdir}/${_realname}.tar.gz"
-	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
