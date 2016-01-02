@@ -11,6 +11,8 @@ source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}
 noextract=("${_realname}.tar.gz")
 sha512sums=("fd2fa6fd67b81b7d827c09d5a624e815515e1e79d4296ea05eb6590305ee132b6f913835966f3ab7a0c079c22f17c1d70ead3762ea069e8ec4ab7fef82285d9a")
 
+depends=('bash')
+
 conflicts=("${_realname}")
 provides=("${_realname}")
 
