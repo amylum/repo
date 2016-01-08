@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=iptables-amylum
 _realname=iptables
-pkgver=1.4.21_9
+pkgver=1.6.0_10
 pkgrel=1
 pkgdesc="Linux kernel packet control tool"
 arch=('x86_64')
@@ -9,13 +9,13 @@ url="https://github.com/amylum/iptables"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("f3f3315bc749053ad6e459cc8a7a418bf53c81372be6c9d39e1a6c56981d686fbe317acf2b7e79c26f9ca5c301d903e3475217e9b13cf4d2448d6c65f1af7772")
+sha512sums=("15363ff428463acf2ebefdb50bc5b91397700c1e96e7ac34eeed0b5bcfb9ed567c75c11b8634336b22bdd558edf2254e8957a95aea8a182ef91a969fc22fc49b")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
 
 package() {
-	cd "${pkgdir}"
-	tar xf "${srcdir}/${_realname}.tar.gz"
-	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
