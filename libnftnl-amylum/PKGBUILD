@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libnftnl-amylum
 _realname=libnftnl
-pkgver=1.0.5_1
+pkgver=1.0.5_2
 pkgrel=1
 pkgdesc="Netfilter library providing interface to the nf_tables subsystem"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libnftnl"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("ad445dbb4ca7ae52e0d8fc04ee4df96be5da5a20866739e03d6364d3c918d99f6404d37b04dad153b444e0bb462227b2c52f5caa3d2e99658f35270caa51c1b7")
+sha512sums=("4339065c077eda0cc264a18ee362f841f2a6b51cc2c539d90b0eee7226812be5ea368a31948261af7de8c92355f15ca92f92807964808e34745e9c14839526d3")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
