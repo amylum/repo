@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libmnl-amylum
 _realname=libmnl
-pkgver=1.0.3-2
+pkgver=1.0.3_2
 pkgrel=1
 pkgdesc="Minimalistic user-space library oriented to Netlink developers."
 arch=('x86_64')
