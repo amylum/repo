@@ -2,7 +2,7 @@
 pkgname=openssh-amylum
 _realname=openssh
 pkgver=7.1p1_6
-pkgrel=1
+pkgrel=2
 pkgdesc="SSH connectivity tools"
 arch=('x86_64')
 url="https://github.com/amylum/openssh"
