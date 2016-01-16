@@ -6,6 +6,9 @@ Dir.glob('*/PKGBUILD').each do |pkgbuild|
   dummy = lines.find { |x| x.match(/^_dummy=true/) }
   next if dummy
 
+  version_line = lines.find { |x| x.match(/^pkgver=/) }.chomp
+  version = version_line.split('=', 2).last.gsub('_', '-')
+
   item do
     name "repo::#{package}"
 
@@ -15,9 +18,8 @@ Dir.glob('*/PKGBUILD').each do |pkgbuild|
     end
 
     actual do
-      grep
-      file pkgbuild
-      regex /^pkgver=([[:alnum:].]+)_([[:alnum:]]+)$/, '\1-\2'
+      static
+      set version
     end
   end
 end
