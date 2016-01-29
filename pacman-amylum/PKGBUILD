@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=pacman-amylum
 _realname=pacman
-pkgver=4.2.1_7
+pkgver=4.2.1_8
 pkgrel=1
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/pacman"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("eeb0068a2e5f5cc27762291681567e7aad9fd6d72014eda275c4a3aeeb6844d1e901116f6f2d2c0ea18bbc7a01250f2884154b7770602775c305000f99915c41")
+sha512sums=("fda87585f2a93f3fa8bc8ac0e31394c1c2a97439f514a21bc1b6570c0356a66638387054166b479bce7451f1dccc6fdecf57200d04c8996d771d534d0c4e840b")
 
 depends=('bash')
 
