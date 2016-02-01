@@ -7,8 +7,8 @@ pkgdesc="POSIX 1003.1e capabilities"
 arch=('x86_64')
 url="https://github.com/amylum/libcap"
 license=('GPL2')
-source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.libcap.gz")
-noextract=("${_realname}.libcap.gz")
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
 sha512sums=("8b8573bf3b286476e243ac650ecbf337a383b0bd2470de41c31ffc0d84b76a3bd3cf307f1bfa276014c7f9e62c1bac797b9e1c5f198e604bd02aba648fe0c30d")
 
 conflicts=("${_realname}")
@@ -16,6 +16,6 @@ provides=("${_realname}")
 
 package() {
     cd "${pkgdir}"
-    tar xf "${srcdir}/${_realname}.libcap.gz"
+    tar xf "${srcdir}/${_realname}.tar.gz"
     mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
