@@ -16,6 +16,6 @@ provides=("${_realname}")
 
 package() {
     cd "${pkgdir}"
-    tar xf "${srcdir}/${_realname}.iproute2.gz"
+    tar xf "${srcdir}/${_realname}.tar.gz"
     mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
