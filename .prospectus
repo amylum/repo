@@ -23,20 +23,3 @@ Dir.glob('*/PKGBUILD').each do |pkgbuild|
     end
   end
 end
-
-item do
-  name 'repo::pacman-mirrorlist-amylum'
-
-  expected do
-    static
-    set Time.now.strftime('%Y%m')
-  end
-
-  actual do
-    static
-    file_lines = File.readlines('pacman-mirrorlist-amylum/PKGBUILD')
-    version_string = file_lines.find { |x| x.match(/^pkgver/) }.chomp
-    year_month = version_string.split('=').last[0..5]
-    set year_month
-  end
-end
