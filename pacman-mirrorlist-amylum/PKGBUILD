@@ -1,0 +1,32 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=pacman-mirrorlist-amylum
+_realname=pacman-mirrorlist
+pkgver=20160131
+pkgrel=1
+pkgdesc="Arch Linux mirror list for use by pacman"
+arch=('any')
+url="https://www.archlinux.org/mirrorlist/"
+license=('GPL')
+source=(mirrorlist)
+sha512sums=(SKIP)
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+# NOTE on building this package:
+# * Run (source PKGBUILD && updatelist)
+# * Build the package
+
+updatelist() {
+    local new_date="$(date +"%Y%m%d")"
+    rm -f mirrorlist
+    curl -so mirrorlist https://www.archlinux.org/mirrorlist/all/
+    sed -i "s/^pkgver=.*/pkgver=${new_date}/" PKGBUILD
+}
+
+_dummy=true # Used to skip prospectus list
+
+package() {
+    mkdir -p $pkgdir/etc/pacman.d
+    install -m644 $srcdir/mirrorlist $pkgdir/etc/pacman.d/
+}
