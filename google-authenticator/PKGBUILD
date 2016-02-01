@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=google-authenticator
-pkgver=201602011409-c0404dc
+pkgver=201602011409_c0404dc
 pkgrel=1
 pkgdesc="TOTP authenticator module for PAM"
 arch=('x86_64')
