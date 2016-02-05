@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=grep-amylum
 _realname=grep
-pkgver=2.23_3
+pkgver=2.23_6
 pkgrel=1
 pkgdesc="A string search utility"
 arch=('x86_64')
