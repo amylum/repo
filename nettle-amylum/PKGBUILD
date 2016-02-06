@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=nettle-amylum
 _realname=nettle
-pkgver=3.1.1_2
+pkgver=3.2_3
 pkgrel=1
 pkgdesc="A low-level cryptographic library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/nettle"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("d2b3cc113e8227a87a74b9234e260d369d29a7c288e8776383638ad33fa093c5f8cf193e93d18b5172c982412d42c31611b5d3b3c5201bf747d3a665bcc73a96")
+sha512sums=("18606662e9843d782f4da34445d1454ce3d9f3d712118c4281e62c85607a3af928fb1369b3b7b6ecace470f8bd7c9947e85a0c5d11ad2d7cbda7c266adf2a456")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
