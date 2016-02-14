@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=util-linux-amylum
 _realname=util-linux
-pkgver=2.27.1_5
+pkgver=2.27.1_6
 pkgrel=1
 pkgdesc="Miscellaneous system utilities for Linux"
 arch=('x86_64')
@@ -9,13 +9,13 @@ url="https://github.com/amylum/util-linux"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("6bd5bb7c32dd5892cda744325581750e8b6315fe162fedd57ebf31a385f44e5486373e812f39fb21489e65363ad4d12a2a94de9b5508600ca3fd449cb84e7f36")
+sha512sums=("e04b2d0377ae1d4661514d8af5672e1f6766e2c618c3078b6ac4ef3e5593df2bf853c3278b2b0892efc790073754e4673a880b73e44c2d3b6d603769d24dd03d")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
 
 package() {
-	cd "${pkgdir}"
-	tar xf "${srcdir}/${_realname}.tar.gz"
-	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
