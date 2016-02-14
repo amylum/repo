@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=shadow-amylum
 _realname=shadow
-pkgver=4.2.1_5
+pkgver=4.2.1_6
 pkgrel=2
 pkgdesc="Password and account management tool suite with support for shadow files and PAM"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/shadow"
 license=('BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("08f70b5b8078817af549767031ecc0b59a16c02071d1ff57e8343456f9857e0a7f48498904360fcfbead7a2a265505908fca27e67dfccd7dad4cfe7b7e0cc9fc")
+sha512sums=("532f113431aa099a63d3b74dbc2f83bd433baf156de34d22562d650cba7a1cc17d2d434828927b0ad35872ef094aaafd55cf17ff11328c8bb727e5a37ac4da22")
 
 backup=(etc/login.defs etc/default/useradd)
 
