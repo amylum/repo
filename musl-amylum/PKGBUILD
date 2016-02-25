@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=musl-amylum
 _realname=musl
-pkgver=1.1.13_5
+pkgver=1.1.14_6
 pkgrel=2
 pkgdesc="Lightweight implementation of C standard library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/musl"
 license=('MIT')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("94fc94f40c9a8073fd849e326b584248b7feaa77b2d30d570fcfcdbdce09c10673888e19e20046dc5733dcfbe287d81743d31f0b1915eee93485f5e876f16272")
+sha512sums=("5ec9d08f837f7753776f4ec0a152d3846606c821a0a37d0b42884551ac5e40aa5245828a3288b33fce1dc011da361358682b45e4dc1dfd5c79848c60a4ecc579")
 
 options=(staticlibs)
 
