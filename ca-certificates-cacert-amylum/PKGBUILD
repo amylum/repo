@@ -1,0 +1,23 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=ca-certificates-cacert-amylum
+_realname=ca-certificates-cacert
+pkgver=20160227_1
+pkgrel=1
+pkgdesc="CAcert.org root certificates"
+arch=('x86_64')
+url="https://github.com/amylum/ca-certificates-cacert"
+license=('custom:RDL')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("d90306304472f472e8cbe84f2d657b3d42993f033e2958f3f594eff95bfb211d5eca2778a414b5a39c1e4924b07d753f2f33e3d6ae1baa8e5b600905f2188ae4")
+
+install=ca-certificates-cacert.install
+
+depends=('ca-certificates-amylum')
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+}
