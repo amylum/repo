@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=iana-etc-amylum
 _realname=iana-etc
-pkgver=20160303_6
+pkgver=20160304_7
 pkgrel=1
 pkgdesc="/etc/protocols and /etc/services provided by IANA"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/iana-etc"
 license=('custom:none')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("7b55d3a76f403fac5c33bdd2f98213e436ec15e2adb69378b7be470b5bafdc9a681dbba6d08b1d2ce3e8844d5254c15e08ee9a02d80a13f71aea18a351bd11f3")
+sha512sums=("1e8835a5dd4b1a4ed86a13e514f0d11b44ad4d6108612aaa4c24b82a3070bb5d10bc11821b329b13692c86b251128190706fd449b0df00450cc84d44fd4e1cf2")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
