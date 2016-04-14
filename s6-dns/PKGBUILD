@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=s6-dns
-pkgver=2.0.0.7_23
+pkgver=2.0.1.0_24
 pkgrel=1
 pkgdesc="DNS client programs and libraries for Unix"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/s6-dns"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("0f80c2284938ae989bfa7fb97b9759712e9cdcfbe4fd72a82556412318eb8711d69e457f56d7ea946879e5d043e8bd38088dee422e81960b47c324df4ecb79a5")
+sha512sums=("1e2df68fa3e83acfae91e0039441b6afa2e1e8836f4563e650349ec3b849e943631daefadb11fd71ef8a51a7560275da3a6fb7edcd9ce1c53a91fe7f8d901ae1")
 
 package() {
     cd "${pkgdir}"
