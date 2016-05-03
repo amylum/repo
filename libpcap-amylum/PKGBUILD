@@ -1,0 +1,21 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=libpcap-amylum
+_realname=libpcap
+pkgver=1.7.4_1
+pkgrel=1
+pkgdesc="A system-independent interface for user-level packet capture"
+arch=('x86_64')
+url="https://github.com/amylum/libpcap"
+license=('BSD')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("2912a64f07623f300a716c0030dfd0c192d419f4fd9b6dbb87ee7563a195d3e11d472d7a9b587f0ca81ead6bdf9e9c4881ddf0b3f40d31892117f8a2edef6b3e")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
