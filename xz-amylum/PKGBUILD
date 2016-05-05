@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=xz-amylum
 _realname=xz
-pkgver=5.2.2_10
+pkgver=5.2.2_11
 pkgrel=1
 pkgdesc="Library and command line tools for XZ and LZMA compressed files"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/xz"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("cf4aeabf9edea44f0fa0930e7e7541d1d2446d67473bc2e2304ed6201ad2675d7d0ace8db9b47f1116401de60cbfa1129a1f0560da9cfca0bfdfd75c7ec9ed24")
+sha512sums=("2bf01c5df12ae2b43fb697c4ec54e485b97dac85655d4cafda02341d238307da0af7ae4d59a8f18051dc60bfece73aa44ac2f2a6037afe8605bb3458add1620b")
 
 depends=('bash')
 
@@ -17,7 +17,7 @@ conflicts=("${_realname}")
 provides=("${_realname}")
 
 package() {
-	cd "${pkgdir}"
-	tar xf "${srcdir}/${_realname}.tar.gz"
-	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
