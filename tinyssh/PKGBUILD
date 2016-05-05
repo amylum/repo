@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=tinyssh
-pkgver=20160318_5
+pkgver=20160318_6
 pkgrel=1
 pkgdesc="SSH server"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/tinyssh"
 license=('custom:CC0')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("3c1711f332701d532054a017475058c53763da791601a040b16dd06c5e3b03b32036f2e3657e0d4147df5408af05be0e86c3ad6ba74d657ea74942bd9d8f2e64")
+sha512sums=("041e3683313fb27feb896976f459b13dbfd1dd1f2058da57e09a7e5953d1a791dfecf96a7283c819cf2f12b0d2a7607cbb89f732abb34cf0c45a51302e20f64d")
 
 package() {
     cd "${pkgdir}"
