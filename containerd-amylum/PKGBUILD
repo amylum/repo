@@ -1,0 +1,20 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=containerd-amylum
+_realname=containerd
+pkgver=0.2.1_1
+pkgrel=1
+pkgdesc="application container engine"
+provides=("${_realname}")
+conflicts=("${_realname}")
+arch=('x86_64')
+url="A daemon to control runC, built for performance and density"
+license=('Apache')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("4d45ae3f4c81d11468acb6603a1ebdaa7fc0cecfd84503ba9e4d2d8d90654ad182971cc3b43455efffcf606d9a178322473752934a5db3921b5fa7e93f80924d")
+
+package() {
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
