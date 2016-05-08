@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=slacker
-pkgver=0.0.2_2
+pkgver=0.0.2_3
 pkgrel=1
 pkgdesc="MAC to EUI64 converter"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/slacker"
 license=('MIT')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("c4faab15ccfb53a699a7ce44891e9a8c6a3d535c1dc41e03bd33ed68489d128a6f2af1283c96f58ff0a31c5d8dd9e318b44808f24ca0bebb381705dcb01626ff")
+sha512sums=("3ad5f0062a423a4135563558a03b90947ba23f7dd14c5147e41cae2cc36f4bc1da93a184b264c9efd9caa870a735cda545f5b3820e1443980b72cd9c67391853")
 
 package() {
     cd "${pkgdir}"
