@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=gzip-amylum
 _realname=gzip
-pkgver=1.7_3
+pkgver=1.8_4
 pkgrel=1
 pkgdesc="GNU compression utility"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/gzip"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("c804b7ffb8d5fd1045b787125a9b8e66bb6470c2e20aa09fc0ae98939170b893c13d6ed219d7bb4b1a6023358e338000c2cb570e2376f627d49c0811a52c5069")
+sha512sums=("29929f731eb0893629387c040ba643f73251fd8d62cc388d3dd5fae1ce846a9e70cbc001f720ce55fcdd08f8f68ba093c80af609e2ce648f281ead4776ea7f5a")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
