@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=bash-amylum
 _realname=bash
-pkgver=4.3p42_2
+pkgver=4.3p42_3
 pkgrel=1
 pkgdesc="The GNU Bourne Again shell"
 arch=('x86_64')
@@ -9,14 +9,14 @@ url="https://github.com/amylum/bash"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("4a21f3264f88657fda5893deecb999102f123b3a39ce8106eacc0af34e40a0f3896d82649f668b14cce59b3f13d6c003b9d00f703c77b27fbdac9b8d4c3fe9f6")
+sha512sums=("412615d8375db777d2a4e2bc52d68d46591e0e13afbfad02fa481006809de0fb4209ae9ebb8f9df6ac38ed4bc4393eef38be9329340cb93891c737e09d339e44")
 
 conflicts=("${_realname}")
 provides=('sh' "${_realname}")
 
 package() {
-	cd "${pkgdir}"
-	tar xf "${srcdir}/${_realname}.tar.gz"
-	ln -s bash usr/bin/sh
-	mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    ln -s bash usr/bin/sh
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
