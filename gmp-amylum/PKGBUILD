@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=gmp-amylum
 _realname=gmp
-pkgver=6.1.0_2
+pkgver=6.1.0_3
 pkgrel=1
 pkgdesc="A free library for arbitrary precision arithmetic"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/gmp"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("a6ae2599083decd4a4eb20d335b62827007e7635d2d575eea66a88140a91cadc62cf0a3a7f95a9137312917dd731aa41d837101da0335dee8ccd190d98b2a78a")
+sha512sums=("5662870e42367f798fe54d68fcbc6a48c5183175cce87c63f816ca082345d8bec3ad50074dfb8adfddab9611f15ea2fdd97cbe4244c7c18d62724777202a7a1e")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
