@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=tar-amylum
 _realname=tar
-pkgver=1.28_2
+pkgver=1.29_3
 pkgrel=1
 pkgdesc="Utility used to store, backup, and transport files"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/tar"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("cef9c8440e2704e0fa2cb77dd6b0b3e7722f009f4f4381f06942a783e4faeacfc55763e94bfe6fb7ac2aeb94aadbeee65356ae07e1c0d41c002723e344d4e436")
+sha512sums=("99f2bdbb56f95bfd1c093eff1d38edc1332078bbef3ec28f58c0af69dde9ab6c0fb002ba0b3a9e7208ed913d6b25035be668a38546b247499ce12e1a2dc62d0c")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
