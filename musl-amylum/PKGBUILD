@@ -1,5 +1,5 @@
 # Maintainer: Les Aker <me@lesaker.org>
-pkgname=(musl-amylum dev-musl-amylum)
+pkgname=musl-amylum
 _realname=musl
 pkgver=1.1.14_7
 pkgrel=1
