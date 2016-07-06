@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=containerd-amylum
 _realname=containerd
-pkgver=0.2.2_2
+pkgver=0.2.2_3
 pkgrel=1
 pkgdesc="A daemon to control runC, built for performance and density"
 provides=("${_realname}")
@@ -11,7 +11,7 @@ url="https://github.com/amylum/containerd"
 license=('Apache')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("d8c787531484a6a2a6fd8c0ae490d5ec9f46e85571a71624cb0c0d56e893fb2b90587ee3b7fd1c15e2b9b85105e12def8dcab56a06a8345f43ffbd9931088338")
+sha512sums=("3ece70d8177c6e3427e3573647a6c0bd36912eecff78c4aedc25d11c7fc9f90130e74e08647d5516b3b98d88f8a2ad1e6ec86a3a6758fa19fd3bccea26f6c706")
 
 package() {
     cd "${pkgdir}"
