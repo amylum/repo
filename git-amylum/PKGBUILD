@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=git-amylum
 _realname=git
-pkgver=2.9.0_20
+pkgver=2.9.1_23
 pkgrel=1
 pkgdesc="the fast distributed version control system"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/git"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("fb87a435761e1716310b09875de2b33c36bb0152ad1db1af7cb54defcfd617200b531bcd5baebe9dacbcfb59e425647aa2e7c5cb08761828212c204a2fba72ea")
+sha512sums=("0b40467704fff6b1da27442fb12ea85057101c76473e682bd68c65226ed58340c7e4bdf668c1106128e73fe988ca18b0e94e3b2264c93fc30e9eb30fe29ef321")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
