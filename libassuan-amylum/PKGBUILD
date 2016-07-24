@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libassuan-amylum
 _realname=libassuan
-pkgver=2.4.2_6
+pkgver=2.4.3_7
 pkgrel=1
 pkgdesc="A IPC library used by some GnuPG related software"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libassuan"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("9e246b106b09e7ed5407b5a6807ad386a3c9dcd2a70ce6f95b233480703f3e732669e9d7cf8c6a14f4b545b11e7137233f8afc99c074ca6a9c24eb96ad9bd172")
+sha512sums=("d207f0b8547c31277443a73bd115554f77d482cd0099c216f0a2364dfa0db1759964022383944b1e63ce0bd199ca52f7cf75942f6e976ac763f641c587001715")
 
 depends=('bash')
 
