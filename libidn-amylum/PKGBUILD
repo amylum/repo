@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libidn-amylum
 _realname=libidn
-pkgver=1.32_1
+pkgver=1.33_2
 pkgrel=1
 pkgdesc="Implementation of the Stringprep, Punycode and IDNA specifications"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libidn"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("a07bf6bb6c1f9fb68bd42b648e1247ee17590f2ddc66671212229901deb31b8aefe08ef8453829518122f9ffb728045bd08877c5af6efb4330b673e829f52511")
+sha512sums=("1a70b5735c46216c907d41f5bee6780ceabb8d30c6a671d8154cb8dbaacebc2993f15a4d4b38731f8fde968ffac1bdc4ba2e391c29ee979ca2477af41ebb5c18")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
