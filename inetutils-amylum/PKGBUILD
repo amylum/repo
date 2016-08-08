@@ -1,0 +1,21 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=inetutils-amylum
+_realname=inetutils
+pkgver=1.9.4_1
+pkgrel=1
+pkgdesc="A collection of common network programs"
+arch=('x86_64')
+url="https://github.com/amylum/inetutils"
+license=('GPL3')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("582c39df8b635dd5f1633df0d1cd5812d23004325848859438801513b7936c33654a984496ed96b062d274055853492a412002c9ab38708dad9704a3cb1d2ff9")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
