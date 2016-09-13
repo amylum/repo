@@ -9,7 +9,7 @@ url="https://github.com/amylum/cfssl"
 license=('BSD-2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("2ec360b3662c8680b77fa3a19ff12df24e0b6671997274064a050e0b5148dd20f93cebff65f27f47aa1edac7bd77bc2ed7b0703139b097dd5344951e40c1606d")
+sha512sums=("e4f6cc57209fe5b3a11e5d460a6149d63b5f0753fe2834c5ec8c28e3d4c3b50579512d9d8c0483cf040e406284aef585d56ea753118eef298e0dc271bdc2216c")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
