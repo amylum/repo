@@ -1,23 +1,24 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=ca-certificates-amylum
 _realname=ca-certificates
-pkgver=20160507_3
+pkgver=20160912_4
 pkgrel=1
 pkgdesc="Common CA certificates"
 arch=('x86_64')
 url="https://github.com/amylum/ca-certificates"
-license=('GPL2')
+license=('MIT')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("d55774137f2ab066d16b24dcb41e87ef5a0f9a255ead4acb1314dc76a583f3bc5fb134a7aee1ab3385ac2509bf2c9c3aa18b9d8e834010a43c97c5a17af32184")
+sha512sums=("130e17be0bb9a98ac9b3cd7021f783e87fbe99d0929d3d627f8f465a4a80716b431d6b07f6d332ab26f84088749dcc4ecbcf8b3b99e7cb94ffd3f158e6f09e28")
 
 install=ca-certificates.install
 
-depends=('bash-amylum' 'coreutils-amylum' 'findutils-amylum' 'p11-kit-amylum')
+depends=('bash-amylum' 'findutils-amylum' 'p11-kit-amylum')
 conflicts=("${_realname}")
-provides=("${_realname}" "ca-certificates-utils" "ca-certificates-java")
+provides=("${_realname}" "ca-certificates-utils")
 
 package() {
     cd "${pkgdir}"
     tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
 }
