@@ -9,7 +9,7 @@ url="https://github.com/amylum/openssh"
 license=('custom:BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("aafcd4a053f784ea928f3e37101bfdf0cdb3bb353507ba8d13f20ad8126e3d0c9434b61ae9620f4dfc202bb0469719320db27f6289f5dbb65cc28845e4febeed")
+sha512sums=("67286b4a1bc0f8393c3496503f807868fbfa2a457f46dc4cfa867a885cea32c59adbcb7fffd963a701aff5efbcb740fade7323454990329706a3c6f5082b56a7")
 
 backup=('etc/ssh/sshd_config')
 
