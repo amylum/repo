@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libffi-amylum
 _realname=libffi
-pkgver=3.2.1_3
+pkgver=3.2.1_4
 pkgrel=1
 pkgdesc="Portable foreign function interface library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libffi"
 license=('MIT')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("eb1c2dd78b67c84a278039cfbe2545e2956f66c38d40a7a8cd0a8d8f35f82df387b754e22057b7cd5d12df1e1c3f0f373ea4e91231ab4d657ff14ecef76ff008")
+sha512sums=("0aabfb9ecb683b29df91fcbbfb1364e1dcdec804ce3bd346aa5bd4e5b1fa13c02d56d11bb7160007da657ea7d7949256a469feb6bb7dddb47ed7374b11966c14")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
