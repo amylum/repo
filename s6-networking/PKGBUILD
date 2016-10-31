@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=s6-networking
-pkgver=2.2.0.0_35
+pkgver=2.2.0.0_36
 pkgrel=1
 pkgdesc="small networking utilities for Unix"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/s6-networking"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("cba7c5ad1bab5e75b808c3b146b07d70037a1800fbf6a72b7b23aec633583d0a908c37a218a1025b03504f1ab8e330b028addf057c4a281b47ba4162563153d6")
+sha512sums=("fa8502a6995bc03d97497042f9828671d0372aa756a496165ac16ba0525f58e79140091966be4fb48c67bb903cf4b906e3c7d5167a5671f98ffd704cbef1024b")
 
 package() {
     cd "${pkgdir}"

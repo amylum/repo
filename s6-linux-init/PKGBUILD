@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=s6-linux-init
-pkgver=0.1.0.0_10
+pkgver=0.2.0.0_1
 pkgrel=1
 pkgdesc="minimal init binary builder"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/s6-linux-init"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("72b69b839e2e1fefa5a1e7ef55a81f5b447a62338c4cf7b46ae2bed15206c239c0ec5a1ddb641ecfe3365b57f2dbb290bb54ae60944ae629cfab368b3aa23384")
+sha512sums=("5f6348e77d795a2c4de0c27ae126b3bc4db517fd3c42e24e84f6eef6b6d82e2e193a0296502b4e795dd2c3e41a59bb5e604635e84f22d3d32ec14a92d7d0b7ab")
 
 package() {
     cd "${pkgdir}"

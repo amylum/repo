@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=grep-amylum
 _realname=grep
-pkgver=2.25_9
+pkgver=2.26_1
 pkgrel=1
 pkgdesc="A string search utility"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/grep"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("77eeae8e52f864d1e34d8b3e08085555db6a415ce601a9c8071610367d2e5d13be4d6daf283b019be3bfe802925b99f006302b795dc0eea7feed5357a98a43fd")
+sha512sums=("f9e68b17ab65cf4af2837e74990b3a612316424968902dfa50817cd66a10500dd35eb959d11101c2ab9c834680738303cf3da4336f64eb6d79ea4a35e8af53f0")
 
 depends=('bash')
 
