@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=util-linux-amylum
 _realname=util-linux
-pkgver=2.29_rc2_20
+pkgver=2.29_rc2_21
 pkgrel=1
 pkgdesc="Miscellaneous system utilities for Linux"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/util-linux"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("501cc9c8adb5177ebea7a143dbac482b74852d30a297de99d1ea90c6094efdb3858e108a5dcf34ee9060da27039bea364de505b164931ac2831aeee32600793b")
+sha512sums=("8207a30690d3bcad6ad9972f95f4b41c89c4db6e3cf261ed89eeeda6caf11e7063439c99434087ec3aeb8e21c04f33f08576912095e496db9b42ccc5e7cdcada")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
