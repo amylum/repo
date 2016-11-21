@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libksba-amylum
 _realname=libksba
-pkgver=1.3.5_8
+pkgver=1.3.5_9
 pkgrel=1
 pkgdesc="A CMS and X.509 access library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libksba"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("b12d8db6f0a2d5d64bf914ece582b12217d0e0bc02b24118ee5ee261fa68ada3c041729d03f4f9d51dbbebe7409930cf388821b42ecd39f2f1cdcc88f33e79b8")
+sha512sums=("041299fe597ba83b8f777db8cc052de2fc521cc6d6da0539c8e7185ca7dd949ac63b45a978eb7f82d85ce0d34e28adc11fbd9bbd5784f0a1ad8ba9b965eb2043")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
