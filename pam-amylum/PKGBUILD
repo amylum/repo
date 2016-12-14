@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=pam-amylum
 _realname=pam
-pkgver=1.3.0_17
+pkgver=1.3.0_18
 pkgrel=1
 pkgdesc="PAM (Pluggable Authentication Modules) library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/pam"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("85e18d4fc578ae87863cb6ff02ec04d050774cc0b33e391b8581256f226a64308914c8d1958a3605b44c93a3d194e810cd5fadb511b21fd054524c762f77b327")
+sha512sums=("249484b6cc949be6b7670161ee6179178dc21beddc93f52545c1b0b4ef874570ef9e691c783bbaec4bd516b69c6f29b76f812d487aa03a75432a4e8d94d9ef99")
 
 backup=(etc/security/{access.conf,group.conf,limits.conf,namespace.conf,namespace.init,pam_env.conf,time.conf} etc/environment)
 

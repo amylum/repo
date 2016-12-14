@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libseccomp-amylum
 _realname=libseccomp
-pkgver=2.3.1_4
+pkgver=2.3.1_5
 pkgrel=1
 pkgdesc="Enhanced seccomp library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libseccomp"
 license=('LGPL2.1')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("9ef2a175f83b79ea0495acb90ea4ccd6880f7271fa1e4840fcc4d87522febea524b374c9f665c906cb7b2ff68f68cf8ed70358ecf2192ea15385b2a6ccc251b9")
+sha512sums=("8e7d18681331449c13b6bc7cefe181ac477d95c590f094461e46b5f2c7e93ad188692efc043ccadd40bdea7b88277f66ac2ec277273e44329b9f59bea5bcdb7f")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
