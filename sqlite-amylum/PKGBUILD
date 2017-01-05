@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=sqlite-amylum
 _realname=sqlite
-pkgver=3.15.2_1
+pkgver=3.16.1_1
 pkgrel=1
 pkgdesc="A C library that implements an SQL database engine"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/sqlite"
 license=('custom:Public Domain')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("e2a7f2c410720e5796cee1b80c951b93784952ab54449ee562e8d550767a0491fcde6b15a1e9eb967322e437bdbafc623e842594e3740c07325698c46da2ff85")
+sha512sums=("a5658ebfebed5d8ff9d3d00d5e33009931a416120258f95666a1aa3b23e781e6d839558f54aaf0be3a0da09d7f3d821ff1d3abf3c563508374bda62dd69acf97")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

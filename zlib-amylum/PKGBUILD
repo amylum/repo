@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=zlib-amylum
 _realname=zlib
-pkgver=1.2.8_4
+pkgver=1.2.10_1
 pkgrel=1
 pkgdesc="Compression library implementing the deflate compression method found in gzip and PKZIP"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/zlib"
 license=('custom')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("f75bcb34c1a2bb560dd31f3dcaba074abd3821f264ffdf4d25d980d1b7f1022211ca6c70c1bbae4c4bce0b37076f318bfdfa4d6d7c291a4b3ef3329ef2161d3d")
+sha512sums=("2afa1b84ca4a900a47e99a7317a6f952850af5d63c2be4b93d391255c08684285632d0891ff563e4ff87e24ccf35db99b6e346e7fa8bb28451c507c0c12c73bd")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

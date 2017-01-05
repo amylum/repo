@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=less-amylum
 _realname=less
-pkgver=487_7
+pkgver=487_8
 pkgrel=1
 pkgdesc="A terminal based program for viewing text files"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/less"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("2466f3dc54cf3a00ffe2dbafc5738801f345546e5ff003a87cd3abc9f3d202b7dd1152419eec7648976afc3c0ad4e2b8e971f1d8f143086bac062f00312f8de1")
+sha512sums=("b146ce2e20331986be49e68be431b6dc490a9d61ddc1869d22e87a39b3ee635ac9fce7a01a758297b127ce6619b7b99d5265f68d1618b7d200d594bcb30d86ce")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
