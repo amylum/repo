@@ -1,0 +1,21 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=ripgrep-amylum
+_realname=ripgrep
+pkgver=0.3.2_1
+pkgrel=1
+pkgdesc="A search tool that combines the usability of ag with the raw speed of grep"
+arch=('x86_64')
+url="https://github.com/amylum/ripgrep"
+license=('MIT')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("2034e62992de9dfa6c73f948d36495059768fe0f113cc6f444abca44abfc1b4fe4edef10308cd092c618a4e5414f9ca0476ea5d69ce8a4f5e7324fe7441b682a")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
