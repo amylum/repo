@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=anopa
-pkgver=0.4.0_15
+pkgver=0.4.0_16
 pkgrel=1
 pkgdesc="Process supervision framework built on S6"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/anopa"
 license=('GPL3')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("18b83c4520c73c3a7e24fda46e0ce4c0b56d1e0f1c7e3c585795f9ef31d3d4527def6675a021767073da60de82f0e982ad002f8be74e95b94ff6092e35b1c9ff")
+sha512sums=("03e1c5c930583483cee8ab148a33dd06e793dbbfa42b7b230fabab5e1881c2bbcb97b5546272382a0772df6abd9a7039479fd1cb6835bc2cd04182d1a9a6e4b5")
 
 package() {
     cd "${pkgdir}"
