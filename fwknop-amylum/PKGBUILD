@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=fwknop-amylum
 _realname=fwknop
-pkgver=2.6.9_15
+pkgver=2.6.9_16
 pkgrel=1
 pkgdesc="FireWall KNock OPerator: Single Packet Authorization and Port Knocking"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/fwknop"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("53f3a8bcd48bd70385a1dc8e70cd5002594b592c77d8941e50534d83284a3c84f0e5559c41d33b72e012b321679fd15e7e573f48f55902bbdefa23588c39d40c")
+sha512sums=("1c852139bd5f1b95cbe707b415593c09d00678cf897b8664c1b780200899c966e6f350d03562101ca4459a1c3a76338c9deb6d81e192d3b1f6dd0f48e288941e")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

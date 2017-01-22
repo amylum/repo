@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=openntpd-amylum
 _realname=openntpd
-pkgver=6.0p1_12
+pkgver=6.0p1_13
 pkgrel=1
 pkgdesc="Free, easy to use implementation of the Network Time Protocol"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/openntpd"
 license=('BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("078295050523d723d90e4c8b63e8adb56ce6add70e0a3eaac6cc8a8d3405fb45346d175e5280b99f0fa87178b25e7835a283034491a7c4671493b41c401f68dd")
+sha512sums=("2ef35d2d93884aacf1ada3a8e071ab7be242d55ffeaf08b424e5d4f212042685ce1eefaf447e39f86964ee82b9ba93278c2a28b7bc8cfee73055208b24d57836")
 
 install=$pkgname.install
 backup=('etc/ntpd.conf')
