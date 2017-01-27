@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=openssl-amylum
 _realname=openssl
-pkgver=1.0.2j_4
+pkgver=1.0.2k_1
 pkgrel=1
 pkgdesc="The Open Source toolkit for Secure Sockets Layer and Transport Layer Security"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/openssl"
 license=('BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("d96ad9b6a3a8e067b625602e04c6c4dbc5f083e367ffa3269dabd2a219a49a7b1e17539497b6f131f9e9d8a61538bcdf983dc0bdae1a31e8f37e4495a96c7f88")
+sha512sums=("84e536f6c5759ab7defd5bdeba74a5193e423ec3122eb7f850fb7a444a90474af415e071f7a14120ba54e12dda292bee89a195403ea62ade3cd13c75fad32f57")
 
 depends=('bash')
 

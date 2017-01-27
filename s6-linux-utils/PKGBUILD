@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=s6-linux-utils
-pkgver=2.2.0.0_6
+pkgver=2.2.0.0_7
 pkgrel=1
 pkgdesc="minimalistic Linux-specific system utilities"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/s6-linux-utils"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("35ea38a5670e594c617ae4328217d97456a48208dc1b4043bbd850a961d33520ed7cc985355f9a09338440206067abfae8ef5a231c3adc90712675df90f9223c")
+sha512sums=("276992cc265763335351086a1e855c24fc04116b5ed748722eef160a5deafe3f20c82c05d9a76ecccde312401e55699e7a52addadb29afde3ff57e8d1e420677")
 
 package() {
     cd "${pkgdir}"
