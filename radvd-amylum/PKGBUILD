@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=radvd-amylum
 _realname=radvd
-pkgver=2.15_15
+pkgver=2.16_2
 pkgrel=1
 pkgdesc="IPv6 Router Advertisement Daemon"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/radvd"
 license=('custom')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("6dfad3cec36d92face556ff6e21a898334769fb4395720cfc9976d8cea2ba8340a4ce504348a2c6970f0eadc040b239f7d62715e1b461a8d834199338739fcff")
+sha512sums=("5f376f169d6c16183b4a9f04319a918fc9c2a982571a0bc6f9041b667f1b67c3c1009ba5402aa065122b8f745f69fc397d3ec1f693442f9046d012c04ec06f43")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
