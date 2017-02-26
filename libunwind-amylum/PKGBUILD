@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libunwind-amylum
 _realname=libunwind
-pkgver=1.1_15
+pkgver=1.1_16
 pkgrel=1
 pkgdesc="Portable and efficient C programming interface (API) to determine the call-chain of a program"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libunwind"
 license=('MIT')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("f4c743efde51edfd625309516f69515937194456f9f3ca12ed2b08228b14018469f62a83657d535eab896ef7c4499983548fcc1f158af1b06e0a329e0028497a")
+sha512sums=("ba7671bdcfa1d6ee947bad274221d4ccc810870ba1caac3afc452e95e6154d79f10619ddf4f22ce5a648ef534fa0128e08b2634171b6a8db3db0b250fcf334da")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
