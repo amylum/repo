@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=krb5-amylum
 _realname=krb5
-pkgver=1.15_2
+pkgver=1.15.1_1
 pkgrel=1
 pkgdesc="The Kerberos network authentication system"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/krb5"
 license=('custom')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("28d74a1de24c40109b79d1d1b3da9963dd4860b382195d41f7a35c0e96ccb79515bbb8b4100f419d487138b63d38a1f999600b453cc411f619e3a5d4549d1250")
+sha512sums=("f3c49862c18134297cbc77284cb505adfd3062510dd62a1cf998c4d2bdb3d7212f9e8ec69d18e8b7e2824393f0d2f0f4da46e1450b7b56d3c1d2f6fc93eda3dc")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
