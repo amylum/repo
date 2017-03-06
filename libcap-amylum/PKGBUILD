@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libcap-amylum
 _realname=libcap
-pkgver=2.25_19
+pkgver=2.25_20
 pkgrel=1
 pkgdesc="POSIX 1003.1e capabilities"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libcap"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("2b754c544396ae7ef59c632b7c65931a8449d0ff5142bb450acfa5b7a768df01d3de730a610572f7a8ed5fe335992ae38c506bbb6163db56f3a53f23f04e512d")
+sha512sums=("d97d14bd104fdb60fee2fe6ca3955e8126f8fca7cadc3d52ae3a61b77a32caf77646295758a91d9007ef65770125e64d334b5c39aa9f239ba60ef755a2195bdd")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
