@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=cfssl-amylum
 _realname=cfssl
-pkgver=1.2.0_dev17_1
+pkgver=1.2.0_dev18_1
 pkgrel=1
 pkgdesc="A free library for arbitrary precision arithmetic"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/cfssl"
 license=('BSD-2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("6f574f5acf2d00b0a8948aefc5ca61325e3d9de9eb72ea69b55c5475faa53c431663dc47d67fe5ca65bb3f7215cb2dd9fdf98c8dc0cf6d3e02c706ba34c321e1")
+sha512sums=("e75d561bec68fcbf59b34d3aca73ae6d2de4effeef2a3d13e920da52b143c84ab15407c846f6aeb8c928b8e939b7d0b9bfa3a53f3e6d9943d799476a6b9e96c2")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
