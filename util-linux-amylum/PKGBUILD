@@ -11,8 +11,8 @@ source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}
 noextract=("${_realname}.tar.gz")
 sha512sums=("0dd856c09ebcfa7450ca95f5031c355364aca37176405d802ef8a6db591839fe0d2492dc12e68c24ea23c88e46e73c0895491494e111e41e31850960b1fc0bb7")
 
-conflicts=("${_realname}")
-provides=("${_realname}")
+conflicts=("${_realname}" libutil-linux)
+provides=("${_realname}" libutil-linux)
 
 package() {
     cd "${pkgdir}"
