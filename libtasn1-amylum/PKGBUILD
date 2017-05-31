@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libtasn1-amylum
 _realname=libtasn1
-pkgver=4.9_5
+pkgver=4.12_1
 pkgrel=1
 pkgdesc="The ASN.1 library used in GNUTLS"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libtasn1"
 license=('LGPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("a2a1c3f9acbe70ecd47b799578e0de4a8b1071af107501f2cfd9e4c8eb3ff57469f44378572823b9bbc247d1a01f2ce514f16351a9ff9296f6ba4ef80efae849")
+sha512sums=("121f8f15b3a37c75386a8fc2dc82be9e6ca3129de0b47c52b9f3df54484201941a94e10a945f0054238515499610975bf079502ff647cbad4d6d2292b7c96e74")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=gc-amylum
 _realname=gc
-pkgver=7.6.0_17
+pkgver=7.6.0_18
 pkgrel=1
 pkgdesc="A garbage collector for C and C++"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/gc"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("8912ce504fae5f288adaf6c47752482fea6b9ed6090dbecec4136e6ec6104a0da52041231277eaa8df0e3b11f227cb24ad0717b912e5fe71b94e0757dd4ff3ae")
+sha512sums=("5327b6b841dd455f7aa8f731e2942cdbaaf4610376714fe4f691628c49c5fcd3fc2667c873b63a973ed397c3c688cb05ba2e4cb6330362222e352a08569ff726")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
