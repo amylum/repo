@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=sed-amylum
 _realname=sed
-pkgver=4.4_1
+pkgver=4.4_2
 pkgrel=1
 pkgdesc="GNU stream editor"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/sed"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("2ff202e363d2349f4c3331221f006531d5d35eb4c7c33fe6d94c61f4c2d44ecf0c2040a715091829d6a2726d051e90002e31b3bf42edd86fea6d31d9c38d8545")
+sha512sums=("eabf1e9de3d314ba10ccd43bfa7a8c75b4950dea182d5ad5ef47768fc14039bd3ef77e0cf6e64ec9998a1b1f51805053cc8cfe890007247d69d26ef099c2635b")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
