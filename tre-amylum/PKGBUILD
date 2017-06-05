@@ -1,0 +1,21 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=tre-amylum
+_realname=tre
+pkgver=0.8.0_1
+pkgrel=1
+pkgdesc="POSIX compliant regexp matching library. Includes agrep for approximate grepping"
+arch=('x86_64')
+url="https://github.com/amylum/tre"
+license=('custom:BSD')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tre.gz")
+noextract=("${_realname}.tre.gz")
+sha512sums=("ffe3b17b671e76efd55293e831288f990d123b115e3279fc5de8eca33e02e4f831285bca767ca63da426ffbb9e4138a67b15167ebbf72711ebedcee440802103")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tre.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
