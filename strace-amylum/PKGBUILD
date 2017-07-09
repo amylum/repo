@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=strace-amylum
 _realname=strace
-pkgver=4.17_2
+pkgver=4.18_1
 pkgrel=1
 pkgdesc="Portable and efficient C programming interface (API) to determine the call-chain of a program"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/strace"
 license=('custom')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("e5e86311a4e0fef5e51ab83df56169c13cd6942c27e660d1b47816815d7ed5e9188a2a69202d9487f7b138fc40c4317b8cef22a6dda5ca70dca4cf2442a61b42")
+sha512sums=("d4219587790a05cf6a3340c4b20e49fe2cfe286053aa0ba51554b56f81da5e2c7adf58685500e44bdf1a8cf6eb62d03bae2c51e86fb28d8c774df669eeae32d2")
 
 depends=('bash' 'perl')
 
