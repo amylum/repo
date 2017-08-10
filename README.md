@@ -1,7 +1,7 @@
 repo
 ======
 
-[![Automated Build](http://img.shields.io/badge/automated-build-green.svg)](https://hub.docker.com/r/amylum/repo/)
+[![Automated Build](https://img.shields.io/docker/build/amylum/repo.svg)](https://hub.docker.com/r/amylum/repo/)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
 Repository for Arch packages, primarily compiled statically and built against [musl](http://www.musl-libc.org/)
