@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=iproute2-amylum
 _realname=iproute2
-pkgver=4.11.0_2
+pkgver=4.12.0_1
 pkgrel=1
 pkgdesc="IP Routing Utilities"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/iproute2"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("06dee790a09c0c23ca314657236381229513ec457882fde829d47b1c75235598f552d63646f8d5542fe31d8203c4725e482e430ac046ac787c5baf5b21d7b1bc")
+sha512sums=("a35a92cda1f1fccc4cc051d693cbb79b7d5764c406bab7c84a10b2a9cf72a71c491b09eb774c1610b575cf1b75cd934086af678d506ccc1608b5e3a11d8e8191")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
