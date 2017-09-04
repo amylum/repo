@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=runc-amylum
 _realname=runc
-pkgver=1.0.0_rc4_1
+pkgver=1.0.0_rc4_2
 pkgrel=1
 pkgdesc="CLI tool for managing OCI compliant containers"
 provides=("${_realname}")
@@ -11,7 +11,7 @@ url="https://github.com/amylum/runc"
 license=('Apache')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("efee3762376944bacae40885f4c33af7f0a0a909039efdecc6f79fc836697151c16156d6af78cff93bab2458e53dbd6a76ed0d6333908e19a8fae43f1b8e8366")
+sha512sums=("deba69365ed96e78ce6d2a516d176e41346f10858caf31b43dfc44f9c33ee7a3e16d9344ac459bd0f4ef43038b43463a7b1624ed3fc2959abb9f2a8a9690c68b")
 
 package() {
     cd "${pkgdir}"
