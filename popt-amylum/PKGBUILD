@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=popt-amylum
 _realname=popt
-pkgver=1.16_0
+pkgver=1.16_2
 pkgrel=1
 pkgdesc="A commandline option parser"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/popt"
 license=('custom')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("798f4b5856147e72950344b046dde17a3e27fb22d66c454fb7242f253e599a9fc6aff3dac510f2787056c70696d6f16a103ccc76da1b917165727fa0664c9fd7")
+sha512sums=("0837e64560db64add6a575fca3027643ef04737807d251e87aabbecc0ea414a81bc5accd7ff137b7d5f0ff63e6e7d60fb751bc115ea3d467528040a6b59ba8d9")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

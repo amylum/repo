@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=lzo-amylum
 _realname=lzo
-pkgver=2.10_0
+pkgver=2.10_1
 pkgrel=1
 pkgdesc="Portable lossless data compression library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/lzo"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("798f4b5856147e72950344b046dde17a3e27fb22d66c454fb7242f253e599a9fc6aff3dac510f2787056c70696d6f16a103ccc76da1b917165727fa0664c9fd7")
+sha512sums=("50ff3c5e75e3aa359c07f40beb32fe9f88b0299791a9638fcd1484a15a0c5798ee878aa760445e3068c935b4eca231a171688ab231103a1e1bec9fc89292d17e")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
