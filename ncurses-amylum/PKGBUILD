@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=ncurses-amylum
 _realname=ncurses
-pkgver=6.0_20170923_1
+pkgver=6.0_20170930_1
 pkgrel=1
 pkgdesc="System V Release 4.0 curses emulation library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/ncurses"
 license=('MIT')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("fdb78a4f5eda733e896924be5d643d899a322f721a81bd2e02d9498a16420521c4881fcaa5e2443dc7f25cccd994bcce809536b1eb696d4af04b5f2897d683c4")
+sha512sums=("569806f28b47517c40e77bb2bc045f9fa71c900f613bf4e6c23c06dde53d3a5f09eedf7fec7b204b3586c4f4269ebef2a98d0c7db2e922a47e9574389a9013e0")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
