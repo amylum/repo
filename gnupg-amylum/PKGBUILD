@@ -2,7 +2,7 @@
 pkgname=gnupg-amylum
 _realname=gnupg
 pkgver=2.2.1_1
-pkgrel=1
+pkgrel=2
 pkgdesc="Complete and free implementation of the OpenPGP standard"
 arch=('x86_64')
 url="https://github.com/amylum/gnupg"
@@ -13,6 +13,8 @@ sha512sums=("496258963f2dddffbcb514d52d3d91d6cf4f1046ece294a3c5465bd2d2a32a0e252
 
 conflicts=("${_realname}")
 provides=("${_realname}")
+
+depends('libassuan' 'gpgme')
 
 package() {
     cd "${pkgdir}"

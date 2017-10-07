@@ -2,7 +2,7 @@
 pkgname=pacman-amylum
 _realname=pacman
 pkgver=5.0.2_3
-pkgrel=1
+pkgrel=2
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="https://github.com/amylum/pacman"
@@ -13,7 +13,7 @@ sha512sums=("4ed2505cdb6c6e3bf55b38e33d837bee2ef8dd6396ff059215fb6508c1902b1e57d
 
 backup=(etc/pacman.conf etc/makepkg.conf)
 
-depends=('bash')
+depends=('bash' 'gnupg' 'libarchive')
 
 conflicts=("${_realname}")
 provides=("${_realname}")
