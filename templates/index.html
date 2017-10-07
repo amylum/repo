@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= @repo_name %></title>
+  </head>
+  <body>
+    <h2><%= @repo_name %></h2>
+    <p>To use this repo on your site, add the following lines to your pacman.conf:</p>
+    <pre style="border-style: solid;border-width: thin;display:inline-block;padding: 10px;">[amylum]
+SigLevel = Required
+Server = https://<%= @repo_domain %></pre>
+    <p>You'll need to add the repo's GPG key to pacman's keyring so that pacman can verify the package and repo signatures.</p>
+    <pre style="border-style: solid;border-width: thin;display:inline-block;padding: 10px;">pacman-key --recv-key <%= @repo_key_id %>
+pacman-key --lsign <%= @repo_key_id %></pre>
+    <% if @repo_gpg_urls -%>
+    <p>Here are a couple places you can use to verify the above key:</p>
+    <ul>
+      <% @repo_gpg_urls.each do |name, url| -%>
+        <li><a href="<%= url %>"><%= name %></a></li>
+      <% end -%>
+    </ul>
+    <p>This repo is build and served by <a href="<%= @repo_source %>">these open source repos</a></p>
+    <h4>Metadata:</h4>
+    <ul>
+      <li><a href="/repo.db">repo.db</a> -- (<a href="/repo.db.sig">sig</a>)</li>
+    </ul>
+    <h4>Packages:</h4>
+    <ul>
+      <% @packages.each do |package| -%>
+        <li><a href="/<%= package %>"><%= package %></a> -- (<a href="/<%= package %>.sig">sig</a>)</li>
+      <% end -%>
+    </ul>
+  </body>
+</html>

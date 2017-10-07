@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= @repo_name %></title>
+  </head>
+  <body>
+    <h2>This file does not exist</h2>
+    <% @email %>
+      <p>Please reach out to the repo administrator:
+        <a href="mailto:<%= @email %>">
+          <%= @email %>
+        </a>
+      </p>
+    <% end %>
+  </body>
+</html>

@@ -7,7 +7,7 @@ BUILD_PACKAGES = $(addprefix build-,$(PACKAGES))
 UPLOAD_PACKAGES = $(addprefix upload-,$(PACKAGES))
 
 define s3repo
-source $(CONFIG_FILE) && s3repo $1 $2
+source ./makepkg.conf && s3repo $1 $2
 endef
 
 .PHONY : default build-all upload-all clean $(PACKAGES) $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)

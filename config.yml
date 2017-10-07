@@ -1,0 +1,14 @@
+bucket: 'amylum-repo'
+makepkg_flags: '--force --nodeps --clean'
+sign_db: true
+sign_packages: true
+template_dir: templates
+template_params:
+  email: me@lesaker.org
+  repo_name: amylum
+  repo_source: https://github.com/amylum
+  repo_domain: repo.scrtybybscrty.org
+  repo_key_id: nothin
+  repo_gpg_urls:
+    blah: crap
+    what: nope
