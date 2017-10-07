@@ -3,6 +3,7 @@ machine:
     PACMAN_VERSION: v5.0.2
 dependencies:
   override:
+  - 'sudo apt update && sudo apt install -y build-essential autopoint'
   - gem install prospectus octoauth s3repo
   - 'echo "Prospectus: $GITHUB_CREDS" >> ~/.octoauth.yml'
   - git clone https://git.archlinux.org/pacman.git ~/pacman
