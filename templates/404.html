@@ -6,7 +6,7 @@
   </head>
   <body>
     <h2>This file does not exist</h2>
-    <% @email %>
+    <% if @email %>
       <p>Please reach out to the repo administrator:
         <a href="mailto:<%= @email %>">
           <%= @email %>
