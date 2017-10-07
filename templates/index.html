@@ -29,7 +29,7 @@ pacman-key --lsign <%= @repo_key_id %></pre>
     <h4>Packages:</h4>
     <ul>
       <% @packages.each do |package| -%>
-        <li><a href="/<%= package %>"><%= package %></a> -- (<a href="/<%= package %>.sig">sig</a>)</li>
+        <li><a href="/<%= package %>-x86_64.pkg.tar.xz"><%= package %></a> -- (<a href="/<%= package %>-x86_64.pkg.tar.xz.sig">sig</a>)</li>
       <% end -%>
     </ul>
   </body>
