@@ -38,10 +38,10 @@ prune:
 	prospectus -a | grep '^repo::repo' | cut -d: -f5 | tee .outdated
 
 build-outdated: .outdated
-	$(call s3repo,build,$(shell sed 's/^/build-/' .outdated))
+	$(call s3repo,build,$$(sed 's/^/build-/' .outdated))
 
 upload-outdated: .outdated
-    $(call s3repo,upload,$(shell sed 's/^/upload-/' .outdated))
+	$(call s3repo,upload,$$(sed 's/^/upload-/' .outdated))
 
 container:
 	docker build -t amylum-repo .
