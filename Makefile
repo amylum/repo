@@ -9,8 +9,8 @@ UPLOAD_PACKAGES = $(addprefix upload-,$(PACKAGES))
 DOCKER_CMD = docker run \
 	--rm -t -i \
 	-v $$(pwd):/opt/build \
-	-v $$(pwd)/.octoauth.yml:/root/.octoauth.yml \
-	-v ~/.aws/config:/root/.aws/config \
+	-v $$(pwd)/.octoauth.yml:/home/build/.octoauth.yml \
+	-v ~/.aws/config:/home/build/.aws/config \
 	amylum-repo
 
 define s3repo
