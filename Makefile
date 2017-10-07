@@ -46,9 +46,14 @@ upload-outdated: .outdated
 container:
 	docker build -t amylum-repo .
 
-docker-build: container build-outdated
+manual:
+	$(DOCKER_CMD bash
 
-docker-release: container upload-outdated
+docker-build: container
+	$(DOCKER_CMD) make build-outdated
+
+docker-release: container
+	$(DOCKER_CMD) make upload-outdated
 
 $(PACKAGES):
 	$(MAKE) build-$@
