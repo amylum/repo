@@ -17,7 +17,7 @@ define s3repo
 source ./makepkg.conf && s3repo $1 $2
 endef
 
-.PHONY : default build-all upload-all clean prune build-outdated upload-outdated docker-build docker-upload $(PACKAGES) $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
+.PHONY : default build-all upload-all clean prune build-outdated upload-outdated container docker-build docker-upload $(PACKAGES) $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
 
 default: build-all upload-all
 
@@ -46,7 +46,7 @@ upload-outdated: .outdated
 container:
 	docker build -t amylum-repo .
 
-manual:
+manual: container
 	$(DOCKER_CMD) bash
 
 docker-build: container
