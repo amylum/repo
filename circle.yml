@@ -1,6 +1,6 @@
 machine:
   environment:
-    PACMAN_VERSION: 5.0.2
+    PACMAN_VERSION: v5.0.2
 dependencies:
   override:
   - gem install prospectus octoauth s3repo
