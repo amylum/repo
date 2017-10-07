@@ -7,12 +7,13 @@ dependencies:
   - 'echo "Prospectus: $GITHUB_CREDS" >> ~/.octoauth.yml'
   - git clone https://git.archlinux.org/pacman.git ~/pacman
   - 'cd ~/pacman && git checkout "$PACMAN_VERSION"'
+  - 'cd ~/pacman && ./autogen.sh && ./configure && make && sudo make install'
 test:
   override:
-  - prospectus -a | grep '^repo::repo' | cut -d: -f5 | tee .outdated
-  - make $(sed 's/^/build-/' .outdated)
+  - "prospectus -a | grep '^repo::repo' | cut -d: -f5 | tee .outdated"
+  - "make $(sed 's/^/build-/' .outdated)"
 deployment:
   release:
     branch: master
     commands:
-    - make $(sed 's/^/upload-/' .outdated)
+    - "make $(sed 's/^/upload-/' .outdated)"
