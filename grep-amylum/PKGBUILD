@@ -2,7 +2,7 @@
 pkgname=grep-amylum
 _realname=grep
 pkgver=3.1_1
-pkgrel=1
+pkgrel=2
 pkgdesc="A string search utility"
 arch=('x86_64')
 url="https://github.com/amylum/grep"
@@ -10,8 +10,6 @@ license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
 sha512sums=("5afc6e6ae2e76c16367123c9c3deda16eab2af40fbf092a71d68971737a95fdbe8508b02579228e5f5bf716f54c827299cca67af8ea74b3fd11e67f3466abef6")
-
-depends=('bash')
 
 conflicts=("${_realname}")
 provides=("${_realname}")

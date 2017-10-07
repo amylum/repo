@@ -2,7 +2,7 @@
 pkgname=findutils-amylum
 _realname=findutils
 pkgver=4.6.0_4
-pkgrel=1
+pkgrel=2
 pkgdesc="GNU utilities to locate files"
 arch=('x86_64')
 url="https://github.com/amylum/findutils"
@@ -11,7 +11,7 @@ source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}
 noextract=("${_realname}.tar.gz")
 sha512sums=("75a9511e94e4694bfe1f92630ff92575439996c184aa5baadfe798017009ec6dc989a7b1e7420e60f75edf0aeee3366edb0da3e8a7491a9110320a73c177bc8f")
 
-depends=('bash')
+depends=('bash-amylum')
 
 conflicts=("${_realname}")
 provides=("${_realname}")
