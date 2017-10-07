@@ -35,7 +35,7 @@ prune:
 	$(call s3repo,prune)
 
 .outdated:
-	prospectus -a | grep '^repo::repo' | cut -d: -f5 | tee .outdated
+	prospectus | grep '^repo::repo' | cut -d: -f5 | tee .outdated
 
 build-outdated: .outdated
 	$(call s3repo,build,$$(sed 's/^/build-/' .outdated))
