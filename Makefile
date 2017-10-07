@@ -17,7 +17,7 @@ define s3repo
 source ./makepkg.conf && s3repo $1 $2
 endef
 
-.PHONY : default build-all upload-all clean prune build-outdated upload-outdated docker-build docker-release $(PACKAGES) $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
+.PHONY : default build-all upload-all clean prune build-outdated upload-outdated docker-build docker-upload $(PACKAGES) $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
 
 default: build-all upload-all
 
@@ -52,7 +52,7 @@ manual:
 docker-build: container
 	$(DOCKER_CMD) make build-outdated
 
-docker-release: container
+docker-upload: container
 	$(DOCKER_CMD) make upload-outdated
 
 $(PACKAGES):
