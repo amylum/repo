@@ -50,7 +50,7 @@ PKGBUILDS = Dir.glob('*/PKGBUILD').map { |x| Pkgbuild.new(x) }
 
 URL = 'https://repo.scrtybybscrty.org/list.txt'
 REPO = open(URL).readlines.map do |line|
-  _, name, version = line.match(/^(.+)-([^-]+)-\d+$/).to_a
+  _, name, version = line.match(/^(.+)-([^-]+-\d+)$/).to_a
   next unless name
   [name, version]
 end.compact.to_h
