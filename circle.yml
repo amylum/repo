@@ -1,4 +1,6 @@
 machine:
+  services:
+  - docker
   environment:
     PACMAN_VERSION: v5.0.2
 dependencies:
