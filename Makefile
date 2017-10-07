@@ -47,7 +47,7 @@ container:
 	docker build -t amylum-repo .
 
 manual:
-	$(DOCKER_CMD bash
+	$(DOCKER_CMD) bash
 
 docker-build: container
 	$(DOCKER_CMD) make build-outdated
