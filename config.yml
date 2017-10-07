@@ -1,5 +1,6 @@
-bucket: 'amylum-repo'
-makepkg_flags: '--force --nodeps --clean'
+bucket: amylum-repo
+region: us-east-1
+makepkg_flags: --force --nodeps --clean
 sign_db: true
 sign_packages: true
 template_dir: templates
