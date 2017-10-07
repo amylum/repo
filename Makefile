@@ -29,7 +29,7 @@ upload-all:
 
 clean:
 	find . -mindepth 2 -maxdepth 2 ! -name PKGBUILD ! -name '*.install' ! -path './.git/*' ! -path './templates/*' -print -exec rm -r {} \;
-	rm .outdated
+	rm -f .outdated
 
 prune:
 	$(call s3repo,prune)
