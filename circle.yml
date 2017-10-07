@@ -1,0 +1,13 @@
+dependencies:
+  override:
+  - gem install prospectus octoauth s3repo
+  - echo "Prospectus: $GITHUB_CREDS" >> ~/.octoauth.yml
+test:
+  override:
+  - prospectus -a | grep '^repo::repo' | cut -d: -f5 | tee .outdated
+  - make $(sed 's/^/build-/' .outdated)
+deployment:
+  release:
+    branch: master
+    commands:
+    - make $(sed 's/^/upload-/' .outdated)

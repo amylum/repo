@@ -5,3 +5,4 @@
 */*.pkg.tar.xz.sig
 .aws
 .conf
+.outdated
