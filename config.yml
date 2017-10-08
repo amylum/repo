@@ -1,6 +1,6 @@
 bucket: amylum-repo
 region: us-east-1
-makepkg_flags: --clean
+makepkg_flags: --clean --force --nodeps
 key: 917CA18E2FDC46C33094B4B7030CB6B34D642144
 sign_db: true
 sign_packages: true
