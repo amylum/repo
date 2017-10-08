@@ -10,7 +10,8 @@ template_params:
   repo_name: amylum
   repo_source: https://github.com/amylum
   repo_domain: repo.scrtybybscrty.org
-  repo_key_id: nothin
+  repo_key_id: 917CA18E2FDC46C33094B4B7030CB6B34D642144
   repo_gpg_urls:
-    blah: crap
-    what: nope
+    'My blog': https://blog.akerl.org/gpg/packages.txt
+    GitHub: https://gist.github.com/akerl/77dcb483cbf69b035999b2339b9b015e
+    Twitter: https://twitter.com/akerl/status/916868027857108993
