@@ -12,7 +12,7 @@ DOCKER_CMD = docker run \
 	-v $$(pwd)/.octoauth.yml:/home/build/.octoauth.yml \
 	-v ~/.gnupg:/home/build/.gnupg \
 	-v ~/.aws/config:/home/build/.aws/config \
-	amylum-repo
+	amylum/repo
 
 define s3repo
 source ./makepkg.conf && s3repo $1 $2
@@ -44,9 +44,6 @@ build-outdated: .outdated
 
 upload-outdated: .outdated
 	$(call s3repo,upload,$$(cat .outdated))
-
-container:
-	docker build -t amylum-repo .
 
 manual: container
 	$(DOCKER_CMD) bash
