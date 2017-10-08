@@ -40,7 +40,7 @@ prune:
 
 build-outdated: .outdated
 	$(call s3repo,build,$$(cat .outdated))
-	namcap $$(sed 's|$$|/{PKGBUILD,*.pkg.tar.xz}|' .outdated)
+	namcap $$(sed 's|$$|/PKGBUILD|' .outdated) $$(sed 's|$$|/*.pkg.tar.xz|' .outdated)
 
 upload-outdated: .outdated
 	$(call s3repo,upload,$$(cat .outdated))
