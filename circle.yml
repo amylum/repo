@@ -6,6 +6,7 @@ machine:
 dependencies:
   override:
   - 'echo "Prospectus: $GITHUB_CREDS" >> .octoauth.yml'
+  - 'echo "$REPO_KEY" | base64 -d | gpg --import'
 test:
   override:
   - make docker-build
