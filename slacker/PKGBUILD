@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=slacker
 pkgver=0.0.2_3
-pkgrel=2
+pkgrel=3
 pkgdesc="MAC to EUI64 converter"
 arch=('x86_64')
 url="https://github.com/amylum/slacker"
