@@ -1,3 +1,4 @@
+repo_name: amylum
 bucket: amylum-repo
 region: us-east-1
 makepkg_flags: --clean --force --nodeps
