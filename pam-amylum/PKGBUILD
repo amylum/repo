@@ -2,7 +2,7 @@
 pkgname=pam-amylum
 _realname=pam
 pkgver=1.3.0_31
-pkgrel=1
+pkgrel=2
 pkgdesc="PAM (Pluggable Authentication Modules) library"
 arch=('x86_64')
 url="https://github.com/amylum/pam"

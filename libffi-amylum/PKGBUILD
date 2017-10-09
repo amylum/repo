@@ -2,7 +2,7 @@
 pkgname=libffi-amylum
 _realname=libffi
 pkgver=3.2.1_4
-pkgrel=1
+pkgrel=2
 pkgdesc="Portable foreign function interface library"
 arch=('x86_64')
 url="https://github.com/amylum/libffi"

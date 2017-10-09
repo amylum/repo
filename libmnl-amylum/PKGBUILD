@@ -2,7 +2,7 @@
 pkgname=libmnl-amylum
 _realname=libmnl
 pkgver=1.0.4_17
-pkgrel=2
+pkgrel=3
 pkgdesc="Minimalistic user-space library oriented to Netlink developers."
 arch=('x86_64')
 url="https://github.com/amylum/libmnl"

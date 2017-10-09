@@ -2,7 +2,7 @@
 pkgname=cryptsetup-amylum
 _realname=cryptsetup
 pkgver=1.7.5_18
-pkgrel=1
+pkgrel=2
 pkgdesc="Userspace setup tool for transparent encryption of block devices using dm-crypt"
 arch=('x86_64')
 url="https://github.com/amylum/cryptsetup"

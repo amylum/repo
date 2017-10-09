@@ -2,7 +2,7 @@
 pkgname=ncurses-amylum
 _realname=ncurses
 pkgver=6.0_20171007_1
-pkgrel=1
+pkgrel=2
 pkgdesc="System V Release 4.0 curses emulation library"
 arch=('x86_64')
 url="https://github.com/amylum/ncurses"

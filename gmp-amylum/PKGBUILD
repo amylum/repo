@@ -2,7 +2,7 @@
 pkgname=gmp-amylum
 _realname=gmp
 pkgver=6.1.2_1
-pkgrel=1
+pkgrel=2
 pkgdesc="A free library for arbitrary precision arithmetic"
 arch=('x86_64')
 url="https://github.com/amylum/gmp"

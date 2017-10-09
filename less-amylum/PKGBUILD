@@ -2,7 +2,7 @@
 pkgname=less-amylum
 _realname=less
 pkgver=487_31
-pkgrel=1
+pkgrel=2
 pkgdesc="A terminal based program for viewing text files"
 arch=('x86_64')
 url="https://github.com/amylum/less"

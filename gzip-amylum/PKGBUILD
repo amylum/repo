@@ -2,7 +2,7 @@
 pkgname=gzip-amylum
 _realname=gzip
 pkgver=1.8_4
-pkgrel=1
+pkgrel=2
 pkgdesc="GNU compression utility"
 arch=('x86_64')
 url="https://github.com/amylum/gzip"

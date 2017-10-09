@@ -3,7 +3,7 @@
 pkgname=npth-amylum
 _realname=npth
 pkgver=1.5_1
-pkgrel=2
+pkgrel=3
 pkgdesc="New portable threads library"
 arch=('x86_64')
 url="https://github.com/amylum/npth"

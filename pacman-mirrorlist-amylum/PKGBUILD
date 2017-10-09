@@ -2,7 +2,7 @@
 pkgname=pacman-mirrorlist-amylum
 _realname=pacman-mirrorlist
 pkgver=20171001
-pkgrel=1
+pkgrel=2
 pkgdesc="Arch Linux mirror list for use by pacman"
 arch=('x86_64')
 url="https://github.com/amylum/pacman-mirrorlist"

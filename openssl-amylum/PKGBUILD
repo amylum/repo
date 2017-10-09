@@ -2,7 +2,7 @@
 pkgname=openssl-amylum
 _realname=openssl
 pkgver=1.0.2l_1
-pkgrel=2
+pkgrel=3
 pkgdesc="The Open Source toolkit for Secure Sockets Layer and Transport Layer Security"
 arch=('x86_64')
 url="https://github.com/amylum/openssl"

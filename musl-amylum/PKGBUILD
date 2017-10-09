@@ -2,7 +2,7 @@
 pkgname=musl-amylum
 _realname=musl
 pkgver=1.1.16_6
-pkgrel=1
+pkgrel=2
 pkgdesc="Lightweight implementation of C standard library"
 arch=('x86_64')
 url="https://github.com/amylum/musl"

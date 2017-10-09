@@ -2,7 +2,7 @@
 pkgname=gc-amylum
 _realname=gc
 pkgver=7.6.0_21
-pkgrel=1
+pkgrel=2
 pkgdesc="A garbage collector for C and C++"
 arch=('x86_64')
 url="https://github.com/amylum/gc"

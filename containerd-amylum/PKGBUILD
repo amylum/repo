@@ -2,7 +2,7 @@
 pkgname=containerd-amylum
 _realname=containerd
 pkgver=0.2.8_1
-pkgrel=1
+pkgrel=2
 pkgdesc="A daemon to control runC, built for performance and density"
 provides=("${_realname}")
 conflicts=("${_realname}")

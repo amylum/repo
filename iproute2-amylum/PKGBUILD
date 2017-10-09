@@ -2,7 +2,7 @@
 pkgname=iproute2-amylum
 _realname=iproute2
 pkgver=4.13.0_2
-pkgrel=1
+pkgrel=2
 pkgdesc="IP Routing Utilities"
 arch=('x86_64')
 url="https://github.com/amylum/iproute2"

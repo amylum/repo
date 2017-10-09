@@ -2,7 +2,7 @@
 pkgname=gpgme-amylum
 _realname=gpgme
 pkgver=1.9.0_1
-pkgrel=2
+pkgrel=3
 pkgdesc="A C wrapper library for GnuPG"
 arch=('x86_64')
 url="https://github.com/amylum/gpgme"

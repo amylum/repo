@@ -2,7 +2,7 @@
 pkgname=sqlite-amylum
 _realname=sqlite
 pkgver=3.20.1_1
-pkgrel=1
+pkgrel=2
 pkgdesc="A C library that implements an SQL database engine"
 arch=('x86_64')
 url="https://github.com/amylum/sqlite"

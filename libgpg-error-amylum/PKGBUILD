@@ -2,7 +2,7 @@
 pkgname=libgpg-error-amylum
 _realname=libgpg-error
 pkgver=1.27_1
-pkgrel=2
+pkgrel=3
 pkgdesc="Support library for libgcrypt"
 arch=('x86_64')
 url="https://github.com/amylum/libgpg-error"

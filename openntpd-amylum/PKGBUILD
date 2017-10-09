@@ -2,7 +2,7 @@
 pkgname=openntpd-amylum
 _realname=openntpd
 pkgver=6.2p3_2
-pkgrel=1
+pkgrel=2
 pkgdesc="Free, easy to use implementation of the Network Time Protocol"
 arch=('x86_64')
 url="https://github.com/amylum/openntpd"

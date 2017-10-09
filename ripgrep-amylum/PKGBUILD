@@ -2,7 +2,7 @@
 pkgname=ripgrep-amylum
 _realname=ripgrep
 pkgver=0.6.0_1
-pkgrel=1
+pkgrel=2
 pkgdesc="A search tool that combines the usability of ag with the raw speed of grep"
 arch=('x86_64')
 url="https://github.com/amylum/ripgrep"

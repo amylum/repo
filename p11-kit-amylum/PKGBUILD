@@ -2,7 +2,7 @@
 pkgname=p11-kit-amylum
 _realname=p11-kit
 pkgver=0.23.2_7
-pkgrel=3
+pkgrel=4
 pkgdesc="Library to work with PKCS#11 modules"
 arch=('x86_64')
 url="https://github.com/amylum/p11-kit"

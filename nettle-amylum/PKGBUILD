@@ -2,7 +2,7 @@
 pkgname=nettle-amylum
 _realname=nettle
 pkgver=3.3_6
-pkgrel=1
+pkgrel=2
 pkgdesc="A low-level cryptographic library"
 arch=('x86_64')
 url="https://github.com/amylum/nettle"

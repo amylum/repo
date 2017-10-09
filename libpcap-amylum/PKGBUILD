@@ -2,7 +2,7 @@
 pkgname=libpcap-amylum
 _realname=libpcap
 pkgver=1.8.1_14
-pkgrel=1
+pkgrel=2
 pkgdesc="A system-independent interface for user-level packet capture"
 arch=('x86_64')
 url="https://github.com/amylum/libpcap"

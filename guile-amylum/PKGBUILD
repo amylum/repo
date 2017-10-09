@@ -2,7 +2,7 @@
 pkgname=guile-amylum
 _realname=guile
 pkgver=2.2.2_6
-pkgrel=1
+pkgrel=2
 pkgdesc="Portable, embeddable Scheme implementation written in C"
 arch=('x86_64')
 url="https://github.com/amylum/guile"

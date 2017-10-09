@@ -2,7 +2,7 @@
 pkgname=readline-amylum
 _realname=readline
 pkgver=7.0_34
-pkgrel=1
+pkgrel=2
 pkgdesc="GNU readline library"
 arch=('x86_64')
 url="https://github.com/amylum/readline"

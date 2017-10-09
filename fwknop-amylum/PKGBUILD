@@ -2,7 +2,7 @@
 pkgname=fwknop-amylum
 _realname=fwknop
 pkgver=2.6.9_26
-pkgrel=1
+pkgrel=2
 pkgdesc="FireWall KNock OPerator: Single Packet Authorization and Port Knocking"
 arch=('x86_64')
 url="https://github.com/amylum/fwknop"

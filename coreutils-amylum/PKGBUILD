@@ -2,7 +2,7 @@
 pkgname=coreutils-amylum
 _realname=coreutils
 pkgver=8.28_2
-pkgrel=1
+pkgrel=2
 pkgdesc="The basic file, shell and text manipulation utilities of the GNU operating system"
 arch=('x86_64')
 url="https://github.com/amylum/coreutils"

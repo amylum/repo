@@ -2,7 +2,7 @@
 pkgname=libseccomp-amylum
 _realname=libseccomp
 pkgver=2.3.2_6
-pkgrel=1
+pkgrel=2
 pkgdesc="Enhanced seccomp library"
 arch=('x86_64')
 url="https://github.com/amylum/libseccomp"

@@ -2,7 +2,7 @@
 pkgname=bash-amylum
 _realname=bash
 pkgver=4.4p12_1
-pkgrel=1
+pkgrel=2
 pkgdesc="The GNU Bourne Again shell"
 arch=('x86_64')
 url="https://github.com/amylum/bash"

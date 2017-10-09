@@ -2,7 +2,7 @@
 pkgname=cfssl-amylum
 _realname=cfssl
 pkgver=1.2.0_dev31_1
-pkgrel=1
+pkgrel=2
 pkgdesc="A free library for arbitrary precision arithmetic"
 arch=('x86_64')
 url="https://github.com/amylum/cfssl"

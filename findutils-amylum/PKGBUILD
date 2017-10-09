@@ -2,7 +2,7 @@
 pkgname=findutils-amylum
 _realname=findutils
 pkgver=4.6.0_4
-pkgrel=2
+pkgrel=3
 pkgdesc="GNU utilities to locate files"
 arch=('x86_64')
 url="https://github.com/amylum/findutils"

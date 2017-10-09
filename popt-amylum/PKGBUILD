@@ -2,7 +2,7 @@
 pkgname=popt-amylum
 _realname=popt
 pkgver=1.16_2
-pkgrel=1
+pkgrel=2
 pkgdesc="A commandline option parser"
 arch=('x86_64')
 url="https://github.com/amylum/popt"

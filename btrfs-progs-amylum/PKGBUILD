@@ -2,7 +2,7 @@
 pkgname=btrfs-progs-amylum
 _realname=btrfs-progs
 pkgver=4.13.2_1
-pkgrel=1
+pkgrel=2
 pkgdesc="Btrfs filesystem utilities"
 arch=('x86_64')
 url="https://github.com/amylum/btrfs-progs"

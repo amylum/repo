@@ -2,7 +2,7 @@
 pkgname=libtasn1-amylum
 _realname=libtasn1
 pkgver=4.12_1
-pkgrel=1
+pkgrel=2
 pkgdesc="The ASN.1 library used in GNUTLS"
 arch=('x86_64')
 url="https://github.com/amylum/libtasn1"

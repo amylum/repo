@@ -2,7 +2,7 @@
 pkgname=pacman-amylum
 _realname=pacman
 pkgver=5.0.2_3
-pkgrel=3
+pkgrel=4
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="https://github.com/amylum/pacman"

@@ -2,7 +2,7 @@
 pkgname=libassuan-amylum
 _realname=libassuan
 pkgver=2.4.3_12
-pkgrel=2
+pkgrel=3
 pkgdesc="A IPC library used by some GnuPG related software"
 arch=('x86_64')
 url="https://github.com/amylum/libassuan"

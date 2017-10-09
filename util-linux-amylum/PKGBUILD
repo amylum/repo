@@ -2,7 +2,7 @@
 pkgname=util-linux-amylum
 _realname=util-linux
 pkgver=2.31_rc2_2
-pkgrel=1
+pkgrel=2
 pkgdesc="Miscellaneous system utilities for Linux"
 arch=('x86_64')
 url="https://github.com/amylum/util-linux"

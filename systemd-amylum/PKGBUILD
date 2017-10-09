@@ -2,7 +2,7 @@
 pkgname=systemd-amylum
 _realname=systemd
 pkgver=0.0.1_1
-pkgrel=2
+pkgrel=3
 pkgdesc="Dummy package to avoid installing systemd"
 provides=("${_realname}")
 conflicts=("${_realname}")

@@ -2,7 +2,7 @@
 pkgname=procps-ng-amylum
 _realname=procps-ng
 pkgver=3.3.12_14
-pkgrel=1
+pkgrel=2
 pkgdesc="Process utilities"
 arch=('x86_64')
 url="https://github.com/amylum/procps-ng"

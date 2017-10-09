@@ -2,7 +2,7 @@
 pkgname=gnutls-amylum
 _realname=gnutls
 pkgver=3.5.15_4
-pkgrel=1
+pkgrel=2
 pkgdesc="A library which provides a secure layer over a reliable transport layer"
 arch=('x86_64')
 url="https://github.com/amylum/gnutls"

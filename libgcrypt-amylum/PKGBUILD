@@ -2,7 +2,7 @@
 pkgname=libgcrypt-amylum
 _realname=libgcrypt
 pkgver=1.8.1_1
-pkgrel=1
+pkgrel=2
 pkgdesc="General purpose cryptographic library based on the code from GnuPG"
 arch=('x86_64')
 url="https://github.com/amylum/libgcrypt"

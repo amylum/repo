@@ -2,7 +2,7 @@
 pkgname=tre-amylum
 _realname=tre
 pkgver=0.8.0_1
-pkgrel=1
+pkgrel=2
 pkgdesc="POSIX compliant regexp matching library. Includes agrep for approximate grepping"
 arch=('x86_64')
 url="https://github.com/amylum/tre"

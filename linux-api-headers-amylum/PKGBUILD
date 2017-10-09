@@ -2,7 +2,7 @@
 pkgname=linux-api-headers-amylum
 _realname=linux-api-headers
 pkgver=4.13_1
-pkgrel=1
+pkgrel=2
 pkgdesc="Kernel headers sanitized for use in userspace"
 arch=('x86_64')
 url="https://github.com/amylum/linux-api-headers"

@@ -2,7 +2,7 @@
 pkgname=libtirpc-amylum
 _realname=libtirpc
 pkgver=1.0.2_3
-pkgrel=1
+pkgrel=2
 pkgdesc="Transport Independent RPC library (SunRPC replacement)"
 arch=('x86_64')
 url="https://github.com/amylum/libtirpc"

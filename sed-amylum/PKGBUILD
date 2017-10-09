@@ -2,7 +2,7 @@
 pkgname=sed-amylum
 _realname=sed
 pkgver=4.4_2
-pkgrel=1
+pkgrel=2
 pkgdesc="GNU stream editor"
 arch=('x86_64')
 url="https://github.com/amylum/sed"

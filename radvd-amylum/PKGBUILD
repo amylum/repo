@@ -2,7 +2,7 @@
 pkgname=radvd-amylum
 _realname=radvd
 pkgver=2.17_2
-pkgrel=1
+pkgrel=2
 pkgdesc="IPv6 Router Advertisement Daemon"
 arch=('x86_64')
 url="https://github.com/amylum/radvd"

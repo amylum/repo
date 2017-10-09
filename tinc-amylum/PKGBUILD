@@ -2,7 +2,7 @@
 pkgname=tinc-amylum
 _realname=tinc
 pkgver=1.1pre15_7
-pkgrel=2
+pkgrel=3
 pkgdesc="Mesh VPN"
 arch=('x86_64')
 url="https://github.com/amylum/tinc"

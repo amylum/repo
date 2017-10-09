@@ -2,7 +2,7 @@
 pkgname=zlib-amylum
 _realname=zlib
 pkgver=1.2.11_1
-pkgrel=1
+pkgrel=2
 pkgdesc="Compression library implementing the deflate compression method found in gzip and PKZIP"
 arch=('x86_64')
 url="https://github.com/amylum/zlib"

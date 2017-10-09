@@ -2,7 +2,7 @@
 pkgname=ca-certificates-amylum
 _realname=ca-certificates
 pkgver=20170702_1
-pkgrel=1
+pkgrel=2
 pkgdesc="Common CA certificates"
 arch=('x86_64')
 url="https://github.com/amylum/ca-certificates"

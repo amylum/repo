@@ -2,7 +2,7 @@
 pkgname=libtool-amylum
 _realname=libtool
 pkgver=2.4.6_2
-pkgrel=1
+pkgrel=2
 pkgdesc="A generic library support script"
 arch=('x86_64')
 url="https://github.com/amylum/libtool"

@@ -2,7 +2,7 @@
 pkgname=krb5-amylum
 _realname=krb5
 pkgver=1.15.2_1
-pkgrel=1
+pkgrel=2
 pkgdesc="The Kerberos network authentication system"
 arch=('x86_64')
 url="https://github.com/amylum/krb5"

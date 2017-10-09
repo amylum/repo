@@ -2,7 +2,7 @@
 pkgname=lvm2-amylum
 _realname=lvm2
 pkgver=2.02.175_1
-pkgrel=2
+pkgrel=3
 pkgdesc="Logical Volume Manager 2 utilities"
 arch=('x86_64')
 url="https://github.com/amylum/lvm2"

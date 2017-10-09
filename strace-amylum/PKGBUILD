@@ -2,7 +2,7 @@
 pkgname=strace-amylum
 _realname=strace
 pkgver=4.19_1
-pkgrel=2
+pkgrel=3
 pkgdesc="Portable and efficient C programming interface (API) to determine the call-chain of a program"
 arch=('x86_64')
 url="https://github.com/amylum/strace"

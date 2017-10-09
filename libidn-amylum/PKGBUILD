@@ -2,7 +2,7 @@
 pkgname=libidn-amylum
 _realname=libidn
 pkgver=1.33_2
-pkgrel=1
+pkgrel=2
 pkgdesc="Implementation of the Stringprep, Punycode and IDNA specifications"
 arch=('x86_64')
 url="https://github.com/amylum/libidn"

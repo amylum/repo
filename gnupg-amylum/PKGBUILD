@@ -2,7 +2,7 @@
 pkgname=gnupg-amylum
 _realname=gnupg
 pkgver=2.2.1_1
-pkgrel=3
+pkgrel=4
 pkgdesc="Complete and free implementation of the OpenPGP standard"
 arch=('x86_64')
 url="https://github.com/amylum/gnupg"

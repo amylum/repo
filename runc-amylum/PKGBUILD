@@ -2,7 +2,7 @@
 pkgname=runc-amylum
 _realname=runc
 pkgver=1.0.0_rc4_2
-pkgrel=1
+pkgrel=2
 pkgdesc="CLI tool for managing OCI compliant containers"
 provides=("${_realname}")
 conflicts=("${_realname}")

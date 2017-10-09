@@ -2,7 +2,7 @@
 pkgname=libunistring-amylum
 _realname=libunistring
 pkgver=0.9.7_1
-pkgrel=1
+pkgrel=2
 pkgdesc="Library for manipulating Unicode strings and C strings"
 arch=('x86_64')
 url="https://github.com/amylum/libunistring"

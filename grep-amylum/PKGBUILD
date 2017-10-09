@@ -2,7 +2,7 @@
 pkgname=grep-amylum
 _realname=grep
 pkgver=3.1_1
-pkgrel=2
+pkgrel=3
 pkgdesc="A string search utility"
 arch=('x86_64')
 url="https://github.com/amylum/grep"

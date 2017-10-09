@@ -2,7 +2,7 @@
 pkgname=iptables-amylum
 _realname=iptables
 pkgver=1.6.1_9
-pkgrel=1
+pkgrel=2
 pkgdesc="Linux kernel packet control tool"
 arch=('x86_64')
 url="https://github.com/amylum/iptables"
