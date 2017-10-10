@@ -41,7 +41,7 @@ $(PACKAGE_FILES):
 	$(BUILD) $@
 
 $(BUILD_PACKAGES):
-	$(MAKE) $(shell ./scripts/files.rb $@)
+	$(MAKE) $(shell ./scripts/files.rb $(subst build-,,$@))
 
 build-all: $(PACKAGE_FILES)
 
