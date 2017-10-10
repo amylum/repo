@@ -1,8 +1,8 @@
-PACKAGE_NAMES = $(shell ./scripts/names.rb)
-PACKAGE_FILES = $(shell ./scripts/files.rb)
+PACKAGE_NAMES := $(shell ./scripts/names.rb)
+PACKAGE_FILES := $(shell ./scripts/files.rb)
 
-BUILD_PACKAGES = $(addprefix build-,$(PACKAGE_NAMES))
-UPLOAD_PACKAGES = $(addprefix upload-,$(PACKAGE_NAMES))
+BUILD_PACKAGES := $(addprefix build-,$(PACKAGE_NAMES))
+UPLOAD_PACKAGES := $(addprefix upload-,$(PACKAGE_NAMES))
 
 DOCKER_CMD = docker run \
 	--rm -t -i \
@@ -58,7 +58,7 @@ $(PACKAGE_NAMES): build-$@ upload-$@
 build-all: $(PACKAGE_FILES)
 
 upload-all: build-all
-    $(UPLOAD) $(PACKAGE_NAMES)
+	$(UPLOAD) $(PACKAGE_NAMES)
 
 $(UPLOAD_PACKAGES):
 	$(UPLOAD) $(subst upload-,,$@)
