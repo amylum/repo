@@ -46,7 +46,7 @@ $(BUILD_PACKAGES):
 build-all: $(PACKAGE_FILES)
 
 build-outdated: .outdated
-	[[ -s .outdated ]] && $(MAKE) $$(cat .outdated)
+	if [[ -s .outdated ]] ; then $(MAKE) $$(cat .outdated) ; fi
 
 
 $(UPLOAD_PACKAGES):
@@ -56,7 +56,7 @@ upload-all: build-all
 	$(UPLOAD) $(PACKAGE_NAMES)
 
 upload-outdated: .outdated
-	[[ -s .outdated ]] && $(UPLOAD) $$(cat .outdated)
+	if [[ -s .outdated ]] ; then $(UPLOAD) $$(cat .outdated) ; fi
 
 
 $(PACKAGE_NAMES):
