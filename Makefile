@@ -17,7 +17,13 @@ DOCKER_CMD = docker run \
 default: docker-build
 
 clean:
-	find . -mindepth 2 -maxdepth 2 ! -name PKGBUILD ! -name '*.install' ! -path './.git/*' ! -path './templates/*' -print -exec rm -r {} \;
+	find . -mindepth 2 -maxdepth 2 \
+		! -name PKGBUILD \
+		! -name '*.install' \
+		! -path './.git/*' \
+		! -path './templates/*' \
+		! -path './scripts/*' \
+		-print -exec rm -r {} \;
 	rm -f .outdated
 
 prune:
