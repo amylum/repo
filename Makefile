@@ -16,6 +16,8 @@ S3REPO ?= s3repo
 BUILD = source ./makepkg.conf && $(S3REPO) build
 UPLOAD = $(S3REPO) upload
 
+OUTDATED = $$(cat .outdated)
+
 .PHONY : default clean prune $(BUILD_PACKAGES) build-all build-outdated $(UPLOAD_PACKAGES) upload-all upload-outdated $(PACKAGE_NAMES) manual docker-build docker-upload
 
 default: docker-build
@@ -38,7 +40,7 @@ prune:
 
 
 $(PACKAGE_FILES):
-	$(BUILD) $@
+	$(BUILD) $(shell ./scripts/names.rb $@)
 
 $(BUILD_PACKAGES):
 	$(MAKE) $(shell ./scripts/files.rb $(subst build-,,$@))
