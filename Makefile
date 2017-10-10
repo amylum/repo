@@ -12,6 +12,10 @@ DOCKER_CMD = docker run \
 	-v ~/.aws/config:/home/build/.aws/config \
 	amylum/repo
 
+S3REPO ?= s3repo
+BUILD = source ./makepkg.conf && $(S3REPO) build
+UPLOAD = $(S3REPO) upload
+
 .PHONY : default clean prune $(BUILD_PACKAGES) build-all build-outdated $(UPLOAD_PACKAGES) upload-all upload-outdated $(PACKAGES) manual docker-build docker-upload
 
 default: docker-build
@@ -27,14 +31,14 @@ clean:
 	rm -f .outdated
 
 prune:
-	s3repo prune
+	$(S3REPO) prune
 
 .outdated:
-	prospectus | grep '^repo::s3::' | cut -d: -f5 | tee .outdated
+	./scripts/outdated.rb | tee .outdated
 
 
 $(PACKAGE_FILES):
-	source ./makepkg.conf && s3repo build $@
+	$(BUILD) $@
 
 $(BUILD_PACKAGES):
 	$(MAKE) $(shell ./scripts/files.rb $@)
@@ -46,13 +50,13 @@ build-outdated: .outdated
 
 
 $(UPLOAD_PACKAGES):
-	s3repo upload $(subst upload-,,$@)
+	$(UPLOAD) $(subst upload-,,$@)
 
 upload-all: build-all
-	s3repo upload $(PACKAGE_NAMES)
+	$(UPLOAD) $(PACKAGE_NAMES)
 
 upload-outdated: .outdated
-	s3repo upload $$(cat .outdated)
+	$(UPLOAD) $$(cat .outdated)
 
 
 $(PACKAGES):
