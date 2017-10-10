@@ -60,12 +60,12 @@ $(PACKAGES):
 	$(MAKE) upload-$@
 
 
-manual: container
+manual:
 	$(DOCKER_CMD) bash
 
-docker-build: container
+docker-build:
 	$(DOCKER_CMD) make build-outdated
 
-docker-upload: container
+docker-upload:
 	$(DOCKER_CMD) make upload-outdated
 
