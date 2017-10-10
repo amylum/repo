@@ -35,37 +35,6 @@ clean:
 prune:
 	$(S3REPO) prune
 
-.outdated:
-	./scripts/outdated.rb | tee .outdated
-
-
-$(PACKAGE_FILES):
-	$(BUILD) $(shell ./scripts/names.rb $@)
-
-$(BUILD_PACKAGES):
-	$(MAKE) $(shell ./scripts/files.rb $(subst build-,,$@))
-
-build-all: $(PACKAGE_FILES)
-
-build-outdated: .outdated
-	if [[ -s .outdated ]] ; then $(MAKE) $$(cat .outdated) ; fi
-
-
-$(UPLOAD_PACKAGES):
-	$(UPLOAD) $(subst upload-,,$@)
-
-upload-all: build-all
-	$(UPLOAD) $(PACKAGE_NAMES)
-
-upload-outdated: .outdated
-	if [[ -s .outdated ]] ; then $(UPLOAD) $$(cat .outdated) ; fi
-
-
-$(PACKAGE_NAMES):
-	$(MAKE) build-$@
-	$(MAKE) upload-$@
-
-
 manual:
 	$(DOCKER_CMD) bash
 
@@ -74,4 +43,29 @@ docker-build:
 
 docker-upload:
 	$(DOCKER_CMD) make upload-outdated
+
+.outdated:
+	./scripts/outdated.rb | tee .outdated
+
+build-outdated: .outdated
+	if [[ -s .outdated ]] ; then $(MAKE) $$(cat .outdated) ; fi
+
+upload-outdated: .outdated
+	if [[ -s .outdated ]] ; then $(UPLOAD) $$(cat .outdated) ; fi
+
+$(PACKAGE_NAMES): build-$@ upload-$@
+
+build-all: $(PACKAGE_FILES)
+
+upload-all: build-all
+    $(UPLOAD) $(PACKAGE_NAMES)
+
+$(UPLOAD_PACKAGES):
+	$(UPLOAD) $(subst upload-,,$@)
+
+$(BUILD_PACKAGES):
+	$(MAKE) $(shell ./scripts/files.rb $(subst build-,,$@))
+
+$(PACKAGE_FILES):
+	$(BUILD) $(shell ./scripts/names.rb $@)
 
