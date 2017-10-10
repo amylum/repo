@@ -48,12 +48,13 @@ docker-upload:
 	./scripts/outdated.rb | tee .outdated
 
 build-outdated: .outdated
-	if [[ -s .outdated ]] ; then $(MAKE) $$(cat .outdated) ; fi
+	if [[ -s .outdated ]] ; then $(MAKE) $$(sed 's/^/build-/' .outdated) ; fi
 
 upload-outdated: .outdated
-	if [[ -s .outdated ]] ; then $(UPLOAD) $$(cat .outdated) ; fi
+	if [[ -s .outdated ]] ; then $(UPLOAD) $$(sed 's/^/upload-/' .outdated) ; fi
 
-$(PACKAGE_NAMES): build-$@ upload-$@
+$(PACKAGE_NAMES): 
+	$(MAKE) build-$@ upload-$@
 
 build-all: $(PACKAGE_FILES)
 
