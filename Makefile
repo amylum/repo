@@ -1,10 +1,8 @@
-CONFIG_FILE = .conf
+PACKAGE_NAMES = $(shell ./scripts/names.rb)
+PACKAGE_FILES = $(shell ./scripts/files.rb)
 
-SHELL = /usr/bin/env bash
-
-PACKAGES = $(shell find * -name PKGBUILD -exec dirname {} \;)
-BUILD_PACKAGES = $(addprefix build-,$(PACKAGES))
-UPLOAD_PACKAGES = $(addprefix upload-,$(PACKAGES))
+BUILD_PACKAGES = $(addprefix build-,$(PACKAGE_NAMES))
+UPLOAD_PACKAGES = $(addprefix upload-,$(PACKAGE_NAMES))
 
 DOCKER_CMD = docker run \
 	--rm -t -i \
@@ -14,36 +12,47 @@ DOCKER_CMD = docker run \
 	-v ~/.aws/config:/home/build/.aws/config \
 	amylum/repo
 
-define s3repo
-source ./makepkg.conf && s3repo $1 $2
-endef
+.PHONY : default clean prune $(BUILD_PACKAGES) build-all build-outdated $(UPLOAD_PACKAGES) upload-all upload-outdated $(PACKAGES) manual docker-build docker-upload
 
-.PHONY : default build-all upload-all clean prune build-outdated upload-outdated container docker-build docker-upload $(PACKAGES) $(BUILD_PACKAGES) $(UPLOAD_PACKAGES)
-
-default: build-all upload-all
-
-build-all:
-	$(call s3repo,build,$(PACKAGES))
-
-upload-all:
-	$(call s3repo,upload,$(PACKAGES))
+default: docker-build
 
 clean:
 	find . -mindepth 2 -maxdepth 2 ! -name PKGBUILD ! -name '*.install' ! -path './.git/*' ! -path './templates/*' -print -exec rm -r {} \;
 	rm -f .outdated
 
 prune:
-	$(call s3repo,prune)
+	s3repo prune
 
 .outdated:
 	prospectus | grep '^repo::s3::' | cut -d: -f5 | tee .outdated
 
+
+$(PACKAGE_FILES):
+	source ./makepkg.conf && s3repo build $@
+
+$(BUILD_PACKAGES):
+	$(MAKE) $(shell ./scripts/files.rb $@)
+
+build-all: $(PACKAGE_FILES)
+
 build-outdated: .outdated
-	$(call s3repo,build,$$(cat .outdated))
-	namcap $$(sed 's|$$|/PKGBUILD|' .outdated) $$(sed 's|$$|/*.pkg.tar.xz|' .outdated)
+	$(MAKE) $$(cat .outdated)
+
+
+$(UPLOAD_PACKAGES):
+	s3repo upload $(subst upload-,,$@)
+
+upload-all: build-all
+	s3repo upload $(PACKAGE_NAMES)
 
 upload-outdated: .outdated
-	$(call s3repo,upload,$$(cat .outdated))
+	s3repo upload $$(cat .outdated)
+
+
+$(PACKAGES):
+	$(MAKE) build-$@
+	$(MAKE) upload-$@
+
 
 manual: container
 	$(DOCKER_CMD) bash
@@ -53,14 +62,4 @@ docker-build: container
 
 docker-upload: container
 	$(DOCKER_CMD) make upload-outdated
-
-$(PACKAGES):
-	$(MAKE) build-$@
-	$(MAKE) upload-$@
-
-$(BUILD_PACKAGES):
-	$(call s3repo,build,$(subst build-,,$@))
-
-$(UPLOAD_PACKAGES):
-	$(call s3repo,upload,$(subst upload-,,$@))
 

@@ -1,52 +1,7 @@
 require 'open-uri'
+require_relative 'scripts/pkgbuilds.rb'
 
-class Pkgbuild
-  def initialize(path)
-    @path = path
-  end
-
-  def name
-    @name ||= File.dirname @path
-  end
-
-  def arch_version
-    @arch_version ||= line(/^pkgver=/).chomp.split('=').last
-  end
-    
-  def version
-    @version ||= arch_version.tr('_', '-')
-  end
-
-  def revision
-    @revision ||= line(/^pkgrel=/).chomp.split('=').last
-  end
-
-  def arch_full_version
-    @arch_full_version ||= "#{arch_version}-#{revision}"
-  end
-
-  def url
-    @url ||= line(/^url=/).split('"')[1]
-  end
-
-  def repo
-    @repo ||= url.split('.com/').last
-  end
-
-  def dummy?
-    @dummy ||= line(/^_dummy=true/)
-  end
-
-  def lines
-    @lines ||= File.readlines @path
-  end
-
-  def line(regex)
-    lines.grep(regex).first
-  end
-end
-
-PKGBUILDS = Dir.glob('*/PKGBUILD').map { |x| Pkgbuild.new(x) }
+PKGBUILDS = Pkgbuilds.all
 
 URL = 'https://repo.scrtybybscrty.org/list.txt'
 REPO = open(URL).readlines.map do |line|
