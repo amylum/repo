@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=skalibs
-pkgver=2.6.0.1_1
+pkgver=2.6.0.2_1
 pkgrel=1
 pkgdesc="general-purpose libraries for skarnet packages"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/skalibs"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("69a6e66c1b5ccf6e68ce33e315e748e0784c38146f571911b544d83eeea45fa61843c8516e82811a539c8776e2bf2696c9eab253cfbe2e489d72b19060ba5efe")
+sha512sums=("7c814eb6a28cc214be5dbb8df4ce00a5006d8f20da9a9918f772a977714904a5aa2d038b9b2d44e3a518e8d283492a6d26cb43abe8597809c43cd98444f8a544")
 
 package() {
     cd "${pkgdir}"
