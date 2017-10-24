@@ -75,7 +75,7 @@ $(BUILD_PACKAGES):
 build-all: $(PACKAGE_FILES)
 
 build-outdated: .outdated
-	$(call run_outdated,$(MAKE),build)
+	$(call run_outdated,$(MAKE),build-)
 
 docker-build:
 	$(DOCKER_CMD) make build-outdated
@@ -92,7 +92,7 @@ $(CHECK_PACKAGES):
 check-all: $(CHECK_PACKAGES)
 
 check-outdated:
-	$(call run_outdated,$(MAKE),check)
+	$(call run_outdated,$(MAKE),check-)
 
 docker-check:
 	$(DOCKER_CMD) make check-outdated
@@ -109,7 +109,7 @@ upload-all: build-all
 	$(UPLOAD) $(PACKAGE_NAMES)
 
 upload-outdated: .outdated
-	$(call run_outdated,$(UPLOAD),upload)
+	$(call run_outdated,$(UPLOAD),)
 
 docker-upload:
 	$(DOCKER_CMD) make upload-outdated
