@@ -22,7 +22,7 @@ NAMCAP ?= namcap
 OUTDATED = $$(cat .outdated)
 
 define run_outdated
-if [[ -s .outdated ]] ; then $1 $$(sed 's/^/$2-/' .outdated) ; fi
+if [[ -s .outdated ]] ; then $1 $$(sed 's/^/$2/' .outdated) ; fi
 endef
 
 .PHONY : default clean prune $dd(BUILD_PACKAGES) build-all build-outdated $(UPLOAD_PACKAGES) upload-all upload-outdated $(PACKAGE_NAMES) manual docker-build docker-upload
