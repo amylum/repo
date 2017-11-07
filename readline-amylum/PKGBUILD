@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=readline-amylum
 _realname=readline
-pkgver=7.0_39
+pkgver=7.0_40
 pkgrel=1
 pkgdesc="GNU readline library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/readline"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("48a56c23646332d098247b0142221b18adf440df645f6ec002b23f56bb410e8f8e32abbd904d80ff25f1f067baf0d507968f195ea1a10a04bccb1f4aac7efc93")
+sha512sums=("40f9d55e19d99351affba873fd9d7efcba5c856bd484a995609a0056dbcb06bddbf33dddb1af68ca6982446ea1e6bd551dde4aee8824441d3e76ee84b832322f")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
