@@ -1,15 +1,15 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=strace-amylum
 _realname=strace
-pkgver=4.19_1
-pkgrel=3
+pkgver=4.20_2
+pkgrel=1
 pkgdesc="Portable and efficient C programming interface (API) to determine the call-chain of a program"
 arch=('x86_64')
 url="https://github.com/amylum/strace"
 license=('custom')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("9ed122c9dab7767361c0cbd8469cd0f264adb0d588e90117286eb860b2beef21fa9c23663accdbb9fa9c00345a340c57b664d4cee40c9b0b23fd1055174ca65b")
+sha512sums=("b879f6fc1961655a86e37f72bb79e16bda898c178849d55013a5ce621250f36eed06ff53e4128ee2ed75d87d7db0190f656bebb0cda7c9ba71614d80a8c3a661")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

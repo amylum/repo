@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=autogen-amylum
 _realname=autogen
-pkgver=5.18.12_18
+pkgver=5.18.12_20
 pkgrel=1
 pkgdesc="A tool designed to simplify the creation and maintenance of programs that contain large amounts of repetitious text"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/autogen"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("0739326197ad02f8d73d6e8794597e2a0802aeaca2c22ddc83d554de28bd5638390a69f88c26230b8a0473fe4495bd7f18e0be4834fed3698c65d9aa2b994d73")
+sha512sums=("9aaae94278fb4e748a5796e8d650405b62e301b2c9d50ec9f2469c60a4ec8b6e5aec92827396e0f1eb29dd698d970b03b819b06ecf1c44cdbe4f0f62d1b32392")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
