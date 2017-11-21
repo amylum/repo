@@ -1,15 +1,15 @@
 # Maintainer: Les Aker <me@lesaker.org>
-pkgname=nettle-amylum
-_realname=nettle
-pkgver=3.4_1
+pkgname=zstd-amylum
+_realname=zstd
+pkgver=1.3.2_2
 pkgrel=1
-pkgdesc="A low-level cryptographic library"
+pkgdesc="Zstandard - Fast real-time compression algorithm"
 arch=('x86_64')
-url="https://github.com/amylum/nettle"
-license=('GPL2')
+url="https://github.com/amylum/zstd"
+license=('BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("eece7d256d9af0acdc9e86b01660880425115389b16474381f9f32f3a7ffed1efd3282b24ab0235ed98e8c6a7543df215bef6135bae580575b27995dd2d1e8de")
+sha512sums=("df5dc23a7da6629ef79891c58f3e6939344eaf826199cfdd30a63dc8921a7fb4dc4d9cbeb2149f98b672d72785ed0d043c5dc7e601fbe5dd4531642da0edfc7c")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
