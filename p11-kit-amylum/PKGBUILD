@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=p11-kit-amylum
 _realname=p11-kit
-pkgver=0.23.9_1
+pkgver=0.23.2_8
 pkgrel=1
 pkgdesc="Library to work with PKCS#11 modules"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/p11-kit"
 license=('BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("79b695734ff8910f05d6cfe311645542a1fd2f03c33c053c3d8933de92f98457fee70a9b0cd4a0bfc2dbd1d3d2ec99c58be060360ce8a09387477fe203350d7c")
+sha512sums=("4d9a3686a0090bbfb05a8b754f93ca0acf382c61c7a441f06bb193fc63dc55d1854acd1187516a72fee87d25ced1ba945bf01cf8f61cd8a7a8033a54eadbdce4")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

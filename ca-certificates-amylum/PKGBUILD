@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=ca-certificates-amylum
 _realname=ca-certificates
-pkgver=201711_1_1
+pkgver=201711_2_1
 pkgrel=1
 pkgdesc="Common CA certificates"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/ca-certificates"
 license=('MIT')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("25a27ef571990a96ac84a803d70f922d5e7153f868bbbe0da5a07e88858fa02bf2f12ba586a043580710cf4ffb29caed5b3de2f3b80beb09bfa7e1a820736b91")
+sha512sums=("83dc1642e82a7213625499ebb91ae9b1dcf4cf066fabb64efc4fd0d556c30339b2b1ad82cde410d50bfc719cbc5347391dae095be25e6ff6cefc718905969abe")
 
 install=ca-certificates.install
 
