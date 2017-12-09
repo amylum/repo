@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libtirpc-amylum
 _realname=libtirpc
-pkgver=1.0.2_6
+pkgver=1.0.2_7
 pkgrel=1
 pkgdesc="Transport Independent RPC library (SunRPC replacement)"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libtirpc"
 license=('BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("83efecd800bd73783cdf4ff047c7e7d48d18e73b518a8a9256c19323503bfd0ae602e24cc0b755076dd01ec866440bdbdd47076f9f0aaf9e3716040c741dc763")
+sha512sums=("611fe215ed366b467e72bb4880bb93766e389f74f37a0c2afe7eafe7742ac02fac942d833f67495ac760a7e1590e28585d83ca70bfa04204f8e36c83645d2cd9")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
