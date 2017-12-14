@@ -1,15 +1,15 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libgcrypt-amylum
 _realname=libgcrypt
-pkgver=1.8.1_1
-pkgrel=2
+pkgver=1.8.2_1
+pkgrel=1
 pkgdesc="General purpose cryptographic library based on the code from GnuPG"
 arch=('x86_64')
 url="https://github.com/amylum/libgcrypt"
 license=('LGPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("c5d38719263bbca5e19db574a8a7a07114bfdd39182469b730f9ea11146c7ebeb0d26fc404474523012579afe02beb4993051f05b7ba2c3ecd5fc7ee084c7d47")
+sha512sums=("dde8b5c0335253f3902c5e2afa261b29ac487b05b422191a0ba1c15c22221f221120f4bcafe4dfbfa698f17b569a2f51c1cac428b30e1caeb162a47af89e5964")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
