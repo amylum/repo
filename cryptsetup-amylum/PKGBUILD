@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=cryptsetup-amylum
 _realname=cryptsetup
-pkgver=1.7.5_29
+pkgver=1.7.5_30
 pkgrel=1
 pkgdesc="Userspace setup tool for transparent encryption of block devices using dm-crypt"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/cryptsetup"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("7b0eca9e2192b7028bc256778b1e2fd5302d050cafa752fbe904edd691dc4d20cea2bfebdfaa66b652568851270ab0761a1a7598fe5c3b1c2d4ac96203d71908")
+sha512sums=("5e1d274a4795397dededd9fda4ce14d0023ea12593f1e8d8b37fd6ce0c52a9b1d993b8a43b2e17a66a9857c3724b17954369eb871c9f36cfae035f4c21cfe486")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

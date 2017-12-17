@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=docker-amylum
 _realname=docker
-pkgver=17.05.0_ce_15
+pkgver=17.05.0_ce_16
 pkgrel=1
 pkgdesc="application container engine"
 provides=("${_realname}")
@@ -11,7 +11,7 @@ url="https://github.com/amylum/docker"
 license=('Apache')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("dd006db4360f2339413b8a1896374b29c57088e21ebe6bffd4092e7ef5eff6163fd75ca96e057b2cf6c40145cd48490613e499717bd619f635a28560de9c8055")
+sha512sums=("e75aec7d4b44ead2e8df09f701991980615643d51ca06cf3c174872f25df87cf63b736cc0d2f14c418cc3708265c6b482ffe6fa662fd4ed2da2dff96ea17c2fc")
 
 package() {
     cd "${pkgdir}"
