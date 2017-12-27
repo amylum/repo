@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=lvm2-amylum
 _realname=lvm2
-pkgver=2.02.177_2
+pkgver=2.02.177_3
 pkgrel=1
 pkgdesc="Logical Volume Manager 2 utilities"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/lvm2"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("4613658c9c8ea1e06457fa7c57949a475de3a5f2f5a0148df1e574814399c480fd835f068d64af36b8377aa7eea26314cc2af822fb4707998ea9262e9bb5165e")
+sha512sums=("216378a4d1b636417579c078058a1ac77ef9a49bbfd4473957f997ffc4d42bb347b300aa87661b22f949892fbe2a86328e01ee73c07dc90e9e06553b7c09261e")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
