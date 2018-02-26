@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=tinc-amylum
 _realname=tinc
-pkgver=1.1pre15_26
+pkgver=1.1pre15_27
 pkgrel=1
 pkgdesc="Mesh VPN"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/tinc"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("69bb66dbe642ad1416068dfa844e3065f24e0a504d402f32b2ecd6e7eef2bc54d6a4a63f98948da118f57a7bb8cbf192716526589a8b68f306c10c19b1550860")
+sha512sums=("40d7f58286314b9669d29ed3b3788f091cce2a98d51204ac96552d267539c49aa799a29f06c2794942b2ae092922271c5788bf72809bdc692d9611ded8029d04")
 
 package() {
     cd "${pkgdir}"
