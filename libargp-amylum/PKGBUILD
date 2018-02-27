@@ -1,0 +1,21 @@
+# Maintainer: Les Aker <me@lesaker.org>
+pkgname=libargp-amylum
+_realname=libargp
+pkgver=1.3_1
+pkgrel=1
+pkgdesc="Portable library providing command-line parsing functionality"
+arch=('x86_64')
+url="https://github.com/amylum/libargp"
+license=('GPL2+')
+source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
+noextract=("${_realname}.tar.gz")
+sha512sums=("66763e9c235163c73c41522de3c2c5b56451ffb5e3bd1e857e4e90a1c6c02d306198f364e507894b7d6942d638e57713a16053610999ffdb1faf162f996001c9")
+
+conflicts=("${_realname}")
+provides=("${_realname}")
+
+package() {
+    cd "${pkgdir}"
+    tar xf "${srcdir}/${_realname}.tar.gz"
+    mv usr/share/licenses/${_realname} usr/share/licenses/${pkgname}
+}
