@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libunistring-amylum
 _realname=libunistring
-pkgver=0.9.8_1
+pkgver=0.9.9_1
 pkgrel=1
 pkgdesc="Library for manipulating Unicode strings and C strings"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libunistring"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("7957b3e72c23aac4a51c903699f26a4f204959d73836c668b7d77e96f8816150eb31dcf20ba04db1ce8d936491dff7086ed055c207d5fb22a9bdd123ca15f3d8")
+sha512sums=("cea13565c848662e7a7ecdd4875e97420fa43f55014a071521de6828afa92f9c210d9e0ee4b8284733a2ba6df1d82f2399476938d8cc9154891b33eb176c8a38")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
