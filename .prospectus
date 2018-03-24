@@ -49,6 +49,8 @@ item do
     end
   end
 
-  extend ProspectusDockerhub::Build.new('amylum/repo')
-  extend ProspectusCircleci::Build.new('amylum/repo')
+  unless ENV['CI']
+    extend ProspectusDockerhub::Build.new('amylum/repo')
+    extend ProspectusCircleci::Build.new('amylum/repo')
+  end
 end
