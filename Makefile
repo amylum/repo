@@ -22,7 +22,7 @@ NAMCAP ?= namcap
 OUTDATED = $$(cat .outdated)
 
 define run_outdated
-if [[ -s .outdated ]] ; then $1 $$(sed 's/^/$2/' .outdated) ; fi
+$1 $$(sed 's/^/$2/' .outdated)
 endef
 
 .PHONY : default clean prune $dd(BUILD_PACKAGES) build-all build-outdated $(UPLOAD_PACKAGES) upload-all upload-outdated $(PACKAGE_NAMES) manual docker-build docker-upload
@@ -51,7 +51,7 @@ prune:
 
 # Create the metadata file listing packages where the PKGBUILD is newer than S3
 .outdated:
-	./scripts/outdated.rb | tee .outdated
+	./scripts/outdated.rb > .outdated
 
 # Launch the docker container with a bash shell
 manual:
