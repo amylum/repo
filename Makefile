@@ -91,7 +91,7 @@ $(CHECK_PACKAGES):
 
 check-all: $(CHECK_PACKAGES)
 
-check-outdated:
+check-outdated: .outdated
 	$(call run_outdated,$(MAKE),check-)
 
 docker-check:
