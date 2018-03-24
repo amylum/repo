@@ -1,6 +1,6 @@
 FROM dock0/build
 RUN pacman -S --needed --noconfirm namcap
-RUN gem install --no-user-install s3repo prospectus octoauth
+RUN gem install --no-doc --no-user-install s3repo prospectus octoauth rdoc
 RUN useradd -m build
 RUN chown build:build /opt/build
 USER build
