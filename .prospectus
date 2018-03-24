@@ -46,4 +46,6 @@ item do
       end
     end
   end
+
+  extend ProspectusDockerhub::Build.new('amylum/repo')
 end
