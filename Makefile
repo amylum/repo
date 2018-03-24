@@ -7,6 +7,7 @@ UPLOAD_PACKAGES := $(addprefix upload-,$(PACKAGE_NAMES))
 
 DOCKER_CMD = docker run \
 	--rm -t -i \
+	-e CI \
 	-v $$(pwd):/opt/build \
 	-v $$(pwd)/.octoauth.yml:/home/build/.octoauth.yml \
 	-v ~/.gnupg:/home/build/.gnupg \
