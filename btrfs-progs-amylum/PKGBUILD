@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=btrfs-progs-amylum
 _realname=btrfs-progs
-pkgver=4.15.1_3
+pkgver=4.15.1_4
 pkgrel=1
 pkgdesc="Btrfs filesystem utilities"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/btrfs-progs"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("a146713c2b29a6c78599dae0954d94f1ea09969b88f4e2cb9e00677dfd7af70b27c821be25bf43e7b941433edf8ff827ba504b54c8ad833119a7d090b4feb87e")
+sha512sums=("32ac14b5d3ba3a6b137d61f5c9610ec440207456d59a82711cc0e6647ae0f3efea82ef5f895686b9cafea11b6c5b9141fb8d72a80a9afc053f206e24716ad6c2")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
