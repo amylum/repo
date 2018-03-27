@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=zstd-amylum
 _realname=zstd
-pkgver=1.3.3_1
+pkgver=1.3.4_1
 pkgrel=1
 pkgdesc="Zstandard - Fast real-time compression algorithm"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/zstd"
 license=('BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("66962d94b2ff7821394706275bd1c502d99ea27837698bc7420a32b62481b7068dc03199f370368cdce3ca5bcf55c7474e53c2c97217b72b188dd47900cf3cd5")
+sha512sums=("d32717dd1f01fd9818a76758a31d59748f177ab8a0e62e286baf818bdd896b2efedc2787c5d064df53af513cf14f5ed34519d3933c5f213798502cd1ae31c190")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
