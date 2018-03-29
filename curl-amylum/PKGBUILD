@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=curl-amylum
 _realname=curl
-pkgver=7.59.0_1
+pkgver=7.59.0_2
 pkgrel=1
 pkgdesc="An URL retrieval utility and library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/curl"
 license=('MIT')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("6dabe332d94cca80f5fe62a5445bfe4fa1fd4e1975e56c104e52a00a42f78afe22d78d30d5593adebe5c285b600c38e1d9b438248cb24f01eeba67486c4d0ee2")
+sha512sums=("80f51556ccb5816aa84e83a8513e1048d50a65841c22d1927919df20e268d6802a3c056999839f5e526fbeed13d73372bf39e15edc94754728aff1a815d491ff")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

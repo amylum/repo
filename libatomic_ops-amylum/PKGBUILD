@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libatomic_ops-amylum
 _realname=libatomic_ops
-pkgver=7.6.2_1
+pkgver=7.6.4_1
 pkgrel=1
 pkgdesc="Provides semi-portable access to hardware provided atomic memory operations"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libatomic_ops"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("39d5cdabc2a3394b28883e38e58592c8ba7e773bfeec138b6bfe4a50ff15cfeb18537106f29a538e7f7b4e970eb0fc84548862f4e35e51006374dbf2f7158f65")
+sha512sums=("1bd9c4541255caf9c1ed3cdd1cdffca6a773b301c35a1e8d6718d2f6014f3937c9c84ee0e4f1caa18ccf27789a8d1f563020d2d1304b270b29b468017d88002a")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
