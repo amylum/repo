@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=google-authenticator
-pkgver=1.05_5
+pkgver=1.05_6
 pkgrel=1
 pkgdesc="TOTP authenticator module for PAM"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/google-authenticator"
 license=('Apache')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("5fde5ef1fcc6345b3e9c80703ef27d6cb7df02cec1abeda876760c3d1c3d0b847af20622dd1ae625b28b990a9b15612fa71f66c7140e7a4f32aef42eee5a9e08")
+sha512sums=("ae84bb7ab2ac9486242affeefd99b5d668685f60dca465e38a58252c890a55de190c53e41158a1ab28c29152658c3e3485d404d5775cf924aa4fe3c8dd677f39")
 
 package() {
     cd "${pkgdir}"
