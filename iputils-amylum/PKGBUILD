@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=iputils-amylum
 _realname=iputils
-pkgver=20161105_37
+pkgver=20161105_38
 pkgrel=1
 pkgdesc="IP Configuration Utilities (and Ping)"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/iputils"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("e38ac2f7d4b5f5e95e3fdf4fc080ff14999facab58322d9ed142f8c50554117c73a3ed46189e5985602bcf4fc5c9cc81e06d61120ab21be8099fdcbbee10c610")
+sha512sums=("511a88b38f0cf38648a8b8ca08a3c71313a170884b530dd33837a874f315a24a99ab02a94522d99bae5b4110b58b409df85a688ab39b67e2070b3bfd07c2e0ef")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
