@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=pacman-mirrorlist-amylum
 _realname=pacman-mirrorlist
-pkgver=201804_1
+pkgver=201805_1
 pkgrel=1
 pkgdesc="Arch Linux mirror list for use by pacman"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/pacman-mirrorlist"
 license=('MIT')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("12fb8e8b6fac1b524d855104193f97d91e91f44d32a186565962be921b2ceea3224cd7fc02aef8a542d200bd5291df476e370a8efc8607f17b3d214f48c6f63e")
+sha512sums=("e590cfc92a31d3c7a7cdf5a7baed5dd6f33c21d7d3f77e7dc9226b41d6ee5b6df86c4d7b672f5de4e666c3e5b835563faaa3fab5702d77997bed3ee9bd4ec1fd")
 
 backup=(etc/pacman.d/mirrorlist)
 
