@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=gnutls-amylum
 _realname=gnutls
-pkgver=3.5.18_11
+pkgver=3.5.18_12
 pkgrel=1
 pkgdesc="A library which provides a secure layer over a reliable transport layer"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/gnutls"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("d65ffd3877c25f5d272feef6c4d5920a3493309c7422ecd1528d976371edf10b2b9da93ab73b9eed0e297b9ff51b829809da1c637c28f398bda3164540023d57")
+sha512sums=("f6eec307fa3df2115a18ffd380c49ef3718a6498bf67a914009e42960061b0edd1d0376f9ee38ca571eda000e365ae6e9ec676e0a7b23f5233ff7b67993584f6")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
