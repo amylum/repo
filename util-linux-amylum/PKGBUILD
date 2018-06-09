@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=util-linux-amylum
 _realname=util-linux
-pkgver=2.32_18
+pkgver=2.32_19
 pkgrel=1
 pkgdesc="Miscellaneous system utilities for Linux"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/util-linux"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("7709fc3fac1679f17f02a2dae293b730a96a95d94b98d3a2cd7acc7d508371bf97260d523f9d85d25e08342ae34a64f9d22933dd01ac696e29eb671e2aa294e0")
+sha512sums=("44a13c73483f7ab80785312f0aa8812bfe06c9f7ab38406f8c39e9f03b14e1a0162af5cb639f193e716aa0e87069500b03500b29c5e7e9afa8fbffa346f1bd61")
 
 conflicts=("${_realname}" libutil-linux)
 provides=("${_realname}" libutil-linux)
