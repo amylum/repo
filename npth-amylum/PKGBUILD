@@ -2,15 +2,15 @@
 # i
 pkgname=npth-amylum
 _realname=npth
-pkgver=1.5_1
-pkgrel=3
+pkgver=1.6_1
+pkgrel=1
 pkgdesc="New portable threads library"
 arch=('x86_64')
 url="https://github.com/amylum/npth"
 license=('LGPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("3598214220ff00ed4e4d946311a3d766d80a071896985d4716e1664b89d967131d08fdf40988ca816b4197cf4589c3f2392ed44016ad77c87aa38f22eb52b1a9")
+sha512sums=("bcc53d2b7398939ad38c07eb83c33df3d457f04ed332cc9da224661173810dc52cf94656183e9c1958fda504d58b09d0ef21ddd1bd1a8750a21415f08a82f9b5")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
