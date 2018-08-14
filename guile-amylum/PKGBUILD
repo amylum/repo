@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=guile-amylum
 _realname=guile
-pkgver=2.2.4_1
+pkgver=2.2.4_2
 pkgrel=1
 pkgdesc="Portable, embeddable Scheme implementation written in C"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/guile"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("c28e3216b35961d2b99c005f1a6761d3d9c171c3f1dda5acf4b7b044d9bec2614edd871eb5d4f04c470af412bae6c97cdd106487ba9cc4b1771ae7311c798192")
+sha512sums=("39cf57e216c25085ec1dda06b375caf7e1455937c560903202d35eacfd17f949f61e6b00b786e9b9b07b83ae9fb6aa430bfdae8bf3e11a42d3a9e46f27f8e10e")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
