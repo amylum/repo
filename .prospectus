@@ -1,6 +1,6 @@
 require 'open-uri'
 require_relative 'scripts/pkgbuilds.rb'
-Prospectus.extra_dep('file', 'prospectus_circleci')
+Prospectus.extra_dep('file', 'prospectus_travis')
 Prospectus.extra_dep('file', 'prospectus_dockerhub')
 
 PKGBUILDS = Pkgbuilds.all
@@ -51,6 +51,6 @@ item do
 
   unless ENV['CI']
     extend ProspectusDockerhub::Build.new('amylum/repo')
-    extend ProspectusCircleci::Build.new('amylum/repo')
+    extend ProspectusTravis::Build.new('amylum/repo')
   end
 end
