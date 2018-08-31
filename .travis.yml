@@ -1,0 +1,18 @@
+sudo: required
+dist: trusty
+services:
+- docker
+install:
+- 'echo "Prospectus: $GITHUB_CREDS" >> .octoauth.yml'
+- echo "$REPO_KEY" | base64 -d | gpg --import
+script: make docker-build
+deploy:
+  provider: script
+  script: make docker-upload || travis_terminate 1
+  skip_cleanup: true
+  on:
+    branch: master
+notifications:
+  email: false
+  slack:
+    secure: ZeAmoPGNeFKQLN0VHFXlGVZ+rY8Itmg3K6/F2ug2GJy7/ohK4l3te5okkm/EE+qqMQYFZorky5JmiEYtZfQKGCvBEf5Ag5+bxYRnzeCuvHvmXt4w4MHjq7QhykaTLnwtPDa/AR/qgyOIH/asbOZ0+ntvViCAh29eK4f/5xLcRZJajF/ocaeHy33WwpeMEZnZ8L/JwdoHUA9XZ/Nzq3DrFTkIxZHwB/Sh3rABquIr7kaofEcp7hOt7hMzsA4+nTWuZ5zobCjB1EEl0DHJmXOMxiqeYuJY9kj9uTMsOLXVsNfTVkBM1YjuQGJjC9mX8JWbqL6XpuDKf/nBVN0ignjT+1AZ8T3nrp3yk6YFx0llMHl3RwZsnT9e+06s8kG493rnvz8lnDd/TDwbOFfTLUhzKymBz7do3WAfu3rQLJhbOb8nzt4UbZ1ZfPLcQeNy+heAz0seywV3FZrRjiCg51fCPtvjJuWcGtO4WnembtzG2Rq8R9ACM/laZAXJzp16XiQ9E8CmA4nC1ANYvmaPWFVePaKm9clt/QAK3kYUohnYTtbOMEyyzSoUnHoeUJuEJDiE6yfxBqGj51flpXM5UmPRfO2l8SBw+DyKoSnd6Xr03XNOB7zGx9qB8yY56DCAFkybMaDdcZ8QSHWfMEhzrNsb9hecB9lHP9T6vVHDVouBcss=
