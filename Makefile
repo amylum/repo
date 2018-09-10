@@ -54,7 +54,10 @@ prune:
 .outdated:
 	pwd
 	ls -la
+	id
+	touch .outdated
 	./scripts/outdated.rb > .outdated
+	echo 'hi'
 
 # Launch the docker container with a bash shell
 manual:
