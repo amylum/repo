@@ -6,7 +6,7 @@ install:
 - openssl aes-256-cbc -K $encrypted_414eb7c7e966_key -iv $encrypted_414eb7c7e966_iv -in .repo_key.gpg.enc -out .repo_key.gpg -d
 - 'echo "Prospectus: $GITHUB_CREDS" >> .octoauth.yml'
 - gpg --import < .repo_key.gpg
-- sudo chown root:root .
+- sudo chown 501:501 .
 script: make docker-build
 deploy:
   provider: script
