@@ -52,7 +52,6 @@ prune:
 
 # Create the metadata file listing packages where the PKGBUILD is newer than S3
 .outdated:
-	prospectus
 	./scripts/outdated.rb | tee .outdated
 
 # Launch the docker container with a bash shell
