@@ -8,6 +8,7 @@ install:
 - 'echo "Prospectus: $GITHUB_CREDS" >> .octoauth.yml'
 - gpg --import < .repo_key.gpg
 - sudo chown -R 501:501 .
+- sudo chmod 777 .
 script: make docker-build
 deploy:
   provider: script
