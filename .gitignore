@@ -7,3 +7,5 @@
 .conf
 .outdated
 .octoauth.yml
+.repo_key.gpg
+.repo_key.b64
