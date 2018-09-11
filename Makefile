@@ -52,12 +52,7 @@ prune:
 
 # Create the metadata file listing packages where the PKGBUILD is newer than S3
 .outdated:
-	pwd
-	ls -la
-	id
-	touch .outdated
-	./scripts/outdated.rb > .outdated
-	echo 'hi'
+	./scripts/outdated.rb | tee .outdated
 
 # Launch the docker container with a bash shell
 manual:
