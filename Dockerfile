@@ -6,7 +6,7 @@ RUN gem install --no-doc --no-user-install \
     octoauth \
     rdoc \
     prospectus_dockerhub \
-    prospectus_circleci
+    prospectus_travis
 RUN useradd -m --uid 501 build
 RUN chown build:build /opt/build
 USER build
