@@ -8,10 +8,11 @@ UPLOAD_PACKAGES := $(addprefix upload-,$(PACKAGE_NAMES))
 DOCKER_CMD = docker run \
 	--rm -t -i \
 	-e CI \
+	-e AWS_ACCESS_KEY_ID \
+	-e AWS_SECRET_ACCESS_KEY \
 	-v $$(pwd):/opt/build \
 	-v $$(pwd)/.octoauth.yml:/home/build/.octoauth.yml \
 	-v ~/.gnupg:/home/build/.gnupg \
-	-v ~/.aws/config:/home/build/.aws/config \
 	amylum/repo
 
 S3REPO ?= s3repo
