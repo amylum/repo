@@ -1,15 +1,15 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libarchive-amylum
 _realname=libarchive
-pkgver=3.3.2_1
-pkgrel=2
+pkgver=3.3.3_1
+pkgrel=1
 pkgdesc="library that can create and read several streaming archive formats"
 arch=('x86_64')
 url="https://github.com/amylum/libarchive"
 license=('BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("3fb4d115a24eda3276573e34d806ec0262e8e20f16184d845c8edfb14702c7e24fad8ed00be77d077c00b33b483ed242396258ac55294463cf8bddf4577f5c37")
+sha512sums=("b6c8e5ad55d9e3771c3e2562cdd40a799c156f09b76b20f50c5feb5f3e44ffd0e131d9d75aa50835e4e853a4ba77841f04c9d3d9cbd67a4529b1b0dbdf9f4307")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
