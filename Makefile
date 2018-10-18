@@ -88,7 +88,7 @@ docker-build:
 ##
 
 $(CHECK_PACKAGES):
-	$(MAKE) $(subst check-,build-,$@))
+	$(MAKE) $(subst check-,build-,$@)
 	$(NAMCAP) $@/PKGBUILD $@/*.pkg.tar.xz
 
 check-all: $(CHECK_PACKAGES)
