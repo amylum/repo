@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libmnl-amylum
 _realname=libmnl
-pkgver=1.0.4_23
+pkgver=1.0.4_24
 pkgrel=1
 pkgdesc="Minimalistic user-space library oriented to Netlink developers."
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libmnl"
 license=('LGPL2.1')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("1a5abe646f59e6b03f05d13a34386565462e84c9fca42ea6b6e86381ef1713eba6fafaa94b2c77f4b605a2b544e1326bc2ac4de5d94a58b56dc5d8f168ed0338")
+sha512sums=("639f943890498d269ae86510e58ca737f2f3c93f797a2d7db94631c2def8134367e10bc8d6d081251efb2805c300043fe691c55d4a7cdbaf4f38e48833f03acc")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
