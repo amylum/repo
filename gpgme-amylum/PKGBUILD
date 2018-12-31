@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=gpgme-amylum
 _realname=gpgme
-pkgver=1.12.0_1
+pkgver=1.12.0_3
 pkgrel=1
 pkgdesc="A C wrapper library for GnuPG"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/gpgme"
 license=('LGPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("57b37144e4e55cbcad038a430f7e5e0678f030631d54bfda961343d04438c74c070c6b2e4f1afc5c79048b04a5109b8a6139c79536987dc72e84994fc1045960")
+sha512sums=("6461052ebbe590b4740cb7cd75244506e236c0dd18a5c91ec50baccd21495d7624211ae88e5a4e48dc73b7b652a530315bc02ca575e29c475d5ab15608ef00d0")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

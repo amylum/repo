@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=linux-api-headers-amylum
 _realname=linux-api-headers
-pkgver=4.19_1
+pkgver=4.20_1
 pkgrel=1
 pkgdesc="Kernel headers sanitized for use in userspace"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/linux-api-headers"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("f36128f8560aad20f4ecc3a02361d0795e4d3931e9dc30264ac4562ea0b312df18932240c7d5d3bb0552284a52aca0a3ea08b8630f10b1474ae181c00503cedf")
+sha512sums=("a652ac28f0f65ad63a48784d71e58751dabbe678bbed0d48a154bbccca04e10267e802981d2b23f388a2795d3fc40e7232e03b4f311e9b57989ca93a54f48ae8")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

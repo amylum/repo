@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libpcap-amylum
 _realname=libpcap
-pkgver=1.9.0_3
+pkgver=1.9.0_4
 pkgrel=1
 pkgdesc="A system-independent interface for user-level packet capture"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libpcap"
 license=('BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("da1fc8e022e80c5453b3f3ee971a0bd75f7af9bde0e63c9276f33dfd3b304e67a19601fb14bb9d75362282697ab3103aedb5a1626f8c0c49839a90275053e79a")
+sha512sums=("c3e42ad9566ce7a3818c9fb8640c6136df3f93f41775a09e5803f83180fd91b4e7a45c8d27bdebf663121af69430cb34466ae3da55ae81da2f41498729ede577")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=gnupg-amylum
 _realname=gnupg
-pkgver=2.2.10_3
+pkgver=2.2.12_2
 pkgrel=1
 pkgdesc="Complete and free implementation of the OpenPGP standard"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/gnupg"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("3d1cd8c529b8c57714b4dfff3266bde172ba9ecc4bde6aea3835f9875d4dbe7288874f0b17cc522b8a741cc8352d010bd3f73a5b27965da7b36a0bff70de0645")
+sha512sums=("bc009958cfd711e2274c0a938a600decbf1a9f63169f8ddc23037c826faed2a007bb9cf5cb452ffca95cbd8e848f01f20f01248184bee154bf786dcebb748d0a")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
