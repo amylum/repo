@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=iptables-amylum
 _realname=iptables
-pkgver=1.8.0_1
+pkgver=1.8.2_1
 pkgrel=1
 pkgdesc="Linux kernel packet control tool"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/iptables"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("5da2c8f3df1f35834c5a59f6b302d51231f3aec4189c36ca67711fdfe4060e3856a05dcfd763d359aad8978f5e7807505ad599c70a8168b1a79b32e4e525def9")
+sha512sums=("3c157c22d6f1d01708860369ce201f27290e18f8903044fc26d5a709e4fbda0d8c588a9ee18ff6bdd04424b67e1c8892ba6fc22784802e7a9a8de9c9b3daf9fe")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

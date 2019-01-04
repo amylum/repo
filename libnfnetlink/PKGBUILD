@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libnfnetlink-amylum
 _realname=libnfnetlink
-pkgver=0_1
+pkgver=1.0.1_2
 pkgrel=1
 pkgdesc="Low-level library for netfilter related kernel/userspace communication"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libnfnetlink"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("d7b8525cac05ab206cf66e1e67fc2cff5d0d79494d28802deee29311b5a5073cc16986be4ffc50c835239f1934704845c5ea69528dafd5fa18870c57d8674609")
+sha512sums=("ef78d6214467e465fc173d59abc76a6c3f55ce358f82fc10f037b02ecb6161e781ce69c23393a60f258b155bdf133681afbddcc32fbe2859f55796e170dfeb89")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
