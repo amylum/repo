@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=mpfr-amylum
 _realname=mpfr
-pkgver=4.0.1_2
+pkgver=4.0.2_1
 pkgrel=1
 pkgdesc="Multiple-precision floating-point library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/mpfr"
 license=('LGPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("07af850bac02171429b68721ce7f217811b89cad3b1a18aff5295ff01407ba2bec5f5aff8f9b232a094190a46e6138dd96a51f7061f55c9f17f52207e98d6f25")
+sha512sums=("034ea2ec7a5d4985cb31069b0eaf38c7ac27488f115961bbbdfb7060db0ddfa954df33918dc26ea738e929e9dcc40e74e372c7f9b09ec2ff6c5e154c2252f714")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
