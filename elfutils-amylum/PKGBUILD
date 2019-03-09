@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=elfutils-amylum
 _realname=elfutils
-pkgver=0.175_1
+pkgver=0.176_1
 pkgrel=1
 pkgdesc="Utilities to handle ELF object files and DWARF debugging information"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/elfutils"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("6b39a80e406e4edef8565dd061138774f270219dd27c7f2234330b8f581bca8854449f008df39c7268fb197e28817c679f5dafca8f26d3f7245a644803c98929")
+sha512sums=("b9e1097b76716908a87f733e82d4a4acece01b5d556d776689574c707480b85be4cf3b4899e2c7bf4a3a64fee9fdb259a68ebcbdb9c953507923ebae7d8506a5")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

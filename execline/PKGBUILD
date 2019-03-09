@@ -1,6 +1,6 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=execline
-pkgver=2.5.0.1_1
+pkgver=2.5.1.0_1
 pkgrel=1
 pkgdesc="non-interactive scripting language"
 arch=('x86_64')
@@ -8,7 +8,7 @@ url="https://github.com/amylum/execline"
 license=('custom:ISC')
 source=("https://github.com/amylum/${pkgname}/releases/download/${pkgver//_/-}/${pkgname}.tar.gz")
 noextract=("${pkgname}.tar.gz")
-sha512sums=("faf8f9ca3188b3244ae367fdfd190a42913c9d4ab71843d690c6eac4ce5793fabb57194ac4f3e60724fa4a507c4aaf563a83f7f96f9ee80aa41f196f363c6829")
+sha512sums=("871ec5355f4d6ddcb7119e95253438de828dded323ba82c82598dc234314c82029b11ec0ff5d5fec2aef40718a3a228b676310eddca3c074b7f82516e6397a65")
 
 package() {
     cd "${pkgdir}"

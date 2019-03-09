@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libidn2-amylum
 _realname=libidn2
-pkgver=2.0.5_1
+pkgver=2.1.1_1
 pkgrel=1
 pkgdesc="Free software implementation of IDNA2008, Punycode and TR46"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libidn2"
 license=('GPL2')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("fa0a0494dc6c17de67c5bdd206785622ba84dae831870324e5e769ac219150d01b087116e84c76c3797cfbf7628089209fdcdd96f3b4c209f849b22cc71a437b")
+sha512sums=("904489348e6c5d1674415a0b07ef20fdbdba1390333b79d6250c315487dbe98599b922421907604b784e08b1b3d4683a6ec92b8f950599d1c01e0439018af40f")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

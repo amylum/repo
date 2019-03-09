@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libaio-amylum
 _realname=libaio
-pkgver=0.3.111_4
+pkgver=0.3.111_5
 pkgrel=1
 pkgdesc="The Linux-native asynchronous I/O facility (aio) library"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libaio"
 license=('LGPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("7bd686dd45538452de58c336d6231cb953b956bd94d469f93e7b206d9e193d6463a144df655d9fa2872abcf7a6c0b81c9a429942d2a24c3a2f3300361ddee268")
+sha512sums=("ee57fdb74bcc0f155fcd63f9a18f7b1537a71197cdf3e1039b8ceee6165dfb825f4eb3c6fa5414a87fef67b9a9baa15f311331fd08bcbc57a05e18637a8e11dc")
 
 conflicts=("${_realname}")
 provides=("${_realname}")

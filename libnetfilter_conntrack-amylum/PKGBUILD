@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=libnetfilter_conntrack-amylum
 _realname=libnetfilter_conntrack
-pkgver=1.0.7_1
+pkgver=1.0.7_2
 pkgrel=1
 pkgdesc="Library providing an API to the in-kernel connection tracking state table"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/libnetfilter_conntrack"
 license=('GPL')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("beeebb1ada8bf0d7984c8aa3a5b40066708fcea8f6fcb3977c4ea2d5e9f6d2458dd5ab3179b7f7dedbc1a739e88339b5b0d5ed17dfe538a9a158d14204e206e9")
+sha512sums=("a3ce33f901e69e2f176e70a5c758723b99731dfeeade403493e430090b375cac0b8e71b508a5089b3b157c5ff20c7d4d385b80840ad569975f9b833a33cda412")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
