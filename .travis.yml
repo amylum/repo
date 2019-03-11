@@ -10,10 +10,10 @@ install:
 - sudo chown -R 501:501 .
 - sudo chown -R 501:501 ~/.gnupg
 - sudo chmod 777 .
-script: make docker-build
+script: make docker-build-all
 deploy:
   provider: script
-  script: make docker-upload || travis_terminate 1
+  script: make docker-upload-all
   skip_cleanup: true
   on:
     branch: master

@@ -27,7 +27,7 @@ define run_outdated
 $1 $$(sed 's/^/$2/' .outdated)
 endef
 
-.PHONY : default clean prune $dd(BUILD_PACKAGES) build-all build-outdated $(UPLOAD_PACKAGES) upload-all upload-outdated $(PACKAGE_NAMES) manual docker-build docker-upload
+.PHONY : default clean prune $dd(BUILD_PACKAGES) build-all build-outdated $(UPLOAD_PACKAGES) upload-all upload-outdated $(PACKAGE_NAMES) manual docker-build docker-upload docker-build-all docker-upload-all
 
 ##
 ## Misc. targets
@@ -82,6 +82,9 @@ build-outdated: .outdated
 docker-build:
 	$(DOCKER_CMD) make build-outdated
 
+docker-build-all:
+	$(DOCKER_CMD) make build-all
+
 ##
 ## Check packages with namcap
 ## Supports individual packages, all, outdated, and checking in a docker container
@@ -116,3 +119,5 @@ upload-outdated: .outdated
 docker-upload:
 	$(DOCKER_CMD) make upload-outdated
 
+docker-upload-all:
+	$(DOCKER_CMD) make upload-all
