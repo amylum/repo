@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=coreutils-amylum
 _realname=coreutils
-pkgver=8.30_6
+pkgver=8.31_1
 pkgrel=1
 pkgdesc="The basic file, shell and text manipulation utilities of the GNU operating system"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/coreutils"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("91246c10cef13975608a376aeec77d3979d9b316316877442494a032498bc736dfa3630344c03a4e793e9a1bf838a08e9086f78e0b5d4123aeb3f6ef3b931fd5")
+sha512sums=("587b11d4f288439dd48d7e90c84d0a6c296763431887d4737789d5bbe99f2269f1276aed6712c5c5781725faf1885bd4c22ff5e4b08929e7bfc2a516337c2e11")
 
 conflicts=("${_realname}")
 provides=("${_realname}")
