@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=bash-amylum
 _realname=bash
-pkgver=5.0p2_1
+pkgver=5.0p3_1
 pkgrel=1
 pkgdesc="The GNU Bourne Again shell"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/bash"
 license=('GPL3')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("898e1dae93f5c3a485c6fcb409b0dd6a7acf887b9df427c435c6fc20d2dc198d4285d73369f5ff134d7e1404f39ce8e21a01a316ffa987ec3b3c333959f07f1a")
+sha512sums=("ca374e5d7ba65165743da9a5ad907fa188f0e3052b83d84203e47d9ae46eed382e2f673181ecb1c333f73cf468acdde6fe281010b8057fed9efd7d89881294ba")
 
 conflicts=("${_realname}")
 provides=('sh' "${_realname}")
