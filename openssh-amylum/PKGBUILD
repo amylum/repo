@@ -1,7 +1,7 @@
 # Maintainer: Les Aker <me@lesaker.org>
 pkgname=openssh-amylum
 _realname=openssh
-pkgver=7.9p1_6
+pkgver=7.9p1_7
 pkgrel=1
 pkgdesc="SSH connectivity tools"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/amylum/openssh"
 license=('custom:BSD')
 source=("https://github.com/amylum/${_realname}/releases/download/${pkgver//_/-}/${_realname}.tar.gz")
 noextract=("${_realname}.tar.gz")
-sha512sums=("eb6a954a132c8aa5920e5e326d2bdade830aff70c7e412e2e37b7846ea061c8a2aa93c2c5a3727328af65f655095ba03cac901039becbcd1b63c74ac98f63e67")
+sha512sums=("bb4ac9c84ca2d623fd605117f14b2a7abaa97c36d244604589b2149e0f9c0d5bc2b65119bad95208d4b9784c6177c02278339db79549f93184a1eea84abbad68")
 
 backup=('etc/ssh/sshd_config')
 
