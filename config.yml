@@ -2,17 +2,19 @@ repo_name: amylum
 bucket: amylum-repo
 region: us-east-1
 makepkg_flags: --clean --force --nodeps
-key: 917CA18E2FDC46C33094B4B7030CB6B34D642144
+targets:
+  - x86_64
+  - aarch64
+key: F32EF721720E464B25C21F80C31B697E9E98B759
 sign_db: true
 sign_packages: true
 template_dir: templates
 template_params:
-  email: me@lesaker.org
+  email: repo@lesaker.org
   repo_name: amylum
   repo_source: https://github.com/amylum
   repo_domain: repo.scrtybybscrty.org
-  repo_key_id: 917CA18E2FDC46C33094B4B7030CB6B34D642144
+  repo_key_id: F32EF721720E464B25C21F80C31B697E9E98B759
   repo_gpg_urls:
-    'My blog': https://blog.akerl.org/gpg/packages.txt
-    GitHub: https://gist.github.com/akerl/77dcb483cbf69b035999b2339b9b015e
-    Twitter: https://twitter.com/akerl/status/916868027857108993
+    'My blog': https://blog.akerl.org/keys/arch-repo.gpg
+    GitHub: https://github.com/akerl/blog/blob/main/static/keys/arch-repo.gpg
