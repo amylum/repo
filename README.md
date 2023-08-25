@@ -13,7 +13,7 @@ The configuration for this lives in the `config.yaml` file, which is used by [s3
 
 ## Usage
 
-To build and upload all outdated packages:
+To build and upload all packages:
 
 ```
 make docker-build

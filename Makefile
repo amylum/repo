@@ -7,13 +7,12 @@ UPLOAD_PACKAGES := $(addprefix upload-,$(PACKAGE_NAMES))
 
 DOCKER_CMD = docker run \
 	--rm -t -i \
-	-e CI \
 	-e AWS_ACCESS_KEY_ID \
 	-e AWS_SECRET_ACCESS_KEY \
 	-v $$(pwd):/opt/build \
 	-v $$(pwd)/.octoauth.yml:/home/build/.octoauth.yml \
 	-v ~/.gnupg:/home/build/.gnupg \
-	amylum/repo
+	ghcr.io/amylum/build:latest
 
 S3REPO ?= s3repo
 BUILD = source ./makepkg.conf && $(S3REPO) build
@@ -21,13 +20,7 @@ UPLOAD = $(S3REPO) upload
 
 NAMCAP ?= namcap
 
-OUTDATED = $$(cat .outdated)
-
-define run_outdated
-if [[ -s .outdated ]] ; then $1 $$(sed 's/^/$2/' .outdated) ; fi
-endef
-
-.PHONY : default clean prune $dd(BUILD_PACKAGES) build-all build-outdated $(UPLOAD_PACKAGES) upload-all upload-outdated $(PACKAGE_NAMES) manual docker-build docker-upload docker-build-all docker-upload-all
+.PHONY : default clean prune $dd(BUILD_PACKAGES) build-all $(UPLOAD_PACKAGES) upload-all $(PACKAGE_NAMES) manual docker-build docker-upload docker-build-all docker-upload-all
 
 ##
 ## Misc. targets
@@ -36,7 +29,7 @@ endef
 # Defaults to building all packages with Docker
 default: docker-build
 
-# Clean any package cruft and the .outdated file
+# Clean any package cruft
 clean:
 	find . -mindepth 2 -maxdepth 2 \
 		! -name PKGBUILD \
@@ -45,15 +38,10 @@ clean:
 		! -path './templates/*' \
 		! -path './scripts/*' \
 		-print -exec rm -r {} \;
-	rm -f .outdated
 
 # Prune package files from the S3 bucket that are no longer in the package DB
 prune:
 	$(S3REPO) prune
-
-# Create the metadata file listing packages where the PKGBUILD is newer than S3
-.outdated:
-	./scripts/outdated.rb | tee .outdated
 
 # Launch the docker container with a bash shell
 manual:
@@ -65,7 +53,7 @@ $(PACKAGE_NAMES):
 
 ##
 ## Build packages from PKGBUILDs
-## Supports individual packages, all, outdated, and building in a docker container
+## Supports individual packages, all, and building in a docker container
 ##
 
 $(PACKAGE_FILES):
@@ -76,18 +64,12 @@ $(BUILD_PACKAGES):
 
 build-all: $(PACKAGE_FILES)
 
-build-outdated: .outdated
-	$(call run_outdated,$(MAKE),build-)
-
 docker-build:
-	$(DOCKER_CMD) make build-outdated
-
-docker-build-all:
 	$(DOCKER_CMD) make build-all
 
 ##
 ## Check packages with namcap
-## Supports individual packages, all, outdated, and checking in a docker container
+## Supports individual packages, all, and checking in a docker container
 ##
 
 $(CHECK_PACKAGES):
@@ -96,15 +78,12 @@ $(CHECK_PACKAGES):
 
 check-all: $(CHECK_PACKAGES)
 
-check-outdated: .outdated
-	$(call run_outdated,$(MAKE),check-)
-
 docker-check:
-	$(DOCKER_CMD) make check-outdated
+	$(DOCKER_CMD) make check-all
 
 ##
 ## Upload packages to S3
-## Supports individual packages, all, outdated, and uploading from a docker container
+## Supports individual packages, all, and uploading from a docker container
 ##
 
 $(UPLOAD_PACKAGES):
@@ -113,11 +92,5 @@ $(UPLOAD_PACKAGES):
 upload-all: build-all
 	$(UPLOAD) $(PACKAGE_NAMES)
 
-upload-outdated: .outdated
-	$(call run_outdated,$(UPLOAD),)
-
 docker-upload:
-	$(DOCKER_CMD) make upload-outdated
-
-docker-upload-all:
 	$(DOCKER_CMD) make upload-all
