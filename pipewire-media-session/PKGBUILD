@@ -1,0 +1,61 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+pkgname=pipewire-media-session
+pkgver=0.4.2
+pkgrel=2
+epoch=1
+pkgdesc="Legacy session manager for PipeWire (deprecated)"
+url="https://gitlab.freedesktop.org/pipewire/media-session"
+license=(MIT)
+arch=(x86_64)
+depends=('pipewire>=0.3.39')
+makedepends=(
+  alsa-lib
+  dbus
+  git
+  meson
+  systemd
+)
+provides=(pipewire-session-manager)
+conflicts=(wireplumber)
+install=pipewire-media-session.install
+_commit=80dae7e24bec02b2befe09a72fbac6e2b38ccb5c  # tags/0.4.2
+source=("$pkgname::git+https://gitlab.freedesktop.org/pipewire/media-session.git#commit=$_commit")
+b2sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  local meson_options=(
+    -D with-module-sets=[]
+  )
+
+  arch-meson $pkgname build "${meson_options[@]}"
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  depends+=(
+    libdbus-1.so
+    libpipewire-0.3.so
+    libsystemd.so
+  )
+
+  meson install -C build --destdir "$pkgdir"
+
+  install -Dt "$pkgdir/usr/share/doc/$pkgname" -m644 $pkgname/{NEWS,README}*
+  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgname/COPYING
+}
+
+# vim:set sw=2 sts=-1 et:

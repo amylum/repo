@@ -1,0 +1,47 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+
+pkgname=libplacebo
+pkgver=5.264.1
+pkgrel=4
+pkgdesc='Reusable library for GPU-accelerated video/image rendering primitives'
+url='https://github.com/haasn/libplacebo'
+arch=('x86_64')
+license=('LGPL2.1')
+depends=('vulkan-icd-loader' 'libvulkan.so' 'glslang' 'lcms2' 'liblcms2.so' 'shaderc' 'libshaderc_shared.so'
+         'glibc' 'gcc-libs' 'libunwind' 'libdovi.so')
+makedepends=(
+  'meson' 'ninja' 'vulkan-headers' 'glad' 'nuklear'
+  'python' 'python-setuptools' 'python-mako' 'python-markupsafe' 'python-jinja'
+)
+provides=('libplacebo.so')
+source=(https://code.videolan.org/videolan/libplacebo/-/archive/v${pkgver}/libplacebo-v${pkgver}.tar.gz)
+sha512sums=('305f43b71f078f4113def43c444df667dfbdd2a6a34d3b457b15da0b3499ca97ec9a8acbd151d58c8e1a593ace3d8aa61067b32556c6bae451efbb217d60a731')
+b2sums=('421de50ef5e2270e3ba32dd85d92d816a374257442b535face6cb8501d565652aae530b86a7d717c9352c6a82ca665ff7d91c2d9768365780cbbe4f48d1d3276')
+
+build() {
+  cd ${pkgbase}-v${pkgver}
+  CXXFLAGS+=" -I/usr/include/glslang"
+  arch-meson build \
+    -D tests=true \
+    -D vulkan=enabled \
+    -D glslang=enabled \
+    -D shaderc=enabled \
+    -D lcms=enabled \
+    -D d3d11=disabled \
+    -D libdovi=enabled \
+    -D demos=false
+  ninja -C build
+}
+
+check() {
+  cd ${pkgbase}-v${pkgver}
+  ninja -C build test
+}
+
+package() {
+  cd ${pkgbase}-v${pkgver}
+  DESTDIR="${pkgdir}" ninja -C build install
+  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

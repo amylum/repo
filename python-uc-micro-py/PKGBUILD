@@ -1,0 +1,37 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+_pkgname=uc.micro-py
+pkgname=python-uc-micro-py
+pkgver=1.0.2
+pkgrel=1
+pkgdesc='Micro subset of unicode data files for linkify-it-py projects'
+arch=('any')
+url='https://github.com/tsutsu3/uc.micro-py'
+license=('MIT')
+depends=('python')
+makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
+checkdepends=('python-pytest')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha512sums=('772487db5f46424576c92e61076f9b0a55de8b36cfdc9ca5274e91855b749f793f0b6e6efa79287cd2862f65cceb1e10c7e2c28439a867681a8d1ac67a2f0e33')
+
+build() {
+  cd $_pkgname-$pkgver
+
+  python -m build --wheel --no-isolation
+}
+
+check() {
+  cd $_pkgname-$pkgver
+
+  python -m pytest
+}
+
+package() {
+  cd $_pkgname-$pkgver
+
+  python -m installer --destdir="$pkgdir" dist/*.whl
+
+  install -Dm 644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:

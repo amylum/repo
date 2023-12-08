@@ -1,0 +1,50 @@
+# Maintainer: Robin Broda <robin@broda.me>
+# Contributor: Michael Lass <bevan@bi-co.net>
+# Contributor: Justin Dray <justin@dray.be>
+# Contributor: Patrick McCarty <pnorcks at gmail dot com>
+# Contributor: Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
+# Contributor: Thomas S Hatch <thatch45 ar gmail dot com>
+# Contributor: Michael P <ptchinster@archlinux.us>
+# Contributor: Matt Heagney <matt@heagney.com>
+
+pkgname=multipath-tools
+_tag='6bb7330fca4a85c4f5abab0f9de5bd3519923f0a' # git rev-parse ${pkgver}
+pkgver=0.9.7
+pkgrel=4
+pkgdesc='Multipath tools for Linux (including kpartx)'
+arch=('x86_64')
+url='https://github.com/opensvc/multipath-tools'
+license=('GPL2')
+depends=('libaio' 'device-mapper' 'json-c' 'liburcu' 'systemd-libs')
+makedepends=('git' 'systemd')
+source=("multipath-tools::git+https://github.com/opensvc/multipath-tools#tag=${_tag}")
+sha256sums=('SKIP')
+
+_make_opts=(
+  prefix='/usr/'
+  bindir='/usr/bin'
+  etc_prefix=""
+  configfile='/etc/multipath.conf'
+  statedir='/etc/multipath'
+  LIB='lib'
+)
+
+
+build() {
+  cd "${pkgname}"
+
+  make \
+    "${_make_opts[@]}" \
+    FORTIFY_OPT=''
+}
+
+package() {
+  cd "${pkgname}"
+
+  make -j1 \
+    "${_make_opts[@]}" \
+    DESTDIR="${pkgdir}" \
+    install
+
+  install -D -m0644 -t "${pkgdir}/usr/share/doc/${pkgname}" README*
+}

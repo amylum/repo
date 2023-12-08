@@ -1,0 +1,58 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+
+pkgname=libuv
+pkgver=1.47.0
+pkgrel=1
+pkgdesc="Multi-platform support library with a focus on asynchronous I/O"
+arch=('x86_64')
+url="https://github.com/libuv/libuv"
+license=('custom')
+depends=('glibc' 'libnsl')
+makedepends=('python-sphinx')
+source=(https://dist.libuv.org/dist/v$pkgver/libuv-v$pkgver.tar.gz{,.sign})
+sha512sums=('3fb6db0109dfa49db0e6028f6667ab5245b9707df337134ce6e1e9c9f82d4d686356cad30221094f79e87441e300f3c036a3cf04838d6eb23d4f27b1aaf4da13'
+            'SKIP')
+# PGP key IDs are available from https://github.com/libuv/libuv/blob/v1.x/MAINTAINERS.md
+validpgpkeys=('57353E0DBDAAA7E839B66A1AFF47D5E4AD8B4FDC'  # Colin Ihrig (@cjihrig)
+              '612F0EAD9401622379DF4402F28C3C8DA33C03BE'  # Santiago Gimeno
+              'AEAD0A4B686767751A0E4AEF34A25FB128246514'
+              'CFBB9CA9A5BEAFD70E2B3C5A79A67C55A3679C8B') # Jameson Nash (@vtjnash)
+
+prepare() {
+    cd $pkgname-v$pkgver
+    # Disable tests that fail on build.a.o (but pass locally)
+    sed -e '/udp_multicast_join/d' \
+        -e '/tcp_connect6_link_local/d' \
+        -i test/test-list.h
+}
+
+build() {
+    cd $pkgname-v$pkgver
+    ./autogen.sh
+    ./configure --prefix=/usr
+    make
+    make man -C docs
+}
+
+check() {
+    cd $pkgname-v$pkgver
+    make check
+}
+
+package() {
+    cd $pkgname-v$pkgver
+
+    make DESTDIR="$pkgdir" install
+
+    install -Dm644 LICENSE \
+        "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+    install -Dm644 AUTHORS \
+        "$pkgdir"/usr/share/doc/$pkgname/AUTHORS
+    install -Dm644 README.md \
+        "$pkgdir"/usr/share/doc/$pkgname/README.md
+    install -Dm644 ChangeLog \
+        "$pkgdir"/usr/share/doc/$pkgname/ChangeLog
+    install -Dm644 docs/build/man/libuv.1 \
+        "$pkgdir"/usr/share/man/man1/libuv.1
+}

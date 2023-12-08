@@ -1,0 +1,53 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
+# Original TU: Jeff Mickey <j@codemac.net>
+# Contributor: ciccio.a
+
+pkgname=squashfs-tools
+pkgver=4.6.1
+pkgrel=1
+pkgdesc='Tools for squashfs, a highly compressed read-only filesystem for Linux'
+arch=(x86_64)
+url='https://github.com/plougher/squashfs-tools'
+license=(GPL2)
+depends=(
+  glibc
+  gcc-libs
+  lz4
+  lzo
+  xz
+  zlib
+  zstd
+)
+makedepends=(help2man)
+source=($url/archive/$pkgver/$pkgname-$pkgver.tar.gz)
+sha512sums=('10e8a4b1e2327e062aef4f85860e76ebcd7a29e4c19e152ff7edec4a38316982b5bcfde4ab69da6bcb931258d264c2b6cb40cb5f635f9e6f6eba1ed5976267cb')
+b2sums=('05e38681de219413573e8b1a7f36d2f7e87734f68a929ecdeb5ae6017076fbfd67b897448980e047689ef4b154d2dcd1a90162367a6a5babab45f1ef36f09325')
+
+build() {
+  local make_options=(
+    GZIP_SUPPORT=1
+    LZ4_SUPPORT=1
+    LZMA_XZ_SUPPORT=1
+    LZO_SUPPORT=1
+    XATTR_SUPPORT=1
+    XZ_SUPPORT=1
+    ZSTD_SUPPORT=1
+    -C $pkgname-$pkgver/$pkgname
+  )
+
+  make "${make_options[@]}"
+}
+
+package() {
+  local make_options=(
+    INSTALL_PREFIX="$pkgdir/usr"
+    INSTALL_MANPAGES_DIR='$(INSTALL_PREFIX)/share/man/man1'
+    install
+    -C $pkgname-$pkgver/$pkgname
+  )
+
+  make "${make_options[@]}"
+  install -vDm 644 $pkgname-$pkgver/{ACTIONS-README,CHANGES,"README-$pkgver",USAGE*} -t "$pkgdir/usr/share/doc/$pkgname/"
+}

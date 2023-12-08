@@ -1,0 +1,72 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgbase=libproxy
+pkgname=(
+  libproxy
+  libproxy-docs
+)
+pkgver=0.5.3
+pkgrel=2
+pkgdesc="Automatic proxy configuration management library"
+url="https://libproxy.github.io/libproxy/"
+arch=(x86_64)
+license=(LGPL)
+depends=(
+  curl
+  duktape
+  glib2
+)
+makedepends=(
+  gi-docgen
+  git
+  gobject-introspection
+  gsettings-desktop-schemas
+  meson
+  vala
+)
+_commit=29d51a611f28af0bdbd51a5779cc8df264c8dcff  # tags/0.5.3
+source=(
+  "git+https://github.com/libproxy/libproxy#commit=$_commit"
+)
+b2sums=('SKIP')
+
+pkgver() {
+  cd libproxy
+  git describe --tags | sed 's/^libproxy-//;s/[^-]*-g/r&/;s/-/+/g'
+}
+
+prepare() {
+  cd libproxy
+}
+
+build() {
+  local meson_options=(
+  )
+
+  arch-meson libproxy build "${meson_options[@]}"
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package_libproxy() {
+  provides=(libproxy.so)
+  conflicts=('libproxy-webkit<0.5.0-1')
+
+  meson install -C build --destdir "$pkgdir"
+
+  mkdir -p doc/usr/share
+  mv {"$pkgdir",doc}/usr/share/doc
+}
+
+package_libproxy-docs() {
+  pkgdesc+=" (documentation)"
+  depends=()
+
+  mv doc/* "$pkgdir"
+}
+
+# vim:set sw=2 sts=-1 et:

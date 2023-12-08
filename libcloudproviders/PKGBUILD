@@ -1,0 +1,50 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Fina Wilke <fina@felinira.net>
+
+pkgname=libcloudproviders
+pkgver=0.3.5
+pkgrel=1
+pkgdesc="DBus API that allows cloud storage sync clients to expose their services"
+url="https://gitlab.gnome.org/World/libcloudproviders"
+arch=(x86_64)
+license=(LGPL3)
+depends=(glib2)
+makedepends=(
+  git
+  gobject-introspection
+  gtk-doc
+  meson
+  vala
+)
+_commit=e5c51d2b27bc9284d128cbc333d94219b64814f6  # tags/0.3.5^0
+source=("git+https://gitlab.gnome.org/World/libcloudproviders.git#commit=$_commit")
+b2sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  local meson_options=(
+    -D enable-gtk-doc=true
+  )
+
+  arch-meson $pkgname build "${meson_options[@]}"
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
+
+# vim:set sw=2 sts=-1 et:

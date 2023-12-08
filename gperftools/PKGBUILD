@@ -1,0 +1,39 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Dave Reisner <dreisner@archlinux.org>
+# Contributor: Alexander Rødseth <rodseth@gmail.com>
+# Contributor: Thomas Jost <schnouki@schnouki.net>
+# Contributor: JaDa <jada@archlinux.us>
+# Contributor: Joaquim Pedro <osmano807@gmail.com>
+# Contributor: Jan Rüegg <rggjan@gmail.com>
+
+pkgname=gperftools
+pkgver=2.13
+pkgrel=2
+pkgdesc='Fast, multi-threaded malloc and nifty performance analysis tools'
+arch=('x86_64')
+url='https://github.com/gperftools/gperftools'
+license=('BSD')
+depends=('gcc-libs' 'glibc' 'libunwind')
+optdepends=('graphviz: pprof graph generation'
+            'perl: pprof and pprof-symbolize commands')
+source=("https://github.com/gperftools/gperftools/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz"
+         https://github.com/gperftools/gperftools/commit/c48d4f14.patch)
+sha256sums=('4882c5ece69f8691e51ffd6486df7d79dbf43b0c909d84d3c0883e30d27323e7'
+            '0ba3ce58cd064fee8e50ad6c583af9edd39e09231f6291007415ddc0a662e65d')
+
+prepare() {
+  patch -d $pkgname-$pkgver -p1 < c48d4f14.patch # Fix segfaults
+}
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --enable-frame-pointers --enable-libunwind
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}

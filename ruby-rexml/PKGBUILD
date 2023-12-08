@@ -1,0 +1,22 @@
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+
+_gemname=rexml
+pkgname=ruby-$_gemname
+pkgver=3.2.6
+pkgrel=1
+pkgdesc='An XML toolkit for Ruby'
+arch=(any)
+url='https://github.com/ruby/rexml'
+license=(BSD-2)
+depends=(ruby)
+#makedepends=('ruby-rdoc')
+options=(!emptydirs)
+source=(https://rubygems.org/downloads/$_gemname-$pkgver.gem)
+noextract=($_gemname-$pkgver.gem)
+sha256sums=('e0669a2d4e9f109951cb1fde723d8acd285425d81594a2ea929304af50282816')
+
+package() {
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+  gem install --no-document --ignore-dependencies --no-user-install -i "$pkgdir/$_gemdir" -n "$pkgdir/usr/bin" $_gemname-$pkgver.gem
+  rm "$pkgdir/$_gemdir/cache/$_gemname-$pkgver.gem"
+}

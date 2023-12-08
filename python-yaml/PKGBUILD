@@ -1,0 +1,51 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Michal Bozon <michal.bozon__at__gmail.com>
+
+_name=pyyaml
+pkgname=python-yaml
+pkgver=6.0.1
+pkgrel=2
+pkgdesc='Python bindings for YAML, using fast libYAML library'
+arch=(x86_64)
+url='https://github.com/yaml/pyyaml'
+license=(MIT)
+depends=(
+  glibc
+  libyaml
+  python
+)
+makedepends=(
+  cython0
+  python-build
+  python-installer
+  python-setuptools
+  python-wheel
+)
+provides=(python-pyyaml)
+source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
+sha512sums=('1c74a92a4ad7d47854dc7bcb2e89b3c8e0b14fa815c7dbfbc22b24480dbba6c81e971c77ee384c494a960914b95f06edf943d7431925a5ed674a0ba830d258e0')
+b2sums=('c34f2169f6eb6aa718aeb53dbfaf02590e11e504d16cc85a802e1a1191f296ef9aa2501db683e1a48173ce6adeaeca09f2ab989581dcf1c1ba4004831bb4cf47')
+
+build() {
+  cd $_name-$pkgver
+  python -m build --wheel --no-isolation --config-setting=--with-libyaml
+}
+
+check() {
+  local _py_ver="$(python3 -c "import sys; print(str(sys.version_info.major)+str(sys.version_info.minor))")"
+
+  cd $_name-$pkgver
+  export PYTHONPATH="tests/lib:build/lib.linux-$CARCH-cpython-$_py_ver:$PYTHONPATH"
+  python -m tests.lib.test_all
+}
+
+package() {
+  cd $_name-$pkgver
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -Dm 644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+  install -Dm 644 CHANGES README.md -t "$pkgdir"/usr/share/doc/$pkgname/
+}
+
+# vim: ts=2 sw=2 et:

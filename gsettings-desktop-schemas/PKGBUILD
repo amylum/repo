@@ -1,0 +1,50 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+# Contributor: Jaroslav Lichtblau <dragonlord@aur.archlinux.org>
+# Contributor: Adam Hani Schakaki (krzd) <krzd@krzd.net>
+
+pkgname=gsettings-desktop-schemas
+pkgver=45.0
+pkgrel=1
+pkgdesc="Shared GSettings schemas for the desktop"
+url="https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas"
+arch=(any)
+license=(GPL)
+depends=(
+  adobe-source-code-pro-fonts
+  cantarell-fonts
+  dconf
+  glib2
+)
+makedepends=(
+  git
+  gobject-introspection
+  meson
+)
+_commit=5e903c1c205086495213dedc32b0ad50f6010c27  # tags/45.0^0
+source=("git+https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas.git#commit=$_commit")
+b2sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  arch-meson $pkgname build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
+
+# vim:set sw=2 sts=-1 et:

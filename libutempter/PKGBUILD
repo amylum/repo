@@ -1,0 +1,25 @@
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+
+pkgname=libutempter
+pkgver=1.2.1
+pkgrel=4
+pkgdesc="Interface for terminal emulators such as screen and xterm to record user sessions to utmp and wtmp files"
+arch=('x86_64')
+url="http://ftp.altlinux.org/pub/people/ldv/utempter"
+license=('LGPL')
+depends=('glibc')
+makedepends=('git' 'systemd')
+source=(git+https://github.com/altlinux/libutempter.git?signed#tag=${pkgver}-alt1)
+sha512sums=('SKIP')
+validpgpkeys=(296D6F29A020808E8717A8842DB5BD89A340AEB7) # Dmitry V. Levin <ldv@altlinux.org>
+
+build() {
+  cd $pkgname/$pkgname
+  make
+}
+
+package() {
+  cd $pkgname/$pkgname
+  make DESTDIR="$pkgdir" install
+  echo 'z /usr/lib/utempter/utempter 2755 root utmp' | install -Dm644 /dev/stdin "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
+}

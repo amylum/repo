@@ -1,0 +1,42 @@
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
+
+_gemname='puppet-resource_api'
+pkgname="ruby-${_gemname}"
+pkgver=1.9.0
+pkgrel=1
+pkgdesc='This library provides a simple way to write new native resources for puppet.'
+arch=('any')
+url='https://github.com/puppetlabs/puppet-resource_api'
+license=('Apache')
+depends=('ruby' 'ruby-hocon')
+makedepends=('ruby-rdoc')
+checkdepends=('ruby-rake' 'ruby-rspec' 'ruby-bundler')
+source=("${url}/archive/${pkgver}/${_gemname}-${pkgver}.tar.gz")
+noextract=("$_gemname-$pkgver.gem")
+options=("!emptydirs")
+sha512sums=('009900910fc83bbc5d96d51d5d069a527c271786143c080774d90d6ba89f5451a2a949965f852a83a7d4ac964a9db0756c7f698d4f3f6c7631e4164ff545f9c6')
+
+build() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+  gem build "${_gemname}.gemspec"
+}
+
+check() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+  # tests currently don't work because of outdated and partially dependencies
+  #rake test
+}
+
+package() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+  local _gemdir="$(gem env gemdir)"
+  gem install --verbose --ignore-dependencies --no-user-install --install-dir "${pkgdir}/${_gemdir}" --bindir "${pkgdir}/usr/bin" "${_gemname}-${pkgver}.gem"
+
+  install -Dm 644 NOTICE LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+  install -Dm 644 CHANGELOG.md CONTRIBUTING.md HISTORY.md README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+
+  rm -r "${pkgdir}/${_gemdir}/cache"
+}
+
+# vim: ts=2 sw=2 et:

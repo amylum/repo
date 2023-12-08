@@ -1,0 +1,41 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+pkgname=sbc
+pkgver=2.0
+pkgrel=1
+pkgdesc="Bluetooth Subband Codec (SBC) library"
+url="https://git.kernel.org/pub/scm/bluetooth/sbc.git"
+arch=(x86_64)
+license=(GPL LGPL)
+depends=(glibc)
+makedepends=(git)
+provides=(libsbc.so)
+_commit=8dc5d5ba381512ad5b1afa45c63ec6b0a3833244  # tags/2.0^0
+source=("git+$url#commit=$_commit")
+b2sums=('SKIP')
+
+pkgver() {
+  cd sbc
+  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+}
+
+prepare() {
+  cd sbc
+  autoreconf -fvi
+}
+
+build() {
+  cd sbc
+  ./configure --prefix=/usr --disable-static --disable-tester
+  make
+}
+
+check() {
+  cd sbc
+  make check
+}
+
+package() {
+  cd sbc
+  make DESTDIR="$pkgdir" install
+}

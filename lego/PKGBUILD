@@ -1,0 +1,64 @@
+# Maintainer: George Rawlinson <george@rawlinson.net.nz>
+# Contributor: Fernandez Ludovic <lfernandez dot dev at gmail dot com>
+
+pkgname=lego
+pkgver=4.14.2
+pkgrel=1
+pkgdesc='Lets Encrypt client and ACME library'
+url='https://go-acme.github.io/lego'
+arch=('x86_64')
+license=('MIT')
+depends=('glibc')
+makedepends=('git' 'go')
+options=('!lto')
+_commit='a6ddcac65ac0036f4a82ccaf0ca0f0e03a0b186e'
+source=("$pkgname::git+https://github.com/go-acme/lego.git#commit=$_commit")
+b2sums=('SKIP')
+
+pkgver() {
+  cd "$pkgname"
+
+  git describe --tags | sed 's/^v//'
+}
+
+prepare() {
+  cd "$pkgname"
+
+  # create directory for build output
+  mkdir build
+
+  # download dependencies
+  export GOPATH="${srcdir}"
+  go mod download
+}
+
+build() {
+  cd "$pkgname"
+
+  # set Go flags
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export GOPATH="${srcdir}"
+
+  go build -v \
+    -buildmode=pie \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags "-compressdwarf=false \
+    -linkmode external \
+    -extldflags ${LDFLAGS} \
+    -X main.version=v$pkgver" \
+    -o build \
+    ./cmd/...
+}
+
+package() {
+  cd "$pkgname"
+
+  # binary
+  install -vDm755 -t "$pkgdir/usr/bin" build/lego
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}

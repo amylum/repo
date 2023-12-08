@@ -1,0 +1,35 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Evgeniy Alekseev <arcanis at archlinux dot org>
+# Contributor: Julien Nicoulaud <julien.nicoulaud at gmail dot com>
+
+pkgname=zsh-completions
+pkgver=0.35.0
+pkgrel=1
+pkgdesc="Additional completion definitions for Zsh"
+arch=(any)
+url="https://github.com/zsh-users/zsh-completions"
+license=(BSD)
+depends=(zsh)
+source=($pkgname-$pkgver.tar.gz::https://github.com/zsh-users/$pkgname/archive/refs/tags/$pkgver.tar.gz)
+sha512sums=('d6ab46db72b311731abca41e82fded954a43a1e13b81deb7b0acf7d85402ef575c69ead66af97dc2c148a1e681f39e48cfcab53993207f2b786bfe20228587e6')
+b2sums=('22b4dff55749852a41373a8d96b01963f47dc1fbee0f2ff2a21e5ec48e43b022967630dd3ad2dc74793efe1f3bf77d6783161b671730d2e726df913981a676da')
+changelog=ChangeLog
+
+package() {
+  local completion
+  local provided_completions=(
+    _tmuxp
+  )
+
+  cd $pkgname-$pkgver
+  install -vDm 644 src/* -t "$pkgdir/usr/share/zsh/site-functions/"
+  install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+
+  # remove completions which are provided by other packages
+  for completion in "${provided_completions[@]}"; do
+    rm -v "$pkgdir/usr/share/zsh/site-functions/$completion"
+  done
+}
+
+# vim:set ts=2 sw=2 et:

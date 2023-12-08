@@ -1,0 +1,42 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Eric Bélanger <eric@archlinux.org>
+
+pkgname=mpg123
+pkgver=1.32.3
+pkgrel=1
+pkgdesc='Console based real time MPEG Audio Player for Layer 1, 2 and 3'
+url='https://mpg123.de/'
+arch=('x86_64')
+license=('LGPL2.1')
+depends=('alsa-lib')
+makedepends=('sdl2' 'jack' 'libpulse')
+optdepends=(
+  'sdl2: for sdl audio support'
+  'jack: for jack audio support'
+  'libpulse: for pulse audio support'
+  'perl: for conplay'
+)
+provides=(lib{mpg,out,syn}123.so)
+source=(https://downloads.sourceforge.net/sourceforge/mpg123/mpg123-${pkgver}.tar.bz2{,.sig})
+sha512sums=('946c1073b6eebfd65333ec543df1caeea25864479e9c8e153fb53d8b636cc756d8d81947f7b5cbedbbfb1ea664d3fb27562ed36e7726d95e80591bd2ad622afc'
+            'SKIP')
+validpgpkeys=('D021FF8ECF4BE09719D61A27231C4CBC60D5CAFE')
+
+build() {
+  cd mpg123-${pkgver}
+  ./configure \
+    --prefix=/usr \
+    --enable-int-quality \
+    --with-audio="alsa oss sdl jack pulse"
+  # https://bugzilla.gnome.org/show_bug.cgi?id=655517
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}
+
+package() {
+  cd mpg123-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -Dm 755 scripts/conplay -t "${pkgdir}/usr/bin"
+}
+
+# vim:set sw=2 sts=-1 et:

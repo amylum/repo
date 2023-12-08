@@ -1,0 +1,50 @@
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: damir <damir@archlinux.org>
+
+pkgname=libnet
+pkgver=1.3
+pkgrel=1
+epoch=2
+pkgdesc='A library which provides API for commonly used low-level net functions'
+arch=('x86_64')
+url='https://github.com/libnet/libnet'
+license=('BSD')
+depends=('glibc' 'sh')
+makedepends=('git' 'help2man' 'doxygen' 'graphviz')
+checkdepends=('cmocka' 'iproute2')
+_commit='deaebdfe2743e8a6f04d3c307d9272afeeecfade'
+source=("$pkgname::git+$url#commit=$_commit")
+b2sums=('SKIP')
+
+pkgver() {
+  cd "$pkgname"
+
+  git describe --tags | sed 's/^v//'
+}
+
+build() {
+  cd "$pkgname"
+
+  autoreconf -vfi
+
+  ./configure \
+    --prefix=/usr \
+    --enable-tests
+
+  make
+}
+
+check() {
+  cd "$pkgname"
+
+  make check
+}
+
+package() {
+  cd "$pkgname"
+
+  DESTDIR="$pkgdir" make install
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}

@@ -1,0 +1,107 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=guestfs-tools
+pkgver=1.50.1
+pkgrel=1
+pkgdesc="Tools for accessing and modifying guest disk images"
+arch=(x86_64)
+url="https://libguestfs.org/"
+license=(
+  GPL-2.0-or-later
+  LGPL-2.1-or-later
+)
+depends=(
+  gcc-libs
+  glibc
+  jansson
+  libosinfo
+  openssl
+  perl
+  perl-libintl-perl
+)
+makedepends=(
+  bash-completion
+  cdrtools
+  libguestfs
+  libisoburn
+  libvirt
+  libxcrypt
+  libxml2
+  ncurses
+  ocaml-findlib
+  perl-module-build
+  xz
+)
+checkdepends=(
+  linux
+  rpm-tools
+)
+backup=(
+  etc/virt-builder/repos.d/libguestfs.conf
+  etc/virt-builder/repos.d/libguestfs.gpg
+  etc/virt-builder/repos.d/opensuse.conf
+  etc/virt-builder/repos.d/opensuse.gpg
+)
+source=(
+  https://download.libguestfs.org/$pkgname/${pkgver%.*}-stable/$pkgname-$pkgver.tar.gz{,.sig}
+  $pkgname-1.50.1-common-ocaml5.patch::https://github.com/libguestfs/libguestfs-common/commit/d61cd820b49e403848d15c5deaccbf8dd7045370.patch
+  $pkgname-1.50.1-ocaml5.patch
+)
+sha512sums=('d4544dfbfbf4764f7d166fb6a97c2c3204e62aa96652020b63dd9a11233f314e811fad4a1a9dc053237b31140eaa6d30da8385c6bce4231ccc653f63afae4b89'
+            'SKIP'
+            '95ae3004e71b0eb236cc7115464679c965a99f550f58643e259e949cbba4e3a99808a2c213c4a406beb94a5a2041f6a10555c3ee64875a788dd36d31e4e1bd46'
+            'fd1e89c55d0f14284b060027e56447a6ec5fc2cb8d7955c8dff4f960d045f0d8e2d30212f2efdb797ab6682d06a4094ade9124adc85f59171adcbc6bfd7f2d94')
+b2sums=('c3156802f6ff3c326fdd094ae80184590b74b8908fba81369815e8388c3600db65c76aa91d10877adf3ca910971b1cb9a552610a1b865e322d062b0080908527'
+        'SKIP'
+        '847d8cf0ffb9028a301764fb4256ae69006266329078ee43d7b91f5526b680993457e97a90355a38cc09880df00451f26bee5e017e47cef6ded6382b5d8db2cf'
+        'e00bca65caffc89cfeaf0bc343e68f8e936e5538360667f7c61ecdb8bd4cbd37fa3b6b48aec7c21ffe859572d408975a5170d06599d9c9ff8f3368a3312965c9')
+validpgpkeys=('F7774FB1AD074A7E8C8767EA91738F73E1B768A0')  # Richard W.M. Jones <rjones@redhat.com>
+
+prepare() {
+  # fix for common modules for ocaml >= 5
+  patch -Np1 -d $pkgname-$pkgver/common -i ../../$pkgname-1.50.1-common-ocaml5.patch
+  # backported fix for ocaml >= 5:
+  # https://github.com/rwmjones/guestfs-tools/commit/6e11b3b90a751e013683cea21af802c6273da989
+  patch -Np1 -d $pkgname-$pkgver -i ../$pkgname-1.50.1-ocaml5.patch
+
+  cd $pkgname-$pkgver
+  autoreconf -fiv
+}
+
+build() {
+  local configure_options=(
+    --prefix=/usr
+    --sysconfdir=/etc
+  )
+
+  cd $pkgname-$pkgver
+  ./configure "${configure_options[@]}"
+  make
+}
+
+check() {
+  export LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1  # verbose libguestfs output
+  export SKIP_TEST_VIRT_FILESYSTEMS_SH=1  # mismatch in test 2
+  export SKIP_TEST_VIRT_INSPECTOR_SH=1  # requires KVM
+  export SKIP_TEST_VIRT_INSPECTOR_LUKS_ON_LVM_SH=1  # requires KVM
+  export SKIP_TEST_VIRT_INSPECTOR_LVM_ON_LUKS_SH=1  # requires KVM
+  export SKIP_TEST_VIRT_BUILDER_SH=1  # virt-resize: error: /dev/sda2: physical volume not returned by pvs_full
+  export SKIP_TEST_VIRT_DRIVERS_LINUX_SH=1  # requires rpm-tools during libguestfs compile time?
+  
+  make -k check -C $pkgname-$pkgver
+}
+
+package() {
+  depends+=(
+    glib2 libgobject-2.0.so libglib-2.0.so
+    libguestfs libguestfs.so
+    libvirt libvirt.so
+    libxcrypt libcrypt.so
+    libxml2 libxml2.so
+    ncurses libncursesw.so
+    pcre2 libpcre2-8.so
+    xz liblzma.so
+  )
+
+  make DESTDIR="$pkgdir/" install -C $pkgname-$pkgver
+}

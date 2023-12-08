@@ -1,0 +1,55 @@
+# Maintainer: Christian Rebischke <chris.rebischke@archlinux.org>
+# Maintainer: Daurnimator <daurnimator@archlinux.org>
+# Maintainer: Justin Kromlinger <hashworks@archlinux.org>
+# Contributor: Jerome Leclanche <jerome@leclan.ch>
+
+pkgname=terraform
+pkgver=1.6.5
+pkgrel=1
+pkgdesc="HashiCorp tool for building and updating infrastructure as code idempotently"
+url="https://github.com/hashicorp/terraform"
+arch=("x86_64")
+license=("BUSL-1.1")
+makedepends=('go')
+depends=('glibc')
+optdepends=('diffutils: for running `terraform fmt -diff`')
+options=('!lto')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/hashicorp/terraform/archive/v$pkgver.tar.gz"
+        "terraform.bash"
+        "terraform.zsh")
+sha512sums=('588b00bc86905021d5efb41ba62306c2a41c9cd2225fb1aeb956a7845be15d6aa3c7d0365e3b779ea7da415a562094ba091e6a4644add72ba3abe169f3a7d36a'
+            'ea42bfc41288e5ad741fcddfbd5c1f8ba0088be0967b820db1e12e1dc13d1ba242b9cc1c247bf29c36ec59cdce76ff6703cf6b3f76cca5ec441a4927a01afe7d'
+            'ad991daf40f68c11fa66256177a04d97bd38d6a89c554d6261489d4de703852628ffc37429d862237ca24e15f6a7c915cfa027731189ac89a27f7b20c72ab4c9')
+b2sums=('afa99bf8e9787a4498e9868ceb91921e6be7bdd5d7ef60378a9173e9765f689fb4c6e8888ce5405c00a6fe855e22dc91fc46e911be8bbc1f0665d9f11bed1ebf'
+        'd047735bbb006e9afbaa4b18af7a7f16a205ec528e91caa61a0b663dd6e24ec1df999216f0b7bd06e3b3c087b37f6ce3aa3cf3a20c892a9cc1962d33ce1b0bcc'
+        'd58712c8203e4a58ec68738f3d22457547a55d230018408400fd1ca433346171b72fa4a87f05efc93213c71f9757d3a8072149ca4e6894355e79f8cfae3bd55b')
+
+prepare() {
+	cd "$pkgname-$pkgver"
+	go mod download
+}
+
+build() {
+	cd "$pkgname-$pkgver"
+	export CGO_CPPFLAGS="${CPPFLAGS}"
+	export CGO_CFLAGS="${CFLAGS}"
+	export CGO_CXXFLAGS="${CXXFLAGS}"
+	export CGO_LDFLAGS="${LDFLAGS}"
+	export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw '-ldflags=-linkmode=external \"-X=github.com/hashicorp/terraform/version.dev=no\"'"
+	export GOPROXY=off
+	go build -o terraform-binary
+}
+
+check() {
+	cd "${pkgname}-${pkgver}"
+	go test -mod=readonly -skip TestInit_cancelModules -skip TestMTLSServer_NoCertFails ./...
+}
+
+package() {
+	install -Dm644 terraform.bash "$pkgdir/usr/share/bash-completion/completions/terraform"
+	install -Dm644 terraform.zsh "$pkgdir/usr/share/zsh/site-functions/_terraform"
+
+	cd "$pkgname-$pkgver"
+	install -Dm755 terraform-binary "$pkgdir/usr/bin/terraform"
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

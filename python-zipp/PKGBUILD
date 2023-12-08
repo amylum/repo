@@ -1,0 +1,32 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=python-zipp
+pkgver=3.17.0
+_commit=5c59b561f5b79631a846b8823d5033cc1407b511
+pkgrel=1
+pkgdesc="Pathlib-compatible object wrapper for zip files"
+url="https://github.com/jaraco/zipp"
+license=('MIT')
+arch=('any')
+depends=('python')
+makedepends=('git' 'python-build' 'python-installer' 'python-setuptools-scm' 'python-wheel')
+checkdepends=('python-pytest' 'python-pytest-enabler' 'python-pytest-mypy' 'python-jaraco.itertools'
+              'python-more-itertools' 'python-big-o' 'python-pytest-ignore-flaky')
+source=("git+https://github.com/jaraco/zipp.git#commit=$_commit")
+sha512sums=('SKIP')
+
+build() {
+  cd zipp
+  python -m build -nw
+}
+
+check() {
+  cd zipp
+  pytest
+}
+
+package() {
+  cd zipp
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}

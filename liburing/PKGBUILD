@@ -1,0 +1,39 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Filipe Laíns (FFY00) <lains@archlinux.org>
+
+pkgname=liburing
+pkgver=2.5
+_commit=5dd20d52f442feae7023af5772429910d3aa5307  # refs/tags/liburing-2.5
+pkgrel=1
+pkgdesc="Linux-native io_uring I/O access library"
+arch=(x86_64)
+url="https://git.kernel.dk/cgit/liburing"
+license=(
+  '(GPL-2.0-only WITH Linux-syscall-note) OR MIT'
+  LGPL-2.0-or-later
+  MIT
+)
+makedepends=(git)
+provides=(
+  liburing.so
+  liburing-ffi.so
+)
+source=("git+$url#tag=$_commit?signed")
+sha512sums=('SKIP')
+validpgpkeys=(C0FC392DCADE26D975FA5E4AF7D358FB2971E0A6)  # Jens Axboe <axboe@kernel.dk>
+
+build() {
+  local configure_options=(
+    --prefix=/usr
+    --mandir=/usr/share/man
+  )
+
+  cd $pkgname
+  ./configure "${configure_options[@]}"
+  make
+}
+
+package() {
+  make DESTDIR="$pkgdir" install -C $pkgname
+  install -vDm 644 $pkgname/LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+}

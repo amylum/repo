@@ -1,0 +1,57 @@
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Sergej Pupykin <sergej@aur.archlinux.org>
+
+pkgname=man-db
+pkgver=2.12.0
+pkgrel=1
+pkgdesc="A utility for reading man pages"
+arch=('x86_64')
+url="https://gitlab.com/man-db/man-db"
+license=('GPL' 'LGPL')
+depends=( 'bash' 'gdbm' 'zlib' 'groff' 'libpipeline' 'less' 'libseccomp' 'glibc')
+makedepends=('po4a')
+optdepends=('gzip') # covered by virtual "base" package
+backup=('etc/man_db.conf')
+conflicts=('man')
+provides=('man')
+replaces=('man')
+install=${pkgname}.install
+source=(https://savannah.nongnu.org/download/man-db/$pkgname-$pkgver.tar.xz{,.asc}
+        # fallback should be used within first 24h after a release
+        #https://download-mirror.savannah.gnu.org/releases/man-db/$pkgname-$pkgver.tar.xz{,.asc} 
+)
+validpgpkeys=('AC0A4FF12611B6FCCF01C111393587D97D86500B') # Colin Watson <cjwatson@debian.org>
+sha512sums=('4b644a508cf10ef6d27b6325b08f8a89e0695bbc1409bf420efd27649c6851860cc472c4d86063f7b71dccd01fb158faa82afa1e2b91c9a20154acf66b0349bf'
+            'SKIP')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  ./configure --prefix=/usr \
+    --sbindir=/usr/bin \
+    --sysconfdir=/etc \
+    --libexecdir=/usr/lib \
+    --with-systemdsystemunitdir=/usr/lib/systemd/system \
+    --with-snapdir=/var/lib/snapd/snap \
+    --with-db=gdbm \
+    --disable-setuid \
+    --enable-cache-owner=root \
+    --enable-mandirs=GNU \
+    --with-sections="1 1p n l 8 3 3p 0 0p 2 3type 5 4 9 6 7"
+  make
+}
+
+check() {
+  cd ${pkgname}-${pkgver}
+  make check
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR=${pkgdir} install
+
+  # part of groff pkg
+  rm -f ${pkgdir}/usr/bin/zsoelim
+
+  install -d -m755 ${pkgdir}/usr/lib/systemd/system/timers.target.wants
+  ln -s ../man-db.timer ${pkgdir}/usr/lib/systemd/system/timers.target.wants/man-db.timer
+}

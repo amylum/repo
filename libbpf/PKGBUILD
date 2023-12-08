@@ -1,0 +1,30 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor:  Adrian Bacircea <adrian.bacircea@gmail.com>
+
+pkgname=libbpf
+pkgver=1.2.2
+pkgrel=1
+pkgdesc='Library for loading eBPF programs and reading and manipulating eBPF objects from user-space'
+url='https://github.com/libbpf/libbpf'
+arch=('x86_64')
+license=('LGPL2.1')
+depends=('glibc' 'libelf' 'linux-api-headers')
+makedepends=('rsync')
+provides=('libbpf.so')
+source=(https://github.com/libbpf/libbpf/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('bc7620207e6f521b9b5baab00bd81346084b8eabf81bff3ec24e5367d389f2a331a0b082798f8bb5d4fea836c3c0cc961fc881abc3a4e05d91152150bdfe47be')
+b2sums=('45a2ceabd38b3ea55f466de68d0806df6ae802b509063ca12d670ba972bac3dc5c7e518e8c9904915dbc9877c27ea892a7b857aa03d4e86016969b2d278b0b4a')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  make -C src
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make -C src DESTDIR="${pkgdir}" LIBSUBDIR=lib install install_headers
+  install -Dm 644 LICENSE* -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

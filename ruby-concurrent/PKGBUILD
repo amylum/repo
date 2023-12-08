@@ -1,0 +1,29 @@
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
+
+_gemname='concurrent-ruby'
+pkgname='ruby-concurrent'
+pkgver=1.2.2
+pkgrel=1
+pkgdesc='Modern concurrency tools including agents, futures, promises, thread pools, actors, supervisors, and more.'
+arch=('any')
+url="https://github.com/ruby-concurrency/${_gemname}"
+license=('MIT')
+depends=('ruby')
+makedepends=('ruby-rdoc')
+optdepends=('java-runtime>=8: jruby support')
+options=('!emptydirs')
+source=("https://rubygems.org/gems/${_gemname}-${pkgver}.gem")
+noextract=("${_gemname}-${pkgver}.gem")
+sha512sums=('4767eba98096e1d792d982f5ad9eafb27bec81b0b089cf14280ecbff2fb6e384cfdb07386672d195d4e586c5334c51aa7ee62db0951cdf37b3dab2f6f39aa4d6')
+
+package() {
+  local _gemdir="$(ruby -e 'puts Gem.default_dir')"
+
+  gem install --ignore-dependencies --no-user-install --install-dir "${pkgdir}${_gemdir}" --bindir "${pkgdir}/usr/bin" "${_gemname}-${pkgver}.gem"
+
+  rm "${pkgdir}/${_gemdir}/cache/${_gemname}-${pkgver}.gem"
+  install -Dm 644 "${pkgdir}${_gemdir}/gems/${_gemname}-${pkgver}/LICENSE.txt" -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:

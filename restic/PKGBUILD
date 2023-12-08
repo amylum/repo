@@ -1,0 +1,43 @@
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Christian Rebischke <chris.rebischke@archlinux.org>
+
+pkgname=restic
+pkgver=0.16.2
+pkgrel=1
+pkgdesc="Fast, secure, efficient backup program"
+arch=('x86_64' 'aarch64')
+url="https://github.com/restic/restic"
+license=('BSD')
+depends=('glibc')
+makedepends=('go' 'git')
+checkdepends=('fuse2')
+optdepends=('fuse2: mount archive')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/restic/restic/archive/v${pkgver}.tar.gz")
+sha512sums=('319b0165def0a874b80314b8ff124a2460895660c55ebe5da260bfc92caeed0f0d886e9556043cfb3d83c1ca6b5f339ff5f74034989982f12c152505e347917c')
+b2sums=('a4feeb44a33d0a3291be04222dfb8939f0a9dbc74e72e10f1334994326ea9154351bc13825664956f0c288916c9455da3eac9a42483b49eb761a85faec67bced')
+
+build(){
+  cd "${pkgname}-${pkgver}"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath -modcacherw"
+  export CGO_ENABLED=0
+  go build -ldflags "-X 'main.version=${pkgver}'" ./cmd/...
+}
+
+check(){
+  cd "${pkgname}-${pkgver}"
+  go test ./cmd/... ./internal/... || true
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  install -Dm755 restic "${pkgdir}/usr/bin/restic"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm644 -t "$pkgdir/usr/share/man/man1/" doc/man/*.1
+  install -Dm644 doc/zsh-completion.zsh "$pkgdir/usr/share/zsh/site-functions/_restic"
+  install -Dm644 doc/bash-completion.sh "$pkgdir/usr/share/bash-completion/completions/restic"
+  install -Dm644 doc/fish-completion.fish "$pkgdir/usr/share/fish/vendor_completions.d/restic.fish"
+}

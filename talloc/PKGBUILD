@@ -1,0 +1,38 @@
+# Maintainer:
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
+
+pkgname=talloc
+pkgver=2.4.1
+pkgrel=1
+pkgdesc="Hierarchical pool based memory allocator with destructors"
+arch=('x86_64')
+license=('GPL3')
+url="https://talloc.samba.org/"
+depends=('glibc' 'libxcrypt')
+makedepends=('python' 'docbook-xsl')
+optdepends=('python: for python bindings')
+source=(https://www.samba.org/ftp/talloc/talloc-$pkgver.tar.{gz,asc})
+sha512sums=('4de3b66d7cd1ff3f53e28e86bf9e89528635465c67868e1262aab6946106c228b2c184e988561361c3194fb260d83e016477254c9dbea7abff40c4dc0d31c76c'
+            'SKIP')
+validpgpkeys=(9147A339719518EE9011BCB54793916113084025) # samba-bugs@samba.org
+
+build() {
+   cd "${srcdir}/${pkgname}-${pkgver}"
+   ./configure --prefix=/usr \
+     --sysconfdir=/etc/samba \
+     --localstatedir=/var \
+     --bundled-libraries=NONE \
+     --builtin-libraries=replace \
+     --enable-talloc-compat1
+   make
+}
+
+check() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make check
+}
+
+package() {
+   cd "${srcdir}/${pkgname}-${pkgver}"
+   make DESTDIR="${pkgdir}" install
+}

@@ -1,0 +1,88 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Daniel Bermond <dbermond@archlinux.org>
+# Contributor: Chocobo1 <chocobo1@archlinux.net>
+
+pkgname=rav1e
+pkgver=0.6.6
+pkgrel=3
+pkgdesc='An AV1 encoder focused on speed and safety'
+arch=(x86_64)
+url=https://github.com/xiph/rav1e/
+license=(BSD)
+depends=(
+  gcc-libs
+  glibc
+)
+makedepends=(
+  cargo-c
+  git
+  nasm
+  rust
+)
+provides=(librav1e.so)
+_tag=7c9db10494c2fffa98a572027d756e55bf754036
+source=(
+  git+https://github.com/xiph/rav1e.git#tag=${_tag}
+  Cargo-rav1e-${pkgver}.lock::https://github.com/xiph/rav1e/releases/download/v${pkgver}/Cargo.lock
+)
+b2sums=('SKIP'
+        'c7d1f548e9cd194c98685827b178f923d7cb1b4e4c20c4cab4779bc1e56a59b84655731cd0e8e60dfb9d3a3dad6f9bd25aee903601f7a2c5214285584b1a3977')
+
+pkgver() {
+  cd rav1e
+  git describe --tags | sed 's/^v//'
+}
+
+prepare() {
+  cp -f Cargo-rav1e-${pkgver}.lock rav1e/Cargo.lock
+  cargo fetch \
+    --locked \
+    --manifest-path rav1e/Cargo.toml
+}
+
+build() {
+  cargo build \
+    --release \
+    --frozen \
+    --no-default-features \
+    --features binaries,asm,threading,signal_support \
+    --manifest-path rav1e/Cargo.toml
+  cargo cbuild \
+    --release \
+    --frozen \
+    --no-default-features \
+    --features binaries,asm,threading,signal_support \
+    --prefix=/usr \
+    --manifest-path rav1e/Cargo.toml
+}
+
+check() {
+  cargo test \
+    --release \
+    --frozen \
+    --no-default-features \
+    --features binaries,asm,threading,signal_support \
+    --manifest-path rav1e/Cargo.toml
+}
+
+package() {
+  cd rav1e
+  cargo install \
+    --frozen \
+    --no-default-features \
+    --features binaries,asm,threading,signal_support \
+    --offline \
+    --no-track \
+    --path . \
+    --root "${pkgdir}"/usr
+  cargo cinstall \
+    --release \
+    --frozen \
+    --no-default-features \
+    --features binaries,asm,threading,signal_support \
+    --prefix /usr \
+    --destdir "${pkgdir}"
+  install -Dm 644 LICENSE PATENTS -t "${pkgdir}"/usr/share/licenses/rav1e/
+}
+
+# vim: ts=2 sw=2 et:

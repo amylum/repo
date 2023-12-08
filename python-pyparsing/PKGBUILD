@@ -1,0 +1,39 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Alexander F Rødseth <xyproto@archlinux.org>
+# Contributor: Chris Brannon <cmbrannon79@gmail.com>
+# Contributor: Geoffroy Carrier <geoffroy.carrier@aur.archlinux.org>
+# Contributor: Arvid Ephraim Picciani <aep@exys.org>
+# Contributor: Michael Krauss <hippodriver@gmx.net>
+
+pkgname=python-pyparsing
+pkgver=3.1.1
+pkgrel=1
+pkgdesc='General parsing module for Python'
+arch=('any')
+url='https://github.com/pyparsing/pyparsing/'
+license=('MIT')
+depends=('python')
+makedepends=('python-build' 'python-installer' 'python-flit-core')
+checkdepends=('python-jinja' 'python-railroad-diagrams')
+optdepends=('python-railroad-diagrams: for generating Railroad Diagrams'
+            'python-jinja: for generating Railroad Diagrams')
+source=("https://github.com/pyparsing/pyparsing/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('51e463c959d81737ac82ca1c9fb68dbf869d8e0140870e45fc77bdfcf258515dc4ea0a5f4dd1a31ce852bf4947cb1654e096036dd494ebab495214a7e1c97d6e')
+
+build() {
+  cd pyparsing-$pkgver
+  python -m build -nw
+}
+
+check() {
+  cd pyparsing-$pkgver
+  python -m unittest
+}
+
+package() {
+  cd pyparsing-$pkgver
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
+
+# vim:set ts=2 sw=2 et:

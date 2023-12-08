@@ -1,0 +1,105 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Ray Rashif <schiv@archlinux.org>
+# Contributor: speps <speps at aur dot archlinux dot org>
+
+pkgbase=lilv
+pkgname=(
+  lilv{,-docs}
+  python-lilv
+)
+pkgver=0.24.22
+pkgrel=1
+pkgdesc="A C library interface to the LV2 plug-in standard"
+arch=(x86_64)
+url="https://drobilla.net/software/lilv.html"
+license=(ISC)
+makedepends=(
+  doxygen
+  libsndfile
+  lv2
+  meson
+  python
+  python-sphinx
+  python-sphinx-lv2-theme
+  python-sphinxygen
+  serd
+  sord
+  sratom
+  swig
+)
+source=(https://download.drobilla.net/$pkgname-$pkgver.tar.xz{,.sig})
+sha512sums=('cd771db89919a11e258d12b43674d7174645a4369f5d3a5168b1217c0a87795926dd7db5304e81cb27eb30477198ac42e6e4931d40fcda833bf70ef75acc558f'
+            'SKIP')
+b2sums=('bd9df20d95ffa921615fb21deed4bc354158219aa51125fc00351aa5ca2f480f9d10d8c867003a373b47eea145c21bb8d0bfc86d53eb1d04d281e1df2fc4a0f2'
+        'SKIP')
+validpgpkeys=('907D226E7E13FA337F014A083672782A9BF368F3') # David Robillard <d@drobilla.net>
+
+_pick() {
+  local p="$1" f d; shift
+  for f; do
+    d="$srcdir/$p/${f#$pkgdir/}"
+    mkdir -p "$(dirname "$d")"
+    mv "$f" "$d"
+    rmdir -p --ignore-fail-on-non-empty "$(dirname "$f")"
+  done
+}
+
+build() {
+  arch-meson $pkgname-$pkgver build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build
+}
+
+package_lilv() {
+  depends=(
+    glibc
+    serd libserd-0.so
+    sord libsord-0.so
+    sratom libsratom-0.so
+    lv2
+    zix
+  )
+  optdepends=(
+    'libsndfile: for lv2apply'
+    'lilv-docs: for documentation'
+    'python-lilv: for Python bindings'
+  )
+  provides=(liblilv-0.so)
+
+  meson install -C build --destdir "$pkgdir"
+  (
+    cd "$pkgdir"
+    _pick $pkgname-docs usr/share/doc
+    _pick python-$pkgbase usr/lib/python*
+  )
+
+  install -vDm 644 $pkgname-$pkgver/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 $pkgname-$pkgver/{NEWS,README.md} -t "$pkgdir/usr/share/doc/$pkgname/"
+  # install bash completion to correct directory and remove /etc
+  install -vDm 644 "$pkgdir/etc/bash_completion.d/$pkgname" -t "$pkgdir/usr/share/bash-completion/completions/"
+  rm -frv "$pkgdir/etc"
+}
+
+package_lilv-docs() {
+  pkgdesc+=" - documentation"
+
+  mv -v $pkgname/* "$pkgdir"
+  mv -v "$pkgdir/usr/share/doc/$pkgbase"{-0,}
+  find "$pkgdir" -type f -iname "*.buildinfo" -delete
+  install -vDm 644 $pkgbase-$pkgver/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
+}
+
+package_python-lilv() {
+  pkgdesc+=" - Python interface"
+  depends=(
+    lilv
+    python
+    python-numpy
+  )
+
+  mv -v $pkgname/* "$pkgdir"
+  install -vDm 644 $pkgbase-$pkgver/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
+}

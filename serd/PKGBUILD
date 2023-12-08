@@ -1,0 +1,66 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Ray Rashif <schiv@archlinux.org>
+# Contributor: speps <speps at aur dot archlinux dot org>
+
+pkgbase=serd
+pkgname=(serd serd-docs)
+pkgver=0.32.0
+pkgrel=1
+pkgdesc="Lightweight C library for RDF syntax supporting reading/ writing Turtle and NTriples"
+arch=(x86_64)
+url="https://drobilla.net/software/serd.html"
+license=(ISC)
+makedepends=(
+  doxygen
+  mandoc
+  meson
+  python-sphinx
+  python-sphinxygen
+)
+source=(https://download.drobilla.net/$pkgname-$pkgver.tar.xz{,.sig})
+sha512sums=('eefd5e4b371213cc77cff3ca6e67c0c460d7cd1a70e55dbac64948ab77703679ee24a446f51d6bfc229fe0cd8089d32eeaa236136cbd1162f7d2100ed2946cbc'
+            'SKIP')
+b2sums=('839440f197a7b9b4082c7a39a7f63ddcc9129aed8968ab5a52780d0b8072743c78d7ccd9d6fc0e810944e3f55661cbd11969ea0f0242d4133d1883098ca4215c'
+        'SKIP')
+validpgpkeys=('907D226E7E13FA337F014A083672782A9BF368F3') # David Robillard <d@drobilla.net>
+
+_pick() {
+  local p="$1" f d; shift
+  for f; do
+    d="$srcdir/$p/${f#$pkgdir/}"
+    mkdir -p "$(dirname "$d")"
+    mv "$f" "$d"
+    rmdir -p --ignore-fail-on-non-empty "$(dirname "$f")"
+  done
+}
+
+build() {
+  arch-meson $pkgname-$pkgver build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build
+}
+
+package_serd() {
+  depends=(glibc)
+  optdepends=('serd-docs: for developer documentation')
+  provides=(libserd-0.so)
+
+  meson install -C build --destdir "$pkgdir"
+  (
+    cd "$pkgdir"
+    _pick $pkgname-docs usr/share/doc
+  )
+
+  install -vDm 644 $pkgname-$pkgver/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 $pkgname-$pkgver/{AUTHORS,NEWS,README.md} -t "$pkgdir/usr/share/doc/$pkgname/"
+}
+
+package_serd-docs() {
+  pkgdesc+=" - documentation"
+
+  mv -v $pkgname/* "$pkgdir"
+  mv -v "$pkgdir/usr/share/doc/"serd{-0,}
+}

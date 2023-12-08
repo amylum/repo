@@ -1,0 +1,34 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Gaetan Bisson <bisson@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
+
+pkgname=libassuan
+pkgver=2.5.6
+pkgrel=1
+pkgdesc='IPC library used by some GnuPG related software'
+arch=(x86_64)
+url="https://www.gnupg.org/related_software/libassuan/"
+license=(GPL3)
+depends=(glibc libgpg-error sh)
+provides=(libassuan.so)
+source=(https://gnupg.org/ftp/gcrypt/${pkgname}/${pkgname}-${pkgver}.tar.bz2{,.sig})
+sha512sums=('dcca942d222a2c226a7e34ba7988ee0c3c55bd6032166eb472caf2053db89aeeea7a40e93d8c2887c7ee73c5f838e8b0725e8cfb595accc1606646559362f7ee'
+            'SKIP')
+b2sums=('462af1eab69e157f65f8134a492cde01dd1e0ee00609f2c2585e742fb9c5532b3fd96054b4fb7449e305690f70aa7a120085db42e2de2e3b0ef8b1603e7e5846'
+        'SKIP')
+validpgpkeys=('6DAA6E64A76D2840571B4902528897B826403ADA') # "Werner Koch (dist signing 2020)"
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr
+  make
+}
+
+check() {
+  make check -C $pkgname-$pkgver
+}
+
+package() {
+  make DESTDIR="$pkgdir" install -C $pkgname-$pkgver
+  install -vDm 644 $pkgname-$pkgver/{AUTHORS,NEWS,README,ChangeLog} -t "$pkgdir/usr/share/doc/$pkgname/"
+}

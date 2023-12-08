@@ -1,0 +1,38 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=fastjsonschema
+pkgname=python-fastjsonschema
+pkgver=2.19.0
+pkgrel=1
+pkgdesc="Fast JSON schema validator for Python"
+arch=(any)
+url="https://github.com/horejsek/python-fastjsonschema"
+license=(BSD-3-Clause)
+depends=(python)
+makedepends=(
+  python-build
+  python-installer
+  python-setuptools
+  python-wheel
+)
+checkdepends=(python-pytest)
+source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
+sha512sums=('d49ab0888e9d063eaf252ae5def2d2d8017eeff25850123a826ff666944bb0e3f7a94ff72efa90aa0c865db503fb4a83087b568f02e93bebc020ab410457cb7d')
+b2sums=('ebf320e93df3192514bb093aa84feccb749060813eb1907d5e0235c5a74734af9095e84f237e5dec0a2ae168e5e4cb4f3d4654ee4e0e08e85ac2a2a0ebd4db06')
+
+build() {
+  cd $pkgname-$pkgver
+  python -m build --wheel --no-isolation
+}
+
+check() {
+  cd $pkgname-$pkgver
+  pytest -vv -m "not benchmark"
+}
+
+package() {
+  cd $pkgname-$pkgver
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -vDm 644 README.rst -t "$pkgdir/usr/share/doc/$pkgname"
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+}

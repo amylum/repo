@@ -1,0 +1,33 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=python-attrs
+pkgver=23.1.0
+_commit=1e2f6f9cac5cc60f0adab051c14adf09ffe39155
+pkgrel=1
+pkgdesc="Attributes without boilerplate."
+arch=('any')
+license=('MIT')
+url="https://www.attrs.org"
+depends=('python')
+makedepends=('git' 'python-build' 'python-installer' 'python-hatchling' 'python-hatch-vcs'
+             'python-hatch-fancy-pypi-readme')
+checkdepends=('python-pytest' 'python-cloudpickle' 'python-hypothesis' 'python-zope-interface')
+source=("git+https://github.com/python-attrs/attrs.git#commit=$_commit")
+sha512sums=('SKIP')
+
+build() {
+  cd attrs
+  python -m build -nw
+}
+
+check() {
+  cd attrs
+  python -m installer -d tmp_install dist/*.whl
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.11/site-packages" pytest
+}
+
+package() {
+  cd attrs
+  python -m installer -d "$pkgdir" dist/*.whl
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}

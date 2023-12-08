@@ -1,0 +1,31 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+# Contributor: Chaiwat Suttipongsakul <cwt114@gmail.com>
+
+pkgname=libdatrie
+pkgver=0.2.13
+pkgrel=4
+pkgdesc='Double-array trie library'
+arch=('x86_64')
+url='https://linux.thai.net/projects/datrie'
+license=('LGPL')
+depends=('glibc')
+makedepends=('doxygen')
+source=("https://linux.thai.net/pub/thailinux/software/libthai/$pkgname-$pkgver.tar.xz")
+sha256sums=('12231bb2be2581a7f0fb9904092d24b0ed2a271a16835071ed97bed65267f4be')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr
+  make
+}
+
+check() {
+  cd $pkgname-$pkgver
+  make check
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

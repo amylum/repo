@@ -1,0 +1,42 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Giovanni Scafora <giovanni@archlinux.org>
+# Contributor: Nezmer <Nezmer@gmail.com>
+
+pkgname=fribidi
+pkgver=1.0.13
+pkgrel=2
+pkgdesc="A Free Implementation of the Unicode Bidirectional Algorithm"
+url="https://github.com/fribidi/fribidi"
+arch=(x86_64)
+license=(LGPL)
+depends=(
+  glibc
+)
+makedepends=(
+  meson
+)
+provides=(libfribidi.so)
+source=("$url/releases/download/v$pkgver/fribidi-$pkgver.tar.xz")
+b2sums=('8cc31220304ddbdeb0047b30ed9084921920b32ad3f1bdcf29ecbb2fafbd430c391bc99bb7f205546ff8482aea1ef7ed369da71deb3474aa623fc2aeace1b62a')
+
+prepare() {
+  cd fribidi-$pkgver
+}
+
+build() {
+  local meson_options=(
+  )
+
+  arch-meson fribidi-$pkgver build "${meson_options[@]}"
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
+
+# vim:set sw=2 sts=-1 et:
